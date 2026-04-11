@@ -192,31 +192,47 @@
           <div class="pane-bottom-pad"></div>
         </div>
 
+        <!-- ══ HOTLINES PANE ══ -->
+        <div id="pane-hotlines" class="tab-pane">
+          <div class="pane-sticky">
+            <div class="mb-6 px-1" style="margin-top:12px;">
+              <h2 class="text-2xl font-bold text-gray-900">Emergency</h2>
+              <p class="text-sm text-gray-500">Cebu City Hotlines</p>
+            </div>
+          </div>
+          <div id="hotline-list" class="space-y-3 px-1"></div>
+          <div class="pane-bottom-pad"></div>
+        </div>
+
       </div>
     </div><!-- /tab-content -->
 
     <!-- Bottom navigation — does not scroll -->
-    <nav class="bottom-nav">
-      <button class="nav-btn active" id="btn-routes" onclick="switchTab('routes')">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
-        </svg>
-        Routes
-      </button>
-      <button class="nav-btn" id="btn-dict" onclick="switchTab('dict')">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-        </svg>
-        Dictionary
-      </button>
-      <button class="nav-btn" id="btn-spots" onclick="switchTab('spots')">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-        </svg>
-        Spots
-      </button>
-    </nav>
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-2 shadow-2xl z-50">
+  <button onclick="switchTab('routes')" id="btn-routes"
+    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-red-600 transition-all duration-150">
+    <i data-lucide="bus" class="w-5 h-5"></i>
+    <span class="text-[10px] font-medium tracking-wide">Routes</span>
+  </button>
+
+  <button onclick="switchTab('dict')" id="btn-dict"
+    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-gray-400 transition-all duration-150">
+    <i data-lucide="book-open" class="w-5 h-5"></i>
+    <span class="text-[10px] font-medium tracking-wide">Dictionary</span>
+  </button>
+
+  <button onclick="switchTab('spots')" id="btn-spots"
+    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-gray-400 transition-all duration-150">
+    <i data-lucide="map-pin" class="w-5 h-5"></i>
+    <span class="text-[10px] font-medium tracking-wide">Spots</span>
+  </button>
+
+  <button onclick="switchTab('hotlines')" id="btn-hotlines"
+    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-gray-400 transition-all duration-150">
+    <i data-lucide="phone-forwarded" class="w-5 h-5"></i>
+    <span class="text-[10px] font-medium tracking-wide">Hotlines</span>
+  </button>
+</nav>
 
   </div><!-- /#main-app -->
 
