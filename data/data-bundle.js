@@ -1,4 +1,3 @@
-// data-bundle.js — auto-generated, do not edit manually
 const ROUTES_DATA = [
   { "code": "01K", "color": "bg-orange-500", "route": "Urgello - Parkmall", "via": "Sikatuna, Imus, North Reclamation", "group": "Cebu City", "keywords": "01k urgello parkmall sikatuna imus colon emall",
     "stops": ["Urgello Terminal", "Sikatuna St", "Imus Ave", "North Reclamation Area", "Emall", "Parkmall Terminal"] },
@@ -50,13 +49,13 @@ const ROUTES_DATA = [
     "stops": ["Basak Terminal", "Quiot", "Mambaling", "CIT-U", "N. Bacalso Ave", "Colon St Terminal"] },
   { "code": "09G", "color": "bg-pink-500", "route": "Basak - Carbon", "via": "Pardo, N. Bacalso, Carbon", "group": "Cebu City", "keywords": "09g basak carbon pardo bacalso quiot jai alai",
     "stops": ["Basak Terminal", "Quiot", "Pardo", "Jai-Alai", "N. Bacalso Ave", "Carbon Market Terminal"] },
-  { "code": "10G", "color": "bg-teal-600", "route": "Bulacao - Carbon", "via": "Bulacao, N. Bacalso, Carbon", "group": "Cebu City", "keywords": "10g pardo carbon bulacao jai alai",
+  { "code": "10G", "color": "bg-teal-600", "route": "Bulacao - Carbon", "via": "Bulacao, N. Bacalso, Carbon", "group": "Cebu City", "keywords": "10g pardo carbon bulacao jai alai kinasangan kinasang-an basak mambaling",
     "stops": ["Bulacao Terminal", "Pardo", "Jai-Alai", "N. Bacalso Ave", "Imus Ave", "Carbon Market Terminal"] },
-  { "code": "10M", "color": "bg-teal-600", "route": "Bulacao - SM City", "via": "Bulacao, Mambaling, SM City", "group": "Cebu City", "keywords": "10m pardo sm city bulacao mambaling emall colon",
+  { "code": "10M", "color": "bg-teal-600", "route": "Bulacao - SM City", "via": "Bulacao, Mambaling, SM City", "group": "Cebu City", "keywords": "10m pardo sm city bulacao mambaling emall colon kinasangan kinasang-an basak mambaling",
     "stops": ["Bulacao Terminal", "Pardo", "Mambaling", "N. Bacalso Ave", "Colon St", "Emall", "SM City Cebu Terminal"] },
-  { "code": "10H", "color": "bg-teal-500", "route": "Bulacao - SM City", "via": "Pardo, CIT, N. Bacalso", "group": "Cebu City", "keywords": "10h bulacao colon pardo cit emall colon SM City",
+  { "code": "10H", "color": "bg-teal-500", "route": "Bulacao - SM City", "via": "Pardo, CIT, N. Bacalso", "group": "Cebu City", "keywords": "10h bulacao colon pardo cit emall colon SM City kinasangan kinasang-an basak mambaling",
     "stops": ["Bulacao Terminal", "Pardo", "CIT-U", "N. Bacalso Ave", "Colon St", "SM City Cebu Terminal"] },
-  { "code": "10F", "color": "bg-teal-500", "route": "Bulacao - Colon", "via": "Pardo, Jones Ave, Capitol", "group": "Cebu City", "keywords": "10f bulacao jones pardo capitol",
+  { "code": "10F", "color": "bg-teal-500", "route": "Bulacao - Colon", "via": "Pardo, Jones Ave, Capitol", "group": "Cebu City", "keywords": "10f bulacao jones pardo capitol kinasangan kinasang-an basak mambaling",
     "stops": ["Bulacao Terminal", "Pardo", "Mambaling", "Jones Ave", "Capitol Site", "Colon St Terminal"] },
   { "code": "11A", "color": "bg-indigo-600", "route": "Inayawan - Colon", "via": "Mambaling, CIT, N. Bacalso", "group": "Cebu City", "keywords": "11a inayawan colon mambaling cit",
     "stops": ["Inayawan Terminal", "Mambaling", "CIT-U", "N. Bacalso Ave", "Colon St Terminal"] },
