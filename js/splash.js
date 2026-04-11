@@ -1,3 +1,5 @@
+// splash.js — handles the welcome screen logic
+
 (function () {
     // Build animated road dashes
     const dashContainer = document.getElementById('dashes');
