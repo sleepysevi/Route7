@@ -3,68 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Route7 | Sugbu Buddy</title>
-  <!-- Vercel Web Analytics -->
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+  <title>Route7 — Sugbu Buddy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Leaflet must load before app.js -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- App styles (edit css/style.css to customize colors) -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bg-gray-50" style="background:var(--color-bg)">
+<body>
 
-  <!-- ═══════════════════════ SPLASH SCREEN ═══════════════════════ -->
+  <!-- ═══════════ SPLASH ═══════════ -->
   <div id="splash">
-    <div class="deco-circle" style="width:320px;height:320px;top:-90px;right:-90px;"></div>
-    <div class="deco-circle" style="width:180px;height:180px;top:40px;left:-60px;"></div>
-    <div class="deco-circle" style="width:120px;height:120px;bottom:110px;right:30px;opacity:0.4;"></div>
+    <div class="deco-circle" style="width:300px;height:300px;top:-80px;right:-80px;"></div>
+    <div class="deco-circle" style="width:160px;height:160px;top:40px;left:-50px;"></div>
+    <div class="deco-circle" style="width:100px;height:100px;bottom:110px;right:30px;opacity:0.35;"></div>
 
-    <!-- Jeepney SVG illustration -->
     <div class="jeep-wrap">
-      <svg width="200" height="110" viewBox="0 0 160 90" fill="none" class="anim-fadeslide-down" style="animation-delay:0.05s">
-        <rect x="10" y="28" width="140" height="42" rx="8" fill="rgba(255,255,255,0.22)"/>
-        <rect x="10" y="28" width="36"  height="42" rx="8" fill="rgba(255,255,255,0.32)"/>
-        <rect x="14" y="32" width="28"  height="22" rx="4" fill="rgba(255,255,255,0.5)"/>
-        <rect x="52" y="33" width="18"  height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
-        <rect x="76" y="33" width="18"  height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
-        <rect x="100" y="33" width="18" height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
-        <rect x="124" y="33" width="20" height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
-        <rect x="10"  y="55" width="140" height="6"  fill="#F59E0B" opacity="0.9"/>
-        <rect x="22"  y="20" width="118" height="10" rx="4" fill="rgba(255,255,255,0.18)"/>
-        <rect x="35"  y="14" width="8"   height="8"  rx="2" fill="rgba(255,255,255,0.3)"/>
-        <rect x="55"  y="14" width="8"   height="8"  rx="2" fill="rgba(255,255,255,0.3)"/>
+      <svg width="190" height="105" viewBox="0 0 160 90" fill="none" class="anim-fadeslide-down" style="animation-delay:.05s">
+        <rect x="10" y="28" width="140" height="42" rx="8" fill="rgba(255,255,255,.22)"/>
+        <rect x="10" y="28" width="36"  height="42" rx="8" fill="rgba(255,255,255,.32)"/>
+        <rect x="14" y="32" width="28"  height="22" rx="4" fill="rgba(255,255,255,.5)"/>
+        <rect x="52" y="33" width="18"  height="16" rx="3" fill="rgba(255,255,255,.45)"/>
+        <rect x="76" y="33" width="18"  height="16" rx="3" fill="rgba(255,255,255,.45)"/>
+        <rect x="100" y="33" width="18" height="16" rx="3" fill="rgba(255,255,255,.45)"/>
+        <rect x="124" y="33" width="20" height="16" rx="3" fill="rgba(255,255,255,.45)"/>
+        <rect x="10"  y="55" width="140" height="6" fill="#F59E0B" opacity=".9"/>
+        <rect x="22"  y="20" width="118" height="10" rx="4" fill="rgba(255,255,255,.18)"/>
+        <rect x="35"  y="14" width="8"  height="8"  rx="2" fill="rgba(255,255,255,.3)"/>
+        <rect x="55"  y="14" width="8"  height="8"  rx="2" fill="rgba(255,255,255,.3)"/>
         <circle cx="34"  cy="72" r="10" fill="#1a1a1a"/>
-        <circle cx="34"  cy="72" r="5"  fill="rgba(255,255,255,0.25)"/>
+        <circle cx="34"  cy="72" r="5"  fill="rgba(255,255,255,.25)"/>
         <circle cx="126" cy="72" r="10" fill="#1a1a1a"/>
-        <circle cx="126" cy="72" r="5"  fill="rgba(255,255,255,0.25)"/>
-        <rect x="6" y="58" width="8" height="10" rx="3" fill="rgba(255,255,255,0.35)"/>
-        <circle cx="12" cy="44" r="4" fill="#F59E0B" opacity="0.9"/>
-        <line x1="50"  y1="30" x2="50"  y2="61" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <line x1="96"  y1="30" x2="96"  y2="61" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <line x1="122" y1="30" x2="122" y2="61" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <circle cx="126" cy="72" r="5"  fill="rgba(255,255,255,.25)"/>
+        <rect x="6" y="58" width="8" height="10" rx="3" fill="rgba(255,255,255,.35)"/>
+        <circle cx="12" cy="44" r="4" fill="#F59E0B" opacity=".9"/>
+        <line x1="50"  y1="30" x2="50"  y2="61" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+        <line x1="96"  y1="30" x2="96"  y2="61" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+        <line x1="122" y1="30" x2="122" y2="61" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
       </svg>
     </div>
 
     <div class="splash-inner">
       <div class="brand-badge anim-fadeslide-down">Sugbu Buddy</div>
-      <div class="brand-title anim-fadeslide-down" style="animation-delay:0.1s">Route<span>7</span></div>
-      <div class="brand-sub anim-fadeslide-down" style="animation-delay:0.2s">Find your way around Cebu!</div>
-      <div class="brand-sub anim-fadeslide-down" style="animation-delay:0.2s">A passion project by sleepysevi.</div>
+      <div class="brand-title anim-fadeslide-down" style="animation-delay:.1s">Route<span>7</span></div>
+      <div class="brand-sub anim-fadeslide-down" style="animation-delay:.2s">Find your way around Cebu</div>
+      <div class="brand-sub anim-fadeslide-down" style="animation-delay:.25s; opacity:.5; font-size:11px;">A passion project by sleepysevi</div>
 
-      <div class="search-wrap anim-fadeslide-up" style="animation-delay:0.4s">
+      <div class="search-wrap anim-fadeslide-up" style="animation-delay:.4s">
         <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
         </svg>
         <input type="text" id="splash-search" placeholder="Where to? e.g. SM, Ayala, Colon..." autocomplete="off"/>
       </div>
 
-      <div class="tags anim-fadeslide-up" style="animation-delay:0.55s">
+      <div class="tags anim-fadeslide-up" style="animation-delay:.5s">
         <span class="tag" data-query="SM City">SM City</span>
         <span class="tag" data-query="Ayala">Ayala</span>
         <span class="tag" data-query="Carbon">Carbon</span>
@@ -73,12 +68,12 @@
         <span class="tag" data-query="Lahug">Lahug</span>
         <span class="tag" data-query="Talamban">Talamban</span>
         <span class="tag" data-query="Mandaue">Mandaue</span>
-        <span class="tag" data-query="Talisay">Bulacao</span>
+        <span class="tag" data-query="Bulacao">Bulacao</span>
         <span class="tag" data-query="Naga">Naga</span>
       </div>
 
-      <button id="enter-btn" class="enter-btn anim-fadeslide-up" style="animation-delay:0.7s">
-        <i data-lucide="map" style="width:18px;height:18px;"></i>
+      <button id="enter-btn" class="enter-btn anim-fadeslide-up" style="animation-delay:.65s">
+        <i data-lucide="map" style="width:16px;height:16px;"></i>
         Explore all routes
       </button>
     </div>
@@ -89,163 +84,143 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════ MAIN APP ═══════════════════════ -->
-  <div id="main-app" class="hidden pb-24">
+  <!-- ═══════════ MAIN APP ═══════════
+       Layout: header (fixed height) + tab-content (scrolls) + bottom-nav (fixed height)
+       All three are flex children of #main-app which is height:100dvh.
+  ════════════════════════════════════ -->
+  <div id="main-app" class="hidden">
 
-    <header class="bg-red-600 text-white px-4 pt-4 pb-3 shadow-md sticky top-0 z-50">
-      <div class="max-w-md mx-auto flex items-center justify-between">
+    <!-- Header — does not scroll -->
+    <header class="app-header">
+      <div style="display:flex;align-items:center;justify-content:space-between;max-width:540px;margin:0 auto;">
         <div>
-          <h1 class="text-xl font-bold flex items-center gap-1.5" style="font-family:'Syne',sans-serif">
-            <i data-lucide="map-pin" style="width:18px;height:18px;"></i>
-            Route<span style="color:#F59E0B">7</span>
+          <h1>
+            <svg style="width:16px;height:16px;stroke:#fff;stroke-width:2;fill:none;flex-shrink:0" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Route<span>7</span>
           </h1>
+          <p>Cebu City Transit Guide</p>
         </div>
-        <!-- Route count badge — filled by JS -->
-        <div id="header-badge" class="text-xs font-bold bg-white bg-opacity-20 rounded-full px-3 py-1 hidden">
+        <div id="header-badge" style="font-size:11px;font-weight:700;background:rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;display:none;">
           <span id="header-count">0</span> routes
         </div>
       </div>
     </header>
 
-    <main class="px-3 pt-3 max-w-md mx-auto">
+    <!-- Scrollable content area -->
+    <div class="tab-content">
+      <div style="max-width:540px;margin:0 auto;">
 
-      <!-- ════════════════ ROUTES SECTION ════════════════ -->
-      <div id="routes-section">
+        <!-- ══ ROUTES PANE ══ -->
+        <div id="pane-routes" class="tab-pane active">
 
-        <div class="relative mb-3">
-          <input type="text" id="searchInput"
-            placeholder="Search routes, stops, areas…"
-            class="w-full py-2.5 pl-10 pr-4 rounded-xl border border-gray-200 bg-white shadow-sm
-                   focus:ring-2 focus:ring-red-400 focus:border-transparent outline-none text-sm">
-          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/>
-          </svg>
-        </div>
+          <!-- Sticky: search + group tabs + toolbar -->
+          <div class="pane-sticky">
+            <div class="search-bar" style="margin:12px 0 8px;">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+              <input type="text" id="searchInput" placeholder="Search routes, stops, areas…">
+            </div>
 
-        <!-- Map panel — hidden until a route card is tapped -->
-        <div id="map-panel" class="hidden mb-3">
-          <div id="map-container"></div>
-          <div id="map-caption">Tap a route card below to view its path</div>
-        </div>
+            <!-- Group filter chips -->
+            <div class="chip-row" id="group-tab-bar" style="padding-left:0;padding-right:0;margin:0 0 6px;"></div>
 
-        <!--
-          GROUP FILTER TABS (rendered by JS)
-          Colors for each group tab are set in app.js → GROUP_STYLE object.
-        -->
-        <div class="flex gap-2 overflow-x-auto pb-2 mb-2 no-scrollbar" id="group-tab-bar"></div>
-
-        <!-- Results label -->
-        <div class="flex items-center justify-between mb-2 px-0.5">
-          <p id="routes-count-label" class="text-xs text-gray-400 font-medium"></p>
-          <!-- Layout toggle (list / grid) -->
-          <div class="flex items-center gap-1 bg-gray-100 rounded-lg p-0.5">
-            <button id="btn-list-view" onclick="setRouteLayout('list')"
-              title="List view"
-              class="p-1.5 rounded-md bg-white shadow-sm text-red-600 transition-all">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
-            </button>
-            <button id="btn-grid-view" onclick="setRouteLayout('grid')"
-              title="Grid view"
-              class="p-1.5 rounded-md text-gray-400 transition-all">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-                <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-              </svg>
-            </button>
+            <!-- Toolbar: count + layout toggle -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:0 0 8px;">
+              <span id="routes-count-label" style="font-size:11px;color:var(--text-faint);font-weight:600;"></span>
+              <div class="layout-toggle">
+                <button id="btn-list-view" class="layout-btn active" onclick="setRouteLayout('list')" title="List">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <button id="btn-grid-view" class="layout-btn" onclick="setRouteLayout('grid')" title="Grid">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
+
+          <!-- Map panel (hidden until a card is tapped) -->
+          <div id="map-panel" style="display:none;padding:0 16px 10px;">
+            <div id="map-container"></div>
+            <div id="map-caption">Tap a route card to view its path</div>
+          </div>
+
+          <!-- Route cards injected here -->
+          <div id="routes-container"></div>
+          <div class="pane-bottom-pad"></div>
         </div>
 
-        <!-- Route cards (list or grid — toggled by JS) -->
-        <div id="routes-container"></div>
+        <!-- ══ DICTIONARY PANE ══ -->
+        <div id="pane-dict" class="tab-pane">
+          <div class="pane-sticky">
+            <div class="search-bar" style="margin:12px 0 8px;">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+              <input type="text" id="dictSearchInput" placeholder="Search Cebuano phrases…">
+            </div>
+            <div style="padding:0 0 10px;">
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Common Cebuano Phrases</div>
+              <div style="font-size:11px;color:var(--text-faint);margin-top:2px;">Tap any card to copy the phrase</div>
+            </div>
+          </div>
+          <div class="dict-list" id="dict-container"></div>
+          <div class="pane-bottom-pad"></div>
+        </div>
+
+        <!-- ══ SPOTS PANE ══ -->
+        <div id="pane-spots" class="tab-pane">
+          <div class="pane-sticky">
+            <div class="search-bar" style="margin:12px 0 8px;">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+              <input type="text" id="spot-search" placeholder="Search tourist spots…">
+            </div>
+            <!-- Category chips -->
+            <div class="chip-row" id="spot-cat-bar" style="padding-left:0;padding-right:0;margin:0 0 6px;"></div>
+          </div>
+
+          <!-- Spots map -->
+          <div style="padding:0 16px 10px;">
+            <div id="spot-map-container"></div>
+            <p style="text-align:center;font-size:10px;color:var(--text-faint);margin-top:6px;">Tap "View on map" on any card to focus it</p>
+          </div>
+
+          <!-- Spot cards injected here -->
+          <div class="spots-list" id="spots-container"></div>
+          <div class="pane-bottom-pad"></div>
+        </div>
+
       </div>
+    </div><!-- /tab-content -->
 
-      <!-- ════════════════ DICTIONARY SECTION ════════════════ -->
-      <div id="dict-section" class="hidden">
-        <div class="relative mb-3">
-          <input type="text" id="dictSearchInput"
-            placeholder="Search Cebuano phrases…"
-            class="w-full py-2.5 pl-10 pr-4 rounded-xl border border-gray-200 bg-white shadow-sm
-                   focus:ring-2 focus:ring-red-400 focus:border-transparent outline-none text-sm">
-          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="mb-3 px-0.5">
-          <h2 class="font-bold text-gray-800 text-sm">Common Cebuano Phrases</h2>
-          <p class="text-xs text-gray-400 mt-0.5">Tap any phrase to copy it</p>
-        </div>
-        <div id="dict-container" class="space-y-2"></div>
-      </div>
-
-      <!-- ════════════════ SPOTS SECTION ════════════════ -->
-      <div id="spots-section" class="hidden">
-        <div class="relative mb-3">
-          <input type="text" id="spot-search"
-            placeholder="Search tourist spots…"
-            class="w-full py-2.5 pl-10 pr-4 rounded-xl border border-gray-200 bg-white shadow-sm
-                   focus:ring-2 focus:ring-red-400 focus:border-transparent outline-none text-sm">
-          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Category chips -->
-        <div class="flex gap-2 overflow-x-auto pb-2 mb-3 no-scrollbar" id="spot-cat-bar"></div>
-
-        <!-- Spots map -->
-        <div class="mb-4">
-          <div id="spot-map-container"></div>
-          <p class="text-center text-xs text-gray-400 mt-1.5">
-            Tap "View on map" on any card to focus it
-          </p>
-        </div>
-
-        <!-- Spot cards -->
-        <div id="spots-container" class="space-y-3"></div>
-      </div>
-
-    </main>
-
-    <!--
-      BOTTOM NAVIGATION
-      ─────────────────────────────────────────────────────
-      To add a 4th tab:
-        1. Add a button here (copy one below and change onclick/id/icon/label)
-        2. Add the section HTML above
-        3. Update switchTab() in app.js to handle the new tab id
-    -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around
-                py-1 shadow-xl z-50">
-      <button onclick="switchTab('routes')" id="btn-routes"
-        class="flex flex-col items-center gap-0.5 px-6 py-2 rounded-xl text-red-600 font-semibold transition-colors duration-150">
-        <i data-lucide="bus" class="w-5 h-5"></i>
-        <span class="text-[10px] tracking-wide">Routes</span>
+    <!-- Bottom navigation — does not scroll -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" id="btn-routes" onclick="switchTab('routes')">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        Routes
       </button>
-      <button onclick="switchTab('dict')" id="btn-dict"
-        class="flex flex-col items-center gap-0.5 px-6 py-2 rounded-xl text-gray-400 transition-colors duration-150">
-        <i data-lucide="languages" class="w-5 h-5"></i>
-        <span class="text-[10px] tracking-wide">Dictionary</span>
+      <button class="nav-btn" id="btn-dict" onclick="switchTab('dict')">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        Dictionary
       </button>
-      <button onclick="switchTab('spots')" id="btn-spots"
-        class="flex flex-col items-center gap-0.5 px-6 py-2 rounded-xl text-gray-400 transition-colors duration-150">
-        <i data-lucide="landmark" class="w-5 h-5"></i>
-        <span class="text-[10px] tracking-wide">Spots</span>
+      <button class="nav-btn" id="btn-spots" onclick="switchTab('spots')">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Spots
       </button>
     </nav>
-  </div>
 
-  <!--
-    SCRIPT LOAD ORDER — do not change this order!
-    1. route-coords.js  → defines ROUTE_COORDS global
-    2. splash.js        → splash screen logic
-    3. app.js           → main app (needs ROUTE_COORDS + Leaflet)
-  -->
+  </div><!-- /#main-app -->
+
+  <!-- Script load order matters -->
   <script src="./data/route-coords.js"></script>
   <script src="./data/data-bundle.js"></script>
   <script src="./js/splash.js"></script>
