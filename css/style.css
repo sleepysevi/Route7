@@ -256,6 +256,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  padding-bottom: 70px;  /* Add this to account for fixed bottom nav height */
 }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
