@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Route7 — Sugbu Buddy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,7 +48,7 @@
       <div class="brand-badge anim-fadeslide-down">Sugbu Buddy</div>
       <div class="brand-title anim-fadeslide-down" style="animation-delay:.1s">Route<span>7</span></div>
       <div class="brand-sub anim-fadeslide-down" style="animation-delay:.2s">Find your way around Cebu</div>
-      <div class="brand-sub anim-fadeslide-down" style="animation-delay:.25s; opacity:.5; font-size:11px;">A passion project by sleepysevi</div>
+      <div class="brand-sub anim-fadeslide-down" style="animation-delay:.25s;opacity:.5;font-size:11px;">A passion project by sleepysevi</div>
 
       <div class="search-wrap anim-fadeslide-up" style="animation-delay:.4s">
         <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -73,7 +71,9 @@
       </div>
 
       <button id="enter-btn" class="enter-btn anim-fadeslide-up" style="animation-delay:.65s">
-        <i data-lucide="map" style="width:16px;height:16px;"></i>
+        <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+        </svg>
         Explore all routes
       </button>
     </div>
@@ -84,18 +84,14 @@
     </div>
   </div>
 
-  <!-- ═══════════ MAIN APP ═══════════
-       Layout: header (fixed height) + tab-content (scrolls) + bottom-nav (fixed height)
-       All three are flex children of #main-app which is height:100dvh.
-  ════════════════════════════════════ -->
+  <!-- ═══════════ MAIN APP ═══════════ -->
   <div id="main-app" class="hidden">
 
-    <!-- Header — does not scroll -->
     <header class="app-header">
-      <div style="display:flex;align-items:center;justify-content:space-between;max-width:540px;margin:0 auto;">
+      <div class="header-inner">
         <div>
           <h1>
-            <svg style="width:16px;height:16px;stroke:#fff;stroke-width:2;fill:none;flex-shrink:0" viewBox="0 0 24 24">
+            <svg style="width:15px;height:15px;stroke:#fff;stroke-width:2;fill:none;flex-shrink:0" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
@@ -103,53 +99,36 @@
           </h1>
           <p>Cebu City Transit Guide</p>
         </div>
-        <div id="header-badge" style="font-size:11px;font-weight:700;background:rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;display:none;">
-          <span id="header-count">0</span> routes
-        </div>
       </div>
     </header>
 
-    <!-- Scrollable content area -->
     <div class="tab-content">
-      <div style="max-width:540px;margin:0 auto;">
+      <div class="content-inner">
 
         <!-- ══ ROUTES PANE ══ -->
         <div id="pane-routes" class="tab-pane active">
-
-          <!-- Sticky: search + group tabs + toolbar -->
           <div class="pane-sticky">
-            <div class="search-bar" style="margin:12px 0 8px;">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+            <div class="search-bar">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
               <input type="text" id="searchInput" placeholder="Search routes, stops, areas…">
             </div>
-
-            <!-- Group filter chips -->
-            <div class="chip-row" id="group-tab-bar" style="padding-left:0;padding-right:0;margin:0 0 6px;"></div>
-
-            <!-- Toolbar: count + layout toggle -->
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:0 0 8px;">
-              <span id="routes-count-label" style="font-size:11px;color:var(--text-faint);font-weight:600;"></span>
+            <div class="chip-row" id="group-tab-bar"></div>
+            <div class="toolbar">
+              <span id="routes-count-label" class="count-label"></span>
               <div class="layout-toggle">
-                <button id="btn-list-view" class="layout-btn active" onclick="setRouteLayout('list')" title="List">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <button id="btn-list-view" class="layout-btn active" onclick="setRouteLayout('list')">
+                  <svg viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
-                <button id="btn-grid-view" class="layout-btn" onclick="setRouteLayout('grid')" title="Grid">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-                  </svg>
+                <button id="btn-grid-view" class="layout-btn" onclick="setRouteLayout('grid')">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                 </button>
               </div>
             </div>
           </div>
-
-          <!-- Map panel (hidden until a card is tapped) -->
           <div id="map-panel" style="display:none;padding:0 16px 10px;">
             <div id="map-container"></div>
             <div id="map-caption">Tap a route card to view its path</div>
           </div>
-
-          <!-- Route cards injected here -->
           <div id="routes-container"></div>
           <div class="pane-bottom-pad"></div>
         </div>
@@ -157,13 +136,13 @@
         <!-- ══ DICTIONARY PANE ══ -->
         <div id="pane-dict" class="tab-pane">
           <div class="pane-sticky">
-            <div class="search-bar" style="margin:12px 0 8px;">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+            <div class="search-bar">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
               <input type="text" id="dictSearchInput" placeholder="Search Cebuano phrases…">
             </div>
-            <div style="padding:0 0 10px;">
-              <div style="font-size:13px;font-weight:700;color:var(--text);">Common Cebuano Phrases</div>
-              <div style="font-size:11px;color:var(--text-faint);margin-top:2px;">Tap any card to copy the phrase</div>
+            <div class="pane-header">
+              <h2>Common Cebuano Phrases</h2>
+              <p>Tap any card to copy the phrase</p>
             </div>
           </div>
           <div class="dict-list" id="dict-container"></div>
@@ -173,21 +152,16 @@
         <!-- ══ SPOTS PANE ══ -->
         <div id="pane-spots" class="tab-pane">
           <div class="pane-sticky">
-            <div class="search-bar" style="margin:12px 0 8px;">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+            <div class="search-bar">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
               <input type="text" id="spot-search" placeholder="Search tourist spots…">
             </div>
-            <!-- Category chips -->
-            <div class="chip-row" id="spot-cat-bar" style="padding-left:0;padding-right:0;margin:0 0 6px;"></div>
+            <div class="chip-row" id="spot-cat-bar"></div>
           </div>
-
-          <!-- Spots map -->
           <div style="padding:0 16px 10px;">
             <div id="spot-map-container"></div>
-            <p style="text-align:center;font-size:10px;color:var(--text-faint);margin-top:6px;">Tap "View on map" on any card to focus it</p>
+            <p style="text-align:center;font-size:10px;color:var(--text-faint);margin-top:6px;">Tap "View on map" to focus a spot</p>
           </div>
-
-          <!-- Spot cards injected here -->
           <div class="spots-list" id="spots-container"></div>
           <div class="pane-bottom-pad"></div>
         </div>
@@ -195,48 +169,52 @@
         <!-- ══ HOTLINES PANE ══ -->
         <div id="pane-hotlines" class="tab-pane">
           <div class="pane-sticky">
-            <div class="mb-6 px-1" style="margin-top:12px;">
-              <h2 class="text-2xl font-bold text-gray-900">Emergency</h2>
-              <p class="text-sm text-gray-500">Cebu City Hotlines</p>
+            <div class="pane-header" style="padding-top:14px;">
+              <h2>Emergency Hotlines</h2>
+              <p>Cebu City emergency and government contacts</p>
             </div>
           </div>
-          <div id="hotline-list" class="space-y-3 px-1"></div>
+          <div class="hotlines-list" id="hotlines-container"></div>
           <div class="pane-bottom-pad"></div>
         </div>
 
       </div>
-    </div><!-- /tab-content -->
+    </div>
 
-    <!-- Bottom navigation — does not scroll -->
-<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-2 shadow-2xl z-50">
-  <button onclick="switchTab('routes')" id="btn-routes"
-    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-red-600 transition-all duration-150">
-    <i data-lucide="bus" class="w-5 h-5"></i>
-    <span class="text-[10px] font-medium tracking-wide">Routes</span>
-  </button>
+    <!-- Bottom nav — uses .nav-btn class only, no Tailwind -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" id="btn-routes" onclick="switchTab('routes')">
+        <svg viewBox="0 0 24 24">
+          <rect x="1" y="3" width="15" height="13" rx="2"/>
+          <path d="M16 8h4l3 3v5h-7V8z"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        Routes
+      </button>
+      <button class="nav-btn" id="btn-dict" onclick="switchTab('dict')">
+        <svg viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        Dictionary
+      </button>
+      <button class="nav-btn" id="btn-spots" onclick="switchTab('spots')">
+        <svg viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Spots
+      </button>
+      <button class="nav-btn" id="btn-hotlines" onclick="switchTab('hotlines')">
+        <svg viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        Hotlines
+      </button>
+    </nav>
 
-  <button onclick="switchTab('dict')" id="btn-dict"
-    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-gray-400 transition-all duration-150">
-    <i data-lucide="book-open" class="w-5 h-5"></i>
-    <span class="text-[10px] font-medium tracking-wide">Dictionary</span>
-  </button>
+  </div>
 
-  <button onclick="switchTab('spots')" id="btn-spots"
-    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-gray-400 transition-all duration-150">
-    <i data-lucide="map-pin" class="w-5 h-5"></i>
-    <span class="text-[10px] font-medium tracking-wide">Spots</span>
-  </button>
-
-  <button onclick="switchTab('hotlines')" id="btn-hotlines"
-    class="flex flex-col items-center gap-1 px-4 py-1 rounded-xl text-gray-400 transition-all duration-150">
-    <i data-lucide="phone-forwarded" class="w-5 h-5"></i>
-    <span class="text-[10px] font-medium tracking-wide">Hotlines</span>
-  </button>
-</nav>
-
-  </div><!-- /#main-app -->
-
-  <!-- Script load order matters -->
   <script src="./data/route-coords.js"></script>
   <script src="./data/data-bundle.js"></script>
   <script src="./js/splash.js"></script>
