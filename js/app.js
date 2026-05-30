@@ -1,4 +1,4 @@
-// app.js — Route7 by sleepysevi
+// app.js — Route7 by sleepysevi (Modernized)
 
 let routesData = [];
 let dictData   = [];
@@ -27,15 +27,15 @@ const GROUP_ORDER = [
   'Talisay City','Minglanilla','City of Naga','San Fernando'
 ];
 const GROUP_COLORS = {
-  'All':           { active:'#059669', inactive:'#D1FAE5', inactiveText:'#065F46' },
-  'Cebu City':     { active:'#DC2626', inactive:'#FEE2E2', inactiveText:'#991B1B' },
-  'Mandaue':       { active:'#1D4ED8', inactive:'#DBEAFE', inactiveText:'#1E3A8A' },
-  'Mactan Island': { active:'#52525B', inactive:'#F4F4F5', inactiveText:'#3F3F46' },
-  'North Cebu':    { active:'#0369A1', inactive:'#E0F2FE', inactiveText:'#0C4A6E' },
-  'Talisay City':  { active:'#1E40AF', inactive:'#DBEAFE', inactiveText:'#1E3A8A' },
-  'Minglanilla':   { active:'#15803D', inactive:'#DCFCE7', inactiveText:'#14532D' },
-  'City of Naga':  { active:'#B45309', inactive:'#FEF9C3', inactiveText:'#92400E' },
-  'San Fernando':  { active:'#B91C1C', inactive:'#FEE2E2', inactiveText:'#7F1D1D' },
+  'All':           { active:'#10B981', inactive:'#D1FAE5', inactiveText:'#065F46' },
+  'Cebu City':     { active:'#E63946', inactive:'#FEE2E2', inactiveText:'#991B1B' },
+  'Mandaue':       { active:'#3B82F6', inactive:'#DBEAFE', inactiveText:'#1E3A8A' },
+  'Mactan Island': { active:'#64748B', inactive:'#F1F5F9', inactiveText:'#334155' },
+  'North Cebu':    { active:'#0EA5E9', inactive:'#E0F2FE', inactiveText:'#0C4A6E' },
+  'Talisay City':  { active:'#6366F1', inactive:'#E0E7FF', inactiveText:'#3730A3' },
+  'Minglanilla':   { active:'#22C55E', inactive:'#DCFCE7', inactiveText:'#14532D' },
+  'City of Naga':  { active:'#F59E0B', inactive:'#FEF3C7', inactiveText:'#92400E' },
+  'San Fernando':  { active:'#EF4444', inactive:'#FEE2E2', inactiveText:'#7F1D1D' },
 };
 
 const SPOT_CATEGORIES = ['All','Historical','Nature','Landmark','Culture','Shopping','Urban','Education','Cultural'];
@@ -55,47 +55,47 @@ const HOTLINES_DATA = [
   {
     group: 'Emergency',
     entries: [
-      { name: 'Cebu City Emergency', dept: 'General Emergency Line', number: '911', color: '#DC2626', bg: '#FEE2E2' },
-      { name: 'Cebu City Disaster Office', dept: 'CDRRMO', number: '(032) 261-8888', color: '#DC2626', bg: '#FEE2E2' },
+      { name: 'Cebu City Emergency', dept: 'General Emergency Line', number: '911', color: '#E63946', bg: '#FEE2E2' },
+      { name: 'Cebu City Disaster Office', dept: 'CDRRMO', number: '(032) 261-8888', color: '#E63946', bg: '#FEE2E2' },
     ]
   },
   {
     group: 'Police & Safety',
     entries: [
-      { name: 'Cebu City Police', dept: 'CCPO — Main', number: '(032) 416-0033', color: '#1D4ED8', bg: '#DBEAFE' },
-      { name: 'Police Emergency', dept: 'Philippine National Police', number: '117', color: '#1D4ED8', bg: '#DBEAFE' },
-      { name: 'NBI Cebu', dept: 'National Bureau of Investigation', number: '(032) 231-1600', color: '#1D4ED8', bg: '#DBEAFE' },
+      { name: 'Cebu City Police', dept: 'CCPO — Main', number: '(032) 416-0033', color: '#3B82F6', bg: '#DBEAFE' },
+      { name: 'Police Emergency', dept: 'Philippine National Police', number: '117', color: '#3B82F6', bg: '#DBEAFE' },
+      { name: 'NBI Cebu', dept: 'National Bureau of Investigation', number: '(032) 231-1600', color: '#3B82F6', bg: '#DBEAFE' },
     ]
   },
   {
     group: 'Fire & Rescue',
     entries: [
-      { name: 'Bureau of Fire Protection', dept: 'Cebu City BFP', number: '(032) 346-3400', color: '#EA580C', bg: '#FFEDD5' },
-      { name: 'Fire Emergency', dept: 'BFP National Hotline', number: '160', color: '#EA580C', bg: '#FFEDD5' },
+      { name: 'Bureau of Fire Protection', dept: 'Cebu City BFP', number: '(032) 346-3400', color: '#F97316', bg: '#FFEDD5' },
+      { name: 'Fire Emergency', dept: 'BFP National Hotline', number: '160', color: '#F97316', bg: '#FFEDD5' },
     ]
   },
   {
     group: 'Medical',
     entries: [
-      { name: 'Vicente Sotto Memorial', dept: 'VSMMC — Government Hospital', number: '(032) 253-9891', color: '#059669', bg: '#D1FAE5' },
-      { name: 'Chong Hua Hospital', dept: 'Private — Fuente', number: '(032) 255-8000', color: '#059669', bg: '#D1FAE5' },
-      { name: 'Cebu Doctors\' University', dept: 'CDU Hospital', number: '(032) 253-7511', color: '#059669', bg: '#D1FAE5' },
-      { name: 'Red Cross Cebu', dept: 'Philippine Red Cross', number: '(032) 253-0037', color: '#DC2626', bg: '#FEE2E2' },
+      { name: 'Vicente Sotto Memorial', dept: 'VSMMC — Government Hospital', number: '(032) 253-9891', color: '#10B981', bg: '#D1FAE5' },
+      { name: 'Chong Hua Hospital', dept: 'Private — Fuente', number: '(032) 255-8000', color: '#10B981', bg: '#D1FAE5' },
+      { name: 'Cebu Doctors\' University', dept: 'CDU Hospital', number: '(032) 253-7511', color: '#10B981', bg: '#D1FAE5' },
+      { name: 'Red Cross Cebu', dept: 'Philippine Red Cross', number: '(032) 253-0037', color: '#E63946', bg: '#FEE2E2' },
     ]
   },
   {
     group: 'Transport & Traffic',
     entries: [
-      { name: 'LTO Cebu', dept: 'Land Transportation Office', number: '(032) 239-5719', color: '#7C3AED', bg: '#EDE9FE' },
-      { name: 'LTFRB Region 7', dept: 'Land Transportation Franchising', number: '(032) 412-6100', color: '#7C3AED', bg: '#EDE9FE' },
-      { name: 'CCTO', dept: 'Cebu City Traffic Operations', number: '(032) 255-1400', color: '#7C3AED', bg: '#EDE9FE' },
+      { name: 'LTO Cebu', dept: 'Land Transportation Office', number: '(032) 239-5719', color: '#8B5CF6', bg: '#EDE9FE' },
+      { name: 'LTFRB Region 7', dept: 'Land Transportation Franchising', number: '(032) 412-6100', color: '#8B5CF6', bg: '#EDE9FE' },
+      { name: 'CCTO', dept: 'Cebu City Traffic Operations', number: '(032) 255-1400', color: '#8B5CF6', bg: '#EDE9FE' },
     ]
   },
   {
     group: 'Utilities',
     entries: [
-      { name: 'MCWD', dept: 'Metro Cebu Water District', number: '(032) 239-6339', color: '#0369A1', bg: '#E0F2FE' },
-      { name: 'VECO / Meralco Visayas', dept: 'Visayan Electric Company', number: '(032) 230-8326', color: '#B45309', bg: '#FEF9C3' },
+      { name: 'MCWD', dept: 'Metro Cebu Water District', number: '(032) 239-6339', color: '#0EA5E9', bg: '#E0F2FE' },
+      { name: 'VECO / Meralco Visayas', dept: 'Visayan Electric Company', number: '(032) 230-8326', color: '#F59E0B', bg: '#FEF3C7' },
     ]
   },
 ];
