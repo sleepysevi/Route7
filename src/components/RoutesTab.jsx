@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Search, X, LayoutGrid, List, MapPin, Compass, AlertCircle } from 'lucide-react';
 import RouteCard from './RouteCard';
 import RouteMap from './RouteMap';
@@ -40,7 +40,18 @@ export default function RoutesTab({
 }) {
   const [activeGroup, setActiveGroup] = useState('All');
   const [layout, setLayout] = useState('list');
+  const [isMapExpanded, setIsMapExpanded] = useState(true);
+  const [isMapHighlighting, setIsMapHighlighting] = useState(false);
   const mapSectionRef = useRef(null);
+  const highlightTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (highlightTimerRef.current) {
+        clearTimeout(highlightTimerRef.current);
+      }
+    };
+  }, []);
 
   // Filter routes by group and search query
   const filteredRoutes = useMemo(() => {
@@ -65,12 +76,26 @@ export default function RoutesTab({
     return result;
   }, [routes, activeGroup, searchQuery]);
 
+  const focusMapPanel = () => {
+    setIsMapExpanded(true);
+
+    if (highlightTimerRef.current) {
+      clearTimeout(highlightTimerRef.current);
+    }
+
+    setIsMapHighlighting(true);
+    highlightTimerRef.current = setTimeout(() => {
+      setIsMapHighlighting(false);
+    }, 600);
+
+    window.setTimeout(() => {
+      mapSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+  };
+
   const handleRouteSelect = (route) => {
     onSelectRoute(route);
-    // Smooth scroll to map if in mobile
-    if (window.innerWidth < 768 && mapSectionRef.current) {
-      mapSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    focusMapPanel();
   };
 
   return (
@@ -163,11 +188,23 @@ export default function RoutesTab({
       </div>
 
       {/* Interactive Map Panel (Always ready / Selected route viewer) */}
-      <div ref={mapSectionRef}>
-        <RouteMap
-          selectedRoute={selectedRoute}
-          onClose={() => onSelectRoute(null)}
-        />
+      <div
+        ref={mapSectionRef}
+        className={`rounded-3xl transition-all duration-300 ${
+          isMapHighlighting
+            ? 'ring-2 ring-[#ffbe0b]/80 shadow-[0_0_0_4px_rgba(255,190,11,0.15),0_0_30px_rgba(255,190,11,0.45)]'
+            : ''
+        }`}
+      >
+        {isMapExpanded && (
+          <RouteMap
+            selectedRoute={selectedRoute}
+            onClose={() => {
+              setIsMapExpanded(false);
+              onSelectRoute(null);
+            }}
+          />
+        )}
       </div>
 
       {/* Result Status Count */}
