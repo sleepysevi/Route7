@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 11A</name>
+    <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com<br><br>INAYAWAN TO COLON<br> inayawan to c. padilla <br> inayawan to magallanes<br> inayawan to carbon<br> inayawan to basilica del sto. nino<br> inayawan to colon<br> inayawan to pasil<br> cogon pardo to colon<br> cogon pardo to magallanes<br> cogon pardo to carbon<br> cogon pardo to basilica del sto. nino<br> cogon pardo to pasil<br> c. padilla to pasil <br> c. padilla to carbon<br> c. padilla to magallanes <br> c. padilla to sto. nino<br> c. padilla to gaisano main<br> pasil to carbon<br> pasil basilica del sto. nino<br><br>COLON TO INAYAWAN<br><br>colon to c. padilla<br>colon to tagunol <br>colon to cogon pardo<br>colon to inayawan<br>colon to tabada<br>colon to mambaling<br>colon to sn. roque<br>c. padilla to inayawan<br>c. padilla to tagunol<br>c. padilla to tabada mambaling<br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>Inayawan to Colon</name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br><br> <br>Inayawan Church - Rizal Ave. - Tagunol St. - Mambaling Flyover - C. Padilla St. - Carlock St. -  Spoliarium St. - Pasil - San Nicolas Parish - Magallanes St. - Basilica Menore del Sto Nino - D. Jakosalem St. - Gaisano Main - University of the Visayas - Colon St.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.856331,10.269823,0
+            123.856374,10.269931,0
+            123.856387,10.270048,0
+            123.856398,10.27018,0
+            123.856419,10.27029,0
+            123.856564,10.271235,0
+            123.856669,10.272035,0
+            123.85665,10.272423,0
+            123.856832,10.273534,0
+            123.85687,10.273732,0
+            123.85691,10.273946,0
+            123.856977,10.274355,0
+            123.857117,10.275176,0
+            123.857382,10.276812,0
+            123.859472,10.275001,0
+            123.859769,10.274751,0
+            123.859936,10.274616,0
+            123.86036,10.27504,0
+            123.86637,10.28278,0
+            123.86706,10.2835,0
+            123.86805,10.28444,0
+            123.86905,10.28524,0
+            123.87607,10.29021,0
+            123.87691,10.29056,0
+            123.87772,10.29076,0
+            123.87855,10.29089,0
+            123.88423,10.29249,0
+            123.88707,10.29317,0
+            123.88721,10.29221,0
+            123.88898,10.29215,0
+            123.89074,10.29225,0
+            123.89365,10.29274,0
+            123.89472,10.29299,0
+            123.89489,10.29307,0
+            123.89547,10.29311,0
+            123.89705,10.29349,0
+            123.89729,10.29346,0
+            123.89784,10.29362,0
+            123.89902,10.29425,0
+            123.89923,10.29432,0
+            123.9,10.29422,0
+            123.90063,10.29404,0
+            123.90127,10.29378,0
+            123.90217,10.2968,0
+            123.9022,10.29732,0
+            123.90205,10.29777,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Colon to Inayawan</name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br><br> <br>Colon St. - Gaisano Main - 138 Mall - Colonnade Supermarket - Metro Gaisano - C. Padilla St. - Don Carlos Gothong High School - Jai-alai - Mambaling Flyover - Tagunol St. - Rizal Ave. - Cogon Pardo - Inayawan Church.]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.90203,10.29778,0
+            123.90061,10.29767,0
+            123.89971,10.29718,0
+            123.89821,10.29625,0
+            123.89808,10.29613,0
+            123.89581,10.29513,0
+            123.89351,10.29428,0
+            123.89051,10.2938,0
+            123.88619,10.29301,0
+            123.88235,10.29199,0
+            123.87873,10.29095,0
+            123.87716,10.29066,0
+            123.87675,10.29055,0
+            123.8762,10.2903,0
+            123.86889,10.28514,0
+            123.86805,10.28448,0
+            123.86719,10.28368,0
+            123.86587,10.28216,0
+            123.86065,10.27546,0
+            123.86014,10.27484,0
+            123.859941,10.27464,0
+            123.85985,10.274714,0
+            123.858852,10.275545,0
+            123.858511,10.275864,0
+            123.857366,10.276936,0
+            123.857173,10.27569,0
+            123.856964,10.274466,0
+            123.856792,10.27345,0
+            123.856623,10.272428,0
+            123.856637,10.272051,0
+            123.856524,10.27119,0
+            123.856468,10.270787,0
+            123.856433,10.270575,0
+            123.856403,10.27037,0
+            123.856374,10.270222,0
+            123.856371,10.270137,0
+            123.856382,10.270074,0
+            123.856331,10.269836,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

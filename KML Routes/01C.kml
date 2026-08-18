@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 01C</name>
+    <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com<br><br>V. rama Ave. to Pier 3 <br><br>V. rama to colon<br>v. rama to zulueta <br>v. rama to t. padilla<br>v. rama to pier 4<br>v. rama to pier 3<br>private to colon<br>private to zulueta <br>private to pier 4<br>private to pier 3<br>colon to pier 3<br>colon to pier 4<br>colon to s. osmena ave.<br><br>Pier 3 to v. rama ave. <br><br>Pier 3 to colon<br>pier 3 to university of cebu<br>pier 3 to gaisano main<br>pier 3 to sancianko\<br>pier 3 to e-mall<br>pier 4 to colon<br>pier 4 to e-mall<br>pier 4 to private<br>pier 3 to private<br>sancianko to private<br>uv to private<br>uv to v. rama<br>uv to e-mall<br>uv to usc - girls hs]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>Sambag 1 to Pier 3</name>
+        <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br><br> <br>V. Rama Ave. - Sambag 1 (USC- girls high) - J. Alcantara St. - E-mall - L. Kilat St. - Colon St. - Metro Colon - Colonnade Supermarket - Gaisano Main - UV - colon obelisk - mabini St. - Zulueta St. - M.J. Cuenco St. - T. Padilla St. - B. Benedicto St. - G. Maxilom Ave. Ext. - Pier 4 - S. Osmena Blvd. - Pier 3.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.88673,10.30032,0
+            123.88727,10.29918,0
+            123.8877,10.29846,0
+            123.88902,10.29946,0
+            123.89039,10.29999,0
+            123.89077,10.30009,0
+            123.89123,10.30002,0
+            123.89398,10.29916,0
+            123.8954,10.29889,0
+            123.89558,10.29871,0
+            123.89599,10.29748,0
+            123.89656,10.29547,0
+            123.89665,10.29547,0
+            123.8981,10.29612,0
+            123.89972,10.29713,0
+            123.90061,10.29763,0
+            123.90375,10.29794,0
+            123.90373,10.29839,0
+            123.90383,10.29879,0
+            123.90539,10.29852,0
+            123.90609,10.29836,0
+            123.90646,10.3003,0
+            123.90659,10.30131,0
+            123.90661,10.30189,0
+            123.90736,10.30196,0
+            123.90904,10.30191,0
+            123.90903,10.30216,0
+            123.90909,10.30241,0
+            123.90948,10.30354,0
+            123.90986,10.30484,0
+            123.9101,10.30508,0
+            123.91097,10.30573,0
+            123.91262,10.30367,0
+            123.91029,10.30167,0
+            123.90991,10.30119,0
+            123.90843,10.29849,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Pier 3 to Sambag 1 (Usc girls high) / v. rama ave.</name>
+        <description><![CDATA[more cebujeepneys route map atcebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br><br> <br>Pier 3 - V. Sotto St. - MJ. Cuenco Ave. - CTU - V. Gullas St. - D. Jakosalem St. - Gaisano Main - University of the Visayas - Sancianko St. - University of cebu - L. Kilat St. - E-mall - J. Alcantara St. - USC-girls high - V. rama Ave.]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.908427,10.298495,0
+            123.90771,10.29852,0
+            123.90623,10.29832,0
+            123.90607,10.29834,0
+            123.9057,10.29648,0
+            123.90409,10.29717,0
+            123.90383,10.2972,0
+            123.90217,10.29693,0
+            123.9022,10.29729,0
+            123.90204,10.2978,0
+            123.90171,10.29925,0
+            123.90108,10.29921,0
+            123.90041,10.29908,0
+            123.89993,10.29891,0
+            123.89835,10.2982,0
+            123.89732,10.29766,0
+            123.89606,10.29731,0
+            123.89561,10.29874,0
+            123.89537,10.29894,0
+            123.89398,10.29919,0
+            123.89124,10.30004,0
+            123.89077,10.30012,0
+            123.88941,10.29967,0
+            123.88899,10.29948,0
+            123.88771,10.29851,0
+            123.8873,10.29919,0
+            123.88678,10.30032,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

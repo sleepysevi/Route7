@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepneys Route No. 07B</name>
+    <description><![CDATA[more cebu jeepneys route map at cebujeepnes.weebly.com<br><br>Banawa to Carbon<br><br>Banawa to Fuente<br>banawa to robinsons <br>banawa to colon<br>banawa to metro colon<br>banawa to usjr<br>banawa to carbon<br>banawa to basilica sto. nino<br>banawa to abellana sports center<br>fuente to colon<br>fuente to carbon<br>v. rama to fuente<br>v. rama to colon<br>v. rama to abellana<br>v. rama to carbon<br>jones to carbon<br>jones to metro colon<br><br>Carbon to Banawa<br>CARBON TO BANAWA<br><br>Carbon to Jones ave. <br>carbon to fuente<br>carbon to robinsons<br>carbon to capitol<br>carbon to nbi<br>carbon to banawa<br>carbon to rustans banawa<br>colon to fuente <br>colon to robinsosn fuente<br>colon to capitol<br>colon to banawa <br>colon to convergys banawa<br>fuente to capitol<br>fuente to nbi<br>fuente to banawa<br>fuente to rustans banawa<br>capitol to banawa]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>Banawa to Carbon via B. Rodriguez St.</name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br> <br>Banawa to Carbon<br><br> <br>Banawa - R. Duterte St. - V. rama ave. - B. Rodriguez St. - Vicente Sotto Hospital - Fuente Osmena Circle - Robinsons Fuente - Crown Regency Hotel - Osmena Blvd. - Metro Colon - P. Lopez St. - USJR - Magallanes St. - Manalili St. - Carbon Public Market - Progreso St.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.87648,10.30522,0
+            123.87613,10.3061,0
+            123.87598,10.30699,0
+            123.87601,10.30946,0
+            123.87615,10.31005,0
+            123.87631,10.31039,0
+            123.87796,10.31247,0
+            123.87841,10.31282,0
+            123.87977,10.31343,0
+            123.88067,10.314,0
+            123.88131,10.3143,0
+            123.88348,10.31493,0
+            123.88441,10.31541,0
+            123.88537,10.31569,0
+            123.889789,10.317215,0
+            123.889928,10.316917,0
+            123.89014,10.316189,0
+            123.89021,10.31601,0
+            123.89025,10.315885,0
+            123.890701,10.3146,0
+            123.891296,10.314772,0
+            123.89162,10.31396,0
+            123.8928,10.31061,0
+            123.892766,10.310486,0
+            123.892664,10.310351,0
+            123.892567,10.310233,0
+            123.892474,10.310022,0
+            123.89247,10.30972,0
+            123.89254,10.30948,0
+            123.892659,10.309338,0
+            123.892916,10.309211,0
+            123.89325,10.30913,0
+            123.89346,10.30869,0
+            123.89383,10.30755,0
+            123.89444,10.30605,0
+            123.89738,10.2979,0
+            123.89751,10.29775,0
+            123.89823,10.29624,0
+            123.89785,10.2949,0
+            123.89812,10.29378,0
+            123.89903,10.29424,0
+            123.89851,10.29244,0
+            123.899345,10.292137,0
+            123.899493,10.291974,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Carbon to Banawa via Capitaol</name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br><br> <br>Carbon to Banawa<br><br> <br>Carbon - M.C. Briones St. - Mj. Cuenco Ave. - Osmena Blvd - Metro Colon - Abellana Sports Complex - Jones Ave. - Cebu Normal University - Crown Regency Hotel - Robinsons Fuente - Fuente Osmena Circle - Provincial Capitol - M. Velez St. - R. Duterte St. - Rustans (banawa) - Banawa.]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.89949,10.29197,0
+            123.9011,10.29239,0
+            123.9023,10.29263,0
+            123.90379,10.29205,0
+            123.90392,10.29207,0
+            123.90419,10.29279,0
+            123.90444,10.29316,0
+            123.9046,10.29355,0
+            123.89952,10.29577,0
+            123.898895,10.296027,0
+            123.898267,10.296228,0
+            123.89754,10.29773,0
+            123.89733,10.29843,0
+            123.89535,10.30377,0
+            123.89423,10.30714,0
+            123.89385,10.30798,0
+            123.89346,10.3091,0
+            123.89346,10.30924,0
+            123.89365,10.30938,0
+            123.89388,10.30967,0
+            123.89386,10.30997,0
+            123.89378,10.31015,0
+            123.89357,10.31037,0
+            123.89339,10.31049,0
+            123.89292,10.31067,0
+            123.89283,10.31084,0
+            123.89214,10.31302,0
+            123.89141,10.31483,0
+            123.89091,10.31628,0
+            123.890226,10.316123,0
+            123.890159,10.31622,0
+            123.88994,10.31699,0
+            123.88981,10.317271,0
+            123.88598,10.31593,0
+            123.88441,10.31545,0
+            123.88346,10.31498,0
+            123.88178,10.31453,0
+            123.88125,10.31434,0
+            123.88064,10.31404,0
+            123.87981,10.31351,0
+            123.87841,10.31289,0
+            123.87794,10.31252,0
+            123.87628,10.31043,0
+            123.87611,10.31004,0
+            123.87596,10.30947,0
+            123.87593,10.30726,0
+            123.87597,10.30688,0
+            123.87611,10.3061,0
+            123.87646,10.30521,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

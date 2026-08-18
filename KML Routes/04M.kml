@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 04M</name>
+    <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com<br><br>Ayala Terminal to Lahug (JY Square Mall)<br><br>ayala to gorordo ave.<br>ayala to harold hotel<br>ayala to up lahug<br>ayala to lahug<br>ayala to mormons church (church of jesus christ of latter day saints)<br>ayala to corner beverly hills<br>ayala to jy square mall<br>ayala to usp lahug<br>ayala to salinas drive<br>ayala to waterfront hotel lahug<br>ayala to tesda<br>ayala to cebu it park<br><br>Lahug to Ayala<br><br>lahug to tesda<br>lahug to arch. reyes ave.<br>lahug to ayala terminal<br>lahug to BIR<br>lahug to brgy. luz<br>jy to ayala terminal<br>jy to cebu business park<br>jy to brgy. luz<br>jy to BIR<br>salinas drive to ayala<br>salinas drive to brgy luz<br>it park to ayala<br>up lahug to ayala<br>usp lahug to ayala<br>waterfront hotel to ayala<br><br>]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walang pamagat na layer</name>
+      <Placemark>
+        <name>Ayala Terminal to Lahug (Jy Mall)</name>
+        <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br> <br>Ayala Terminal to Lahug (JY Square Mall)<br><br> <br>Ayala Terminal - Gorordo Ave. - Royal Concourse  - Philhealth - Golden peak Hotel - UP (lahug) - Lahug Brgy. Hall - The Church of Christ of Latter Day Saints Temple - Corner Sudlon - Jy Square Mall.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.90346,10.31895,0
+            123.90343,10.31903,0
+            123.90328,10.31908,0
+            123.90351,10.31964,0
+            123.90363,10.31969,0
+            123.90391,10.32027,0
+            123.90372,10.32037,0
+            123.90346,10.31973,0
+            123.90347,10.31963,0
+            123.903044,10.318637,0
+            123.90298,10.318809,0
+            123.902502,10.31978,0
+            123.90192,10.319495,0
+            123.901177,10.320836,0
+            123.900601,10.320556,0
+            123.89934,10.319946,0
+            123.899147,10.320622,0
+            123.898991,10.321334,0
+            123.898718,10.322625,0
+            123.89811,10.32531,0
+            123.89792,10.32698,0
+            123.89766,10.32773,0
+            123.89743,10.3286,0
+            123.89742,10.32881,0
+            123.89748,10.32913,0
+            123.8979,10.33057,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Jy Square (Lahug) to Ayala Terminal</name>
+        <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br> <br>Lahug (JY Square Mall) to Ayala Terminal<br><br> <br>Jy Square Mall - Salinas Drive -  USP - IT Park - Waterfront Hotel - Arch. Reyes Ave. - Ayala Terminal.]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.897956,10.33061,0
+            123.898042,10.330678,0
+            123.898283,10.330821,0
+            123.89868,10.330826,0
+            123.899158,10.330641,0
+            123.900182,10.330113,0
+            123.901277,10.329586,0
+            123.901931,10.329269,0
+            123.902682,10.328915,0
+            123.902859,10.328842,0
+            123.904463,10.328024,0
+            123.904662,10.327923,0
+            123.906024,10.327169,0
+            123.906641,10.326736,0
+            123.907451,10.326071,0
+            123.907526,10.325934,0
+            123.907322,10.325749,0
+            123.907022,10.325337,0
+            123.906941,10.325242,0
+            123.906936,10.325073,0
+            123.906485,10.324393,0
+            123.905895,10.323517,0
+            123.905219,10.322487,0
+            123.904694,10.321722,0
+            123.904109,10.320814,0
+            123.903921,10.320466,0
+            123.903717,10.320054,0
+            123.903573,10.319785,0
+            123.903197,10.31892,0
+            123.903283,10.318914,0
+            123.903385,10.31892,0
+            123.903449,10.318867,0
+            123.90354,10.318825,0
+            123.903642,10.318793,0
+            123.903707,10.318798,0
+            123.903717,10.318867,0
+            123.903712,10.31892,0
+            123.903621,10.318978,0
+            123.903524,10.318983,0
+            123.903481,10.318925,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

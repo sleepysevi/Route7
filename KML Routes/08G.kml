@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 08G</name>
+    <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com<br><br>Alumnos to Zulueta St.<br><br>alumnos to c. padilla st.<br>alumnos to pasil<br>alumnos to taboan<br>alumnos to colon<br>alumnos to metro colon<br>alumnos to colonnade<br>alumnos to university of the visayas<br>alumnos to gaisano main<br>alumnos to zulueta st.<br>alumnos to CTU<br>c. padilla st. to pasil<br>c. padilla st. to taboan<br>c. padilla st. to colon st.<br>c. padilla st. to metro colon<br>c. padilla st. to colonnade<br>c. padilla st. to UV<br>c. padilla st. to gaisano main<br>c. padilla st. to zulueta<br>c. padilla st. to CTU<br>colon to CTU<br>colon to metropolitan cathedral<br>colon to basilica del sto. nino <br><br>Colon to Alumnos<br><br>colon to usjr<br>colon to c. padilla st.<br>colon to taboan<br>colon to san nicolas de tolintino church<br>colon to jai-alai<br>colon to mambaling<br>colon to alumnos<br>colon to university of cebu -mambaling (uc-metc)<br>c. padilla st. to alumnos<br>c. padilla st. to uc-metc]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FF0000-5000-normal">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FF0000-5000-highlight">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FF0000-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FF0000-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FF0000-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walang pamagat na layer</name>
+      <Placemark>
+        <name>Alumnos - Colon</name>
+        <description>Alumnos - Tagunol St. - C. Padilla St. - Jai-alai - Carlock St. - Spoliarium St. - Pasil - San NIcolas Parish - Colon - Metro Gaisano - Colonnade Mall - Gaisano Main - University of the Visayas - Zulueta St.</description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.87275,10.28363,0
+            123.87083,10.2865,0
+            123.87439,10.28903,0
+            123.87648,10.29043,0
+            123.87683,10.29055,0
+            123.87868,10.29093,0
+            123.87992,10.29125,0
+            123.88593,10.29294,0
+            123.8871,10.29314,0
+            123.88721,10.29223,0
+            123.88736,10.29217,0
+            123.88849,10.29213,0
+            123.88986,10.29219,0
+            123.89075,10.29226,0
+            123.89135,10.29239,0
+            123.89095,10.29382,0
+            123.89097,10.29388,0
+            123.89345,10.29424,0
+            123.89542,10.29495,0
+            123.89807,10.29612,0
+            123.90031,10.29751,0
+            123.90059,10.29763,0
+            123.90133,10.29772,0
+            123.90207,10.29775,0
+            123.903742,10.297972,0
+            123.90372,10.2984,0
+            123.90382,10.29879,0
+            123.90602,10.29839,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Colon to Alumnos</name>
+        <description>Zulueta St. - MJ. Cuenco Ave. - CTU - Legaspi St. - Cebu Metropolitan Cathedral - V. Gullas St. - Manalili St. - Magallanes St. - USJR - Carbon Public Market - C. Padilla St. - Cacoy Doce Pares - Jai-alai - San Roque - Mambaling - Alumnos.</description>
+        <styleUrl>#line-FF0000-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.906083,10.298336,0
+            123.905949,10.297571,0
+            123.905724,10.29651,0
+            123.905493,10.295655,0
+            123.905252,10.29489,0
+            123.905091,10.294494,0
+            123.905021,10.29432,0
+            123.904898,10.294204,0
+            123.90412,10.294562,0
+            123.903379,10.294932,0
+            123.902623,10.295227,0
+            123.901775,10.295539,0
+            123.901293,10.295755,0
+            123.900703,10.295993,0
+            123.90008,10.296283,0
+            123.899544,10.295755,0
+            123.899083,10.294452,0
+            123.899029,10.294246,0
+            123.898884,10.294145,0
+            123.898691,10.294045,0
+            123.898138,10.293787,0
+            123.897854,10.293628,0
+            123.89728,10.293491,0
+            123.897049,10.293486,0
+            123.896315,10.293296,0
+            123.895832,10.293185,0
+            123.895649,10.293169,0
+            123.895499,10.293127,0
+            123.894888,10.293069,0
+            123.894255,10.293686,0
+            123.893707,10.294246,0
+            123.893563,10.294256,0
+            123.893482,10.294314,0
+            123.89294,10.29423,0
+            123.892098,10.294077,0
+            123.890998,10.293897,0
+            123.890634,10.293834,0
+            123.889877,10.293692,0
+            123.889314,10.293586,0
+            123.8886,10.293438,0
+            123.887506,10.293253,0
+            123.887136,10.293201,0
+            123.886224,10.293027,0
+            123.885548,10.292884,0
+            123.884851,10.292699,0
+            123.883735,10.292383,0
+            123.882528,10.29205,0
+            123.881181,10.291686,0
+            123.880232,10.29138,0
+            123.879347,10.291142,0
+            123.878719,10.290973,0
+            123.878102,10.290857,0
+            123.877566,10.290762,0
+            123.877255,10.290688,0
+            123.876783,10.290577,0
+            123.87638,10.290424,0
+            123.87601,10.290197,0
+            123.875356,10.289759,0
+            123.874766,10.289348,0
+            123.874412,10.289084,0
+            123.874465,10.28882,0
+            123.874556,10.288577,0
+            123.87476,10.287843,0
+            123.874717,10.287432,0
+            123.87475,10.287294,0
+            123.874846,10.287062,0
+            123.875157,10.286413,0
+            123.874685,10.285859,0
+            123.873993,10.285141,0
+            123.873478,10.28455,0
+            123.873183,10.284196,0
+            123.873006,10.283774,0
+            123.872818,10.283631,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>shortcut from colon to cathedral</name>
+        <description><![CDATA[some 08G jeepneys from colon dont go to zulueta st., instead the take this shortcut route to cathedral then to their regular route.<br> <br>more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.903744,10.297967,0
+            123.903846,10.297212,0
+            123.90377,10.297101,0
+            123.903615,10.296046,0
+            123.903507,10.295581,0
+            123.903347,10.29494,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 03B</name>
+    <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com<br><br>Mabolo to Colon via Jones Ave.<br><br>Sindulan to mabolo<br>sindulan to mango ave.<br>sindulan to mango<br>sindulan to fuente osmena<br>sindulan to robinsons fuente<br>sindulan to jones ave.<br>sindulan to osmena blvd.<br>sindulan to metro colon<br>sindulan to colon<br>sindulan to carbon<br>sindulan to sto nino<br>mabolo to mango<br>mabolo to mango ave<br>mabolo to robinsons fuente<br>mabolo to fuente osmena<br>mabolo to jones ave.<br>mabolo to osmena blvd.<br>mabolo to abellana sports complex<br>mabolo to CNU<br>mabolo to metro colon<br>mabolo to colon<br>mabolo  to usjr<br>mabolo to carbon<br>mabolo to sto. nino<br>mango to jones ave<br>mango to abellana sports complex<br>mango metro colon<br>mango to colon<br>mango to usjr<br>mango to carbon<br>mango to sto. nino<br><br>Colon to Mabolo<br><br>Colon to sto nino<br>colon to cpils<br>colon to museo sugbo<br>colon to martires<br>colon to hipodromo<br>colon to carreta cemetery<br>colon to mabolo<br>colon to carwash <br>colon to sindulan<br>carbon to mj cuenco ave.<br>carbon to carreta cemetery<br>carbon to mabolo]]></description>
+    <Style id="line-3333FF-5000-normal">
+      <LineStyle>
+        <color>ffff3333</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-3333FF-5000-highlight">
+      <LineStyle>
+        <color>ffff3333</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-3333FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-3333FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-3333FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walang pamagat na layer</name>
+      <Placemark>
+        <name>Mabolo to colon via Jones ave.</name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://www.facebook.com/cebujeepneysroutemap)<br><br><br>Mabolo to Colon via Jones ave.<br><br><br>Sindulan - carwash - mabolo - mabolo church - M.J. Cuenco ave. - hipodromo - Carreta cemetery - G. Maxilom Ave. - mango ave - USC (north campus) - Fooda saversmart - horizons 101 - mango square - national bookstore - robinsons place - Fuente osmena circle  - crown regency hotel - jones ave. - osmena boulevard - abellana sports complex - CNU - SSS - GV tower hotel - colon st. - Metro Colon.]]></description>
+        <styleUrl>#line-3333FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.915983,10.319413,0
+            123.916222,10.319252,0
+            123.91652,10.319017,0
+            123.916978,10.318703,0
+            123.916509,10.31817,0
+            123.915943,10.317513,0
+            123.916434,10.317131,0
+            123.91696,10.31668,0
+            123.91725,10.31644,0
+            123.91659,10.31566,0
+            123.91575,10.31479,0
+            123.91454,10.31419,0
+            123.91368,10.31382,0
+            123.91291,10.31338,0
+            123.91023,10.31214,0
+            123.90987,10.31191,0
+            123.90924,10.31135,0
+            123.90869,10.31072,0
+            123.90771,10.30944,0
+            123.90734,10.30904,0
+            123.90721,10.30896,0
+            123.90702,10.30892,0
+            123.90667,10.30906,0
+            123.90399,10.31072,0
+            123.9025,10.31127,0
+            123.90104,10.31148,0
+            123.89982,10.31153,0
+            123.89823,10.31124,0
+            123.89493,10.31008,0
+            123.89405,10.30987,0
+            123.89391,10.30988,0
+            123.89376,10.31018,0
+            123.89345,10.31049,0
+            123.89331,10.31054,0
+            123.8929,10.31053,0
+            123.89271,10.31042,0
+            123.89245,10.30996,0
+            123.89243,10.30978,0
+            123.8925,10.30958,0
+            123.89265,10.30932,0
+            123.89291,10.30921,0
+            123.89325,10.30916,0
+            123.89342,10.30876,0
+            123.89376,10.30775,0
+            123.89445,10.30602,0
+            123.89737,10.29795,0
+            123.89821,10.29626,0
+            123.89816,10.29598,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Colon to Mabolo</name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://www.facebook.com/cebujeepneysroutemap)<br><br> Colon to Mabolon<br><br> <br>metro colon - p. lopez st. - USJR - Carbon Public Market - Lincoln St. - F. Gonzales St. - M.C. Briones St. - cebu city hall - la nueva (sto. nino) - prince warehouse club - MCWD - lapu-lapu St. - dept. of Foreign Affairs - OWWA - F. Urdaneta St. - M.J. Cuenco Ave. - CTU - NSO - CPILS - Museo Sugbo - Carreta - Hipodromo - Mabolo - Carwash - Sindulan.]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.89816,10.29596,0
+            123.89786,10.29494,0
+            123.89812,10.29378,0
+            123.89784,10.29361,0
+            123.89796,10.29325,0
+            123.89877,10.29337,0
+            123.90037,10.29296,0
+            123.90018,10.29214,0
+            123.9023,10.29264,0
+            123.90302,10.29232,0
+            123.9045,10.29525,0
+            123.90523,10.29487,0
+            123.9057,10.2965,0
+            123.90644,10.30028,0
+            123.90658,10.30133,0
+            123.90659,10.30193,0
+            123.90649,10.30286,0
+            123.90608,10.30571,0
+            123.9061,10.30633,0
+            123.90626,10.30693,0
+            123.90685,10.30809,0
+            123.90688,10.30827,0
+            123.90774,10.30936,0
+            123.90778,10.30949,0
+            123.90855,10.31053,0
+            123.90926,10.31133,0
+            123.90991,10.31191,0
+            123.91053,10.31227,0
+            123.91291,10.31336,0
+            123.91574,10.31476,0
+            123.91605,10.31504,0
+            123.91727,10.31645,0
+            123.91698,10.3167,0
+            123.916463,10.317157,0
+            123.915962,10.31755,0
+            123.91513,10.31821,0
+            123.915983,10.319413,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

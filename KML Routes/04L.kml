@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 04L</name>
+    <description><![CDATA[more cebu jeepney route maps at cebujeepneys.weebly.com<br><br>Lahug to Sm via Ayala<br><br>lahug to philhealth<br>lahug to golden peak hotel<br>lahug to harolds hotel<br>lahug to cebu parklane hotel<br>lahug to cebu business park<br>lahug to ayala center cebu<br>lahug to mabolo<br>lahug to sm city cebu<br>lahug to pag-ibig fund<br>up cebu to ayala center cebu<br>up cebu to mabolo<br>up cebu to sm city cebu<br>up cebu to pag-ibig fund<br>JY to ayala center cebu<br>JY to sm city cebu<br>JY to philhealth<br>JY to pag-ibig fund<br>JY to mabolo<br>JY to andoks mabolo<br>JY to sm city cebu<br>ayala to mabolo church<br>ayala to andoks mabolo<br>ayala to sm city cebu<br>ayala to cebu daily news<br>mabolo to sm<br>ayala to carmelite monastery<br>lahug to carmelite monastery<br><br>SM to Lahug<br><br>sm to mabolo<br>sm to tesda<br>sm to waterfront hotel<br>sm to cebu IT Park<br>sm to jy square mall<br>sm to lahug<br>sm to up lahug<br>sm to uspf<br>sm to corner sudlon<br>sm to corner dep-ed<br>sm to mormons church<br>sm to philhealth<br>mabolo to IT park<br>mabolo to waterfront hotel <br>mabolo to lahug<br>mabolo to JY<br>mabolo to up cebu]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFFF00-5000-normal">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FFFF00-5000-highlight">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FFFF00-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFFF00-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFFF00-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walang pamagat na layer</name>
+      <Placemark>
+        <name>Lahug to SM via Ayala</name>
+        <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br> <br>Lahug to Sm via Ayala<br><br> <br>Lahug- JY Square Mall - Gorordo Ave. - corner Sudlon - Corner Beverly Hills - Corner Dep-ed (ecotech) - Mormons Church (Church of Jesus Christ of Latter-day Saints) - Lahug Brgy Hall - University of the Philippines (Cebu) - Sugbo Cultural Center - Harolds Hotel - Tonross Apartelle - The Golden Peak Hotel  - N. Escario Hotel -  Philhealth - Kuya J's Restaurant - Cebu Parklane Hotel - Grand Cenia Hotel - Hongkong Plaza Hotel - Cebu Business Park - Mindanao Ave. - Pag-ibig Fund - Ayala Center Cebu - Cardinal Rosales Ave. - Pope John Paul ll Ave. - PLDT - Carmelite Monastery - St. Joseph Parish (Mabolo Church) - Sm City Cebu.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.89808,10.33117,0
+            123.89736,10.32895,0
+            123.89737,10.32862,0
+            123.89788,10.32691,0
+            123.89815,10.32496,0
+            123.89892,10.32141,0
+            123.8993,10.31989,0
+            123.89985,10.31859,0
+            123.89993,10.31854,0
+            123.90135,10.31914,0
+            123.90366,10.32036,0
+            123.90445,10.32004,0
+            123.90478,10.32002,0
+            123.90541,10.32007,0
+            123.90574,10.31991,0
+            123.90783,10.31838,0
+            123.90803,10.3184,0
+            123.9091,10.31946,0
+            123.9108,10.32055,0
+            123.91321,10.31666,0
+            123.91487,10.3138,0
+            123.91518,10.31339,0
+            123.916149,10.312397,0
+            123.916007,10.312275,0
+            123.915503,10.311869,0
+            123.915092,10.311518,0
+            123.914285,10.310871,0
+            123.914379,10.310745,0
+            123.914786,10.310172,0
+            123.915862,10.311053,0
+            123.916592,10.311668,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>SM to Lahug </name>
+        <description><![CDATA[more cebu jeepneys route map at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br> <br>Sm to Lahug<br><br><br>Sm City Cebu - Radisson Hotel - Sergio Osmena Blvd. - Kaohsiung St. - Cebu Daily News - A. Soriano Ave. - Juan Luna Ave. ext. - Pope John Paul ll Ave. - Mabolo Church - Andoks Mabolo - Carmelite Monastery - San Carlos Seminary College - TESDA Vll - Salinas Drive - Cebu IT Park - Waterfront Hotel - Crowne Garden Hotel - Jy Square Mall - Lahug.]]></description>
+        <styleUrl>#line-FFFF00-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.916575,10.311668,0
+            123.916752,10.311832,0
+            123.91631,10.31242,0
+            123.9156,10.31316,0
+            123.91492,10.31397,0
+            123.91363,10.31618,0
+            123.90902,10.32365,0
+            123.90821,10.32507,0
+            123.90758,10.32603,0
+            123.90743,10.32609,0
+            123.90663,10.32675,0
+            123.90611,10.32711,0
+            123.90489,10.32782,0
+            123.90271,10.32893,0
+            123.89877,10.33079,0
+            123.89814,10.33117,0
+            123.89807,10.33117,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

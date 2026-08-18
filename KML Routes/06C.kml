@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cebu Jeepney Route No. 06C</name>
+    <description><![CDATA[More Cebu jeepneys route maps at cebujeepneys.weebly.com<br><br>Guadalupe to Colon<br><br>guadalupe to v. rama st.<br>guadalupe to b.rodrigues st.<br>guadalupe to vicente soto hospital<br>guadalupe to fuente osmena <br>guadalupe to robinsons fuente<br>guadalupe to crown regency hotel<br>guadalupe to osmena blvd.<br>guadalupe to abellana sports center<br>guadalupe to cebu normanl university<br>guadalupe to SSS<br>guadalupe to colon<br>guadalupe to metro colon<br>guadalupe to carbon<br>guadalupe to cebu city hall<br>guadalupe to basilica del sto. nino<br>b. rodrigues st to fuente osmena<br>b. rodrigues st to crown regency hotel<br>b. rodrigues st to cebu normal university<br>b. rodrigues st to abellana sports center<br>b. rodrigues st to colon <br>b. rodrigues st to SSS<br>b. rodrigues st to metro colon<br>b. rodrigues st to carbon<br>b. rodrigues st basilica del sto. nino<br>fuente to colon<br>fuente to sss<br>fuente to carbn<br>fuente to sto.nino<br>osmena blvd. to colon<br>osmena blvd to carbon<br>osmena blvd. to basilica del sto. nino<br><br>Colon to Guadalupe<br><br>more at the website......]]></description>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-33FF33-5000-normal">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-33FF33-5000-highlight">
+      <LineStyle>
+        <color>ff33ff33</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-33FF33-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-33FF33-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-33FF33-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Walang pamagat na layer</name>
+      <Placemark>
+        <name>Guadalupe to Colon</name>
+        <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br> <br>Guadalupe church - Fooda Guadalupe - PRC - V. Rama Ave. - B. Rodriguez St. - Vicente Sotto Hospital - Fuente Osmena Circle - Robinsons Place - Crown Regency Hotel - Osmena Blvd. - Abellana Sports Center - Cebu Normal University - SSS - Metro Gaisano - Plaridel St. - MC. Briones St. - Cebu City Hall - Basilica Menore del Santo Nino - La Nueva  -  MCWD -Osmena Blvd.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.880111,10.331269,0
+            123.87987,10.330934,0
+            123.879977,10.330707,0
+            123.88009,10.330409,0
+            123.880245,10.330034,0
+            123.880447,10.329694,0
+            123.880599,10.32958,0
+            123.880801,10.329557,0
+            123.88124,10.32871,0
+            123.881554,10.32809,0
+            123.882139,10.326818,0
+            123.882962,10.325031,0
+            123.883097,10.324749,0
+            123.88335,10.32422,0
+            123.88364,10.32368,0
+            123.88385,10.32292,0
+            123.88435,10.32039,0
+            123.88521,10.31655,0
+            123.88558,10.31564,0
+            123.88581,10.31437,0
+            123.88616,10.31296,0
+            123.88611,10.31242,0
+            123.88651,10.30968,0
+            123.88666,10.30786,0
+            123.88927,10.30812,0
+            123.89218,10.30907,0
+            123.89265,10.30932,0
+            123.89306,10.30918,0
+            123.89326,10.30917,0
+            123.89381,10.30757,0
+            123.89444,10.30603,0
+            123.89677,10.2995,0
+            123.8974,10.29787,0
+            123.89823,10.29624,0
+            123.90034,10.2954,0
+            123.8994,10.29211,0
+            123.89951,10.29195,0
+            123.9023,10.29265,0
+            123.90305,10.29233,0
+            123.90378,10.29386,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Colon to Guadalupe</name>
+        <description><![CDATA[more cebu jeepneys route maps at cebujeepneys.weebly.com (http://cebujeepneys.weebly.com)<br>Like us on our Facebook Page (http://facebook.com/cebujeepneysroutemap)<br><br> <br>Osmena Blvd. - Basilica Menore del Santo Nino -  Metro Gaisano - Colon - Jones Ave. - Abellana Sports Center - Cebu Normal University - Crown Regency Hotel - Fuente Osmena Circle - Robinsons Place - B. Rodriguez St. - Vicente Sotto Hospital - V. Rama Ave. - PRC - Fooda (guadalupe) - Guadalupe Church.]]></description>
+        <styleUrl>#line-33FF33-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            123.90375,10.29389,0
+            123.90075,10.29523,0
+            123.89827,10.29625,0
+            123.89752,10.29776,0
+            123.89752,10.29795,0
+            123.89534,10.30376,0
+            123.89477,10.30557,0
+            123.89428,10.30688,0
+            123.89424,10.30712,0
+            123.89387,10.30791,0
+            123.89348,10.3091,0
+            123.89347,10.30924,0
+            123.89371,10.30945,0
+            123.89385,10.30966,0
+            123.89384,10.31,0
+            123.89363,10.31035,0
+            123.89323,10.31054,0
+            123.89305,10.31055,0
+            123.89281,10.31048,0
+            123.89259,10.31027,0
+            123.89244,10.31,0
+            123.89246,10.30972,0
+            123.89261,10.30934,0
+            123.89216,10.3091,0
+            123.88931,10.30816,0
+            123.8867,10.3079,0
+            123.8865,10.31005,0
+            123.88616,10.31244,0
+            123.88621,10.31298,0
+            123.8859,10.31407,0
+            123.88561,10.31565,0
+            123.88526,10.31655,0
+            123.8851,10.31717,0
+            123.8837,10.32349,0
+            123.88341,10.32416,0
+            123.883145,10.324741,0
+            123.882166,10.326841,0
+            123.881581,10.328121,0
+            123.881259,10.328762,0
+            123.880833,10.329578,0
+            123.88094,10.329763,0
+            123.880964,10.329847,0
+            123.880959,10.329926,0
+            123.880868,10.330187,0
+            123.880581,10.330781,0
+            123.88049,10.33096,0
+            123.880428,10.3311,0
+            123.880307,10.331227,0
+            123.880207,10.331264,0
+            123.880111,10.331275,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
