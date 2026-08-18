@@ -17,9 +17,6 @@ export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
           onClick={() => onTabChange('routes')}
           className="flex cursor-pointer items-center gap-2.5 transition hover:opacity-90"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-[#ff4757] to-[#ffbe0b] shadow-[0_0_15px_rgba(255,71,87,0.3)]">
-            <Bus className="h-5 w-5 text-white" />
-          </div>
           <div>
             <div className="font-['Syne',sans-serif] text-lg font-extrabold tracking-tight text-white sm:text-xl">
               Route<span className="text-[#ffbe0b]">7</span>

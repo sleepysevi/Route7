@@ -77,7 +77,7 @@ export default function SpotCard({ spot, onFocusOnMap, onSelectJeepneyRoute }) {
             </div>
             {spot.jeepney_tip && (
               <p className="mt-2 text-[11px] leading-snug text-slate-400">
-                💡 <span className="italic">{spot.jeepney_tip}</span>
+                <span className="italic">{spot.jeepney_tip}</span>
               </p>
             )}
           </div>

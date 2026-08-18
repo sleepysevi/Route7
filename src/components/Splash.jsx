@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+  import React, { useEffect, useRef, useState } from 'react';
 import { Search, Compass, Sparkles } from 'lucide-react';
 
 const QUICK_TAGS = [
@@ -93,7 +93,6 @@ export default function Splash({ onEnter }) {
       <div className="relative z-10 flex w-full max-w-[460px] flex-col items-center gap-4 text-center">
         {/* Sugbu Buddy Tag */}
         <div className="splash-enter-down inline-flex items-center gap-1.5 rounded-full border border-[#ff4757]/30 bg-[#ff4757]/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[2.5px] text-[#ff4757] shadow-[0_0_15px_rgba(255,71,87,0.2)]">
-          <Sparkles className="h-3 w-3" />
           Sugbu Buddy
         </div>
 
@@ -145,19 +144,18 @@ export default function Splash({ onEnter }) {
           onClick={() => handleStart(query.trim())}
           className="splash-enter-up mt-2 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff4757] to-[#e84152] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(255,71,87,0.35)] transition-all hover:scale-105 hover:shadow-[0_12px_30px_rgba(255,71,87,0.5)] active:scale-95"
         >
-          <Compass className="h-4 w-4" />
           Explore all routes
         </button>
       </div>
 
       {/* Moving road dash footer */}
       <div className="pointer-events-none absolute inset-x-0 bottom-4 z-0 flex justify-center opacity-60">
-        <div className="relative h-2 w-[75%] max-w-[500px] overflow-hidden rounded-full bg-[#181b24]">
-          <div className="road-scroll flex items-center gap-3">
+        <div className="relative h-10 w-full overflow-hidden flex items-center bg-[#181b24]">
+          <div className="road-scroll flex items-center gap-6">
             {[...Array(24)].map((_, i) => (
               <div
                 key={i}
-                className="h-1 w-6 flex-shrink-0 rounded-full bg-[#ffbe0b]/80"
+                className="h-2 w-12 flex-shrink-0 rounded-full bg-[#ffbe0b]/80"
               />
             ))}
           </div>

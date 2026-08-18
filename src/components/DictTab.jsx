@@ -36,9 +36,6 @@ export default function DictTab({ dictionary, onToast }) {
       {/* Header Info Banner */}
       <div className="glass-panel rounded-3xl p-5 shadow-lg">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#ffbe0b]/15 text-[#ffbe0b]">
-            <Sparkles className="h-5 w-5" />
-          </div>
           <div>
             <h2 className="text-base font-bold text-white">Bisaya Commuter Phrases</h2>
             <p className="text-xs text-slate-400">
