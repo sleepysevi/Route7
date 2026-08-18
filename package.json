@@ -23,9 +23,6 @@
     "@vitejs/plugin-react": "^5.0.0",
     "adm-zip": "^0.6.0",
     "tailwindcss": "^4.3.3",
-    "vite": "^7.0.0"
-  },
-  "engines": {
-    "node": "20.x"
-}
+    "vite": "5.4.11"
+  }
 }
