@@ -82,14 +82,13 @@ export default function App() {
 
       {/* Splash Screen */}
       {showSplash ? (
-        <Splash onEnter={handleEnterApp} />
+        <Splash onEnter={handleEnterApp} onOpenAbout={() => setIsAboutOpen(true)} />
       ) : (
         <>
           {/* Top Sticky Glassmorphic Navbar */}
           <Navbar
             currentTab={currentTab}
             onTabChange={handleTabChange}
-            onOpenAbout={() => setIsAboutOpen(true)}
           />
 
           {/* Main Workspace Container */}
@@ -157,13 +156,14 @@ export default function App() {
             </div>
           </footer>
 
-          {/* About / Guide Modal */}
-          <AboutModal
-            isOpen={isAboutOpen}
-            onClose={() => setIsAboutOpen(false)}
-          />
         </>
       )}
+
+      {/* About / Guide Modal */}
+      <AboutModal
+        isOpen={isAboutOpen}
+        onClose={() => setIsAboutOpen(false)}
+      />
     </div>
   );
 }

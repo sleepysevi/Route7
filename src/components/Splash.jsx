@@ -1,5 +1,5 @@
   import React, { useEffect, useRef, useState } from 'react';
-import { Search, Compass, Sparkles } from 'lucide-react';
+import { Search, Compass, Sparkles, HelpCircle } from 'lucide-react';
 
 const QUICK_TAGS = [
   'SM City',
@@ -14,7 +14,7 @@ const QUICK_TAGS = [
   'Naga',
 ];
 
-export default function Splash({ onEnter }) {
+export default function Splash({ onEnter, onOpenAbout }) {
   const [query, setQuery] = useState('');
   const [isExiting, setIsExiting] = useState(false);
   const inputRef = useRef(null);
@@ -49,6 +49,17 @@ export default function Splash({ onEnter }) {
         isExiting ? 'splash-exit-anim' : ''
       }`}
     >
+      <button
+        type="button"
+        onClick={onOpenAbout}
+        aria-label="About Route7"
+        title="About Route7"
+        className="absolute right-4 top-4 z-20 flex h-10 items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-3 text-xs font-semibold text-slate-300 transition hover:border-[#ff4757]/40 hover:bg-[#ff4757]/15 hover:text-white sm:right-6 sm:top-6"
+      >
+        <HelpCircle className="h-4 w-4 text-[#ffbe0b]" />
+        <span>About</span>
+      </button>
+
       {/* Dynamic ambient background glow rings */}
       <div className="deco-pulse pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full border border-[#ff4757]/20 bg-[radial-gradient(circle,_rgba(255,71,87,0.15),_transparent_70%)] blur-2xl" />
       <div

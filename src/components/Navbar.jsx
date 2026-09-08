@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bus, MessageSquareText, MapPin, PhoneCall, HelpCircle } from 'lucide-react';
+import { Bus, MessageSquareText, MapPin, PhoneCall } from 'lucide-react';
 
 const TABS = [
   { id: 'routes', label: 'Routes', icon: Bus },
@@ -8,30 +8,11 @@ const TABS = [
   { id: 'hotlines', label: 'Hotlines', icon: PhoneCall },
 ];
 
-export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
+export default function Navbar({ currentTab, onTabChange }) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0c0e14]/90 backdrop-blur-md">
-      <div className="mx-auto flex w-full min-w-0 max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        {/* Brand Header */}
-        <div
-          onClick={() => onTabChange('routes')}
-          className="flex shrink-0 cursor-pointer items-center gap-2.5 transition hover:opacity-90"
-        >
-          <div>
-            <div className="font-['Syne',sans-serif] text-lg font-extrabold tracking-tight text-white sm:hidden">
-              R<span className="text-[#ffbe0b]">7</span>
-            </div>
-            <div className="hidden font-['Syne',sans-serif] text-lg font-extrabold tracking-tight text-white sm:block sm:text-xl">
-              Route<span className="text-[#ffbe0b]">7</span>
-            </div>
-            <div className="hidden text-[10px] font-semibold uppercase tracking-[1.5px] text-slate-400 sm:block">
-              Sugbu Buddy
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Tabs */}
-        <nav className="flex min-w-0 items-center gap-1 rounded-2xl border border-white/10 bg-white/[0.04] p-1 shadow-inner">
+      <div className="mx-auto flex w-full min-w-0 max-w-6xl justify-center px-2 py-3 sm:px-6">
+        <nav className="flex w-full min-w-0 items-center gap-1 rounded-2xl border border-white/10 bg-white/[0.04] p-1 shadow-inner sm:w-auto">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const isActive = currentTab === tab.id;
@@ -53,20 +34,6 @@ export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
           })}
         </nav>
 
-        {/* Help / Guide Trigger */}
-        <button
-          type="button"
-          onClick={onOpenAbout}
-          aria-label="Route7 Commuter Guide & FAQ"
-          title="Commuter Guide & FAQ (Press ?)"
-          className="flex h-9 items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-2.5 text-xs font-medium text-slate-300 transition hover:border-[#ff4757]/40 hover:bg-[#ff4757]/15 hover:text-white"
-        >
-          <HelpCircle className="h-4 w-4 text-[#ffbe0b]" />
-          <span className="hidden sm:inline font-semibold">Guide</span>
-          <kbd className="hidden lg:inline-flex h-4 items-center rounded border border-white/20 bg-white/5 px-1 font-mono text-[9px] text-slate-400">
-            ?
-          </kbd>
-        </button>
       </div>
     </header>
   );
