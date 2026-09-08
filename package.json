@@ -12,6 +12,7 @@
     "postinstall": "node -e \"process.platform!=='win32'&&require('child_process').execSync('chmod +x node_modules/.bin/*')\""
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.31.0",
     "motion": "^13.1.0",
@@ -19,10 +20,10 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-  "@tailwindcss/vite": "^4.3.3",
-  "@vitejs/plugin-react": "^4.3.4",
-  "adm-zip": "^0.6.0",
-  "tailwindcss": "^4.3.3",
-  "vite": "5.4.11"
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "adm-zip": "^0.6.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "5.4.11"
   }
 }
