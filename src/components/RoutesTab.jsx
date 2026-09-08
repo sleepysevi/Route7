@@ -17,14 +17,14 @@ const GROUP_ORDER = [
 
 const GROUP_COLORS = {
   All: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'Cebu City': { active: 'bg-[#ff4757] text-white', inactive: 'bg-[#ff4757]/10 text-[#ff7180] border-[#ff4757]/30' },
-  Mandaue: { active: 'bg-[#0ea5e9] text-white', inactive: 'bg-[#0ea5e9]/10 text-[#38bdf8] border-[#0ea5e9]/30' },
-  'Mactan Island': { active: 'bg-white/20 text-white', inactive: 'bg-white/[0.04] text-slate-300 border-white/10' },
-  'North Cebu': { active: 'bg-[#0ea5e9] text-white', inactive: 'bg-[#0ea5e9]/10 text-[#38bdf8] border-[#0ea5e9]/30' },
-  'Talisay City': { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
-  Minglanilla: { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
-  'City of Naga': { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
-  'San Fernando': { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
+  'Cebu City': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  Mandaue: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  'Mactan Island': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  'North Cebu': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  'Talisay City': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  Minglanilla: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  'City of Naga': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  'San Fernando': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
 };
 
 function matchKeywords(kw, query) {

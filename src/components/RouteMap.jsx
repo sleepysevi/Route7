@@ -56,6 +56,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
   const paths = useMemo(() => getRoutePaths(routeEntry), [routeEntry]);
   const startPath = paths.find((p) => p.role === 'start') || paths[0];
   const endPath = paths.find((p) => p.role === 'end');
+  const endLegendPath = endPath || startPath;
 
   // Initialize Map
   useEffect(() => {
@@ -207,9 +208,12 @@ export default function RouteMap({ selectedRoute, onClose }) {
               )}
             </div>
             {paths.length > 0 && (
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                  Route markers
+                </span>
                 {startPath && (
-                  <span className="inline-flex items-center gap-1.5 font-medium">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1 font-medium">
                     <span
                       className="inline-flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white shadow-sm"
                       style={{ backgroundColor: startPath.color }}
@@ -219,11 +223,11 @@ export default function RouteMap({ selectedRoute, onClose }) {
                     <span className="text-slate-300">Start</span>
                   </span>
                 )}
-                {endPath && (
-                  <span className="inline-flex items-center gap-1.5 font-medium">
+                {endLegendPath && (
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1 font-medium">
                     <span
                       className="inline-flex h-4 w-4 items-center justify-center rounded-[3px] text-[9px] font-extrabold text-white shadow-sm"
-                      style={{ backgroundColor: endPath.color }}
+                      style={{ backgroundColor: endLegendPath.color }}
                     >
                       B
                     </span>
@@ -233,7 +237,10 @@ export default function RouteMap({ selectedRoute, onClose }) {
                 {paths
                   .filter((p) => p.role === 'extra')
                   .map((p, i) => (
-                    <span key={`${p.name}-${i}`} className="inline-flex items-center gap-1.5">
+                    <span
+                      key={`${p.name}-${i}`}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1"
+                    >
                       <span
                         className="inline-block h-2 w-4 rounded-sm"
                         style={{ backgroundColor: p.color }}
