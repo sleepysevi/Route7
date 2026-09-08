@@ -11,7 +11,7 @@ const TABS = [
 export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0c0e14]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <div className="mx-auto flex w-full min-w-0 max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Brand Header */}
         <div
           onClick={() => onTabChange('routes')}

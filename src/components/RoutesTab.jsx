@@ -101,7 +101,7 @@ export default function RoutesTab({
   const isSearchActive = searchQuery.trim().length > 0;
 
   return (
-    <div className="space-y-5">
+    <div className="w-full min-w-0 space-y-5">
       {/* Search & Layout Toggle Control Bar */}
       <div className="glass-panel rounded-2xl p-3 shadow-lg sm:p-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

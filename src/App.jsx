@@ -76,7 +76,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0b0c10] text-slate-100 selection:bg-[#ff4757] selection:text-white">
+    <div className="flex min-h-screen w-full min-w-0 flex-col bg-[#0b0c10] text-slate-100 selection:bg-[#ff4757] selection:text-white">
       {/* Toast Notification Container */}
       <Toast message={toastMessage} type={toastType} />
 
@@ -93,7 +93,7 @@ export default function App() {
           />
 
           {/* Main Workspace Container */}
-          <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-6 sm:py-8">
+          <main className="mx-auto w-full min-w-0 max-w-6xl flex-1 px-4 py-6 sm:px-6 sm:py-8">
             {currentTab === 'routes' && (
               <RoutesTab
                 routes={routesData}
