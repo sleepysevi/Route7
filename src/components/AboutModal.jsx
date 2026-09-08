@@ -27,7 +27,7 @@ export default function AboutModal({ isOpen, onClose }) {
       />
 
       {/* Modal Dialog */}
-      <div className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-white/15 bg-[#14161f] p-6 text-white shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+      <div className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-white/10 bg-[#14161f] p-6 text-white shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
         {/* Close Button */}
         <button
           type="button"
@@ -44,7 +44,7 @@ export default function AboutModal({ isOpen, onClose }) {
           </div>
           <div>
             <h2 className="font-['Syne',sans-serif] text-xl font-bold">
-              About Route<span className="text-[#ffbe0b]">7</span>
+              About Route<span className="text-[#ffbe0b]">7</span> 
             </h2>
             <p className="text-xs text-slate-400">Sugbu Buddy • Cebu Commuting & Spots Guide</p>
           </div>
