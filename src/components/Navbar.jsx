@@ -15,10 +15,13 @@ export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
         {/* Brand Header */}
         <div
           onClick={() => onTabChange('routes')}
-          className="flex cursor-pointer items-center gap-2.5 transition hover:opacity-90"
+          className="flex shrink-0 cursor-pointer items-center gap-2.5 transition hover:opacity-90"
         >
           <div>
-            <div className="font-['Syne',sans-serif] text-lg font-extrabold tracking-tight text-white sm:text-xl">
+            <div className="font-['Syne',sans-serif] text-lg font-extrabold tracking-tight text-white sm:hidden">
+              R<span className="text-[#ffbe0b]">7</span>
+            </div>
+            <div className="hidden font-['Syne',sans-serif] text-lg font-extrabold tracking-tight text-white sm:block sm:text-xl">
               Route<span className="text-[#ffbe0b]">7</span>
             </div>
             <div className="hidden text-[10px] font-semibold uppercase tracking-[1.5px] text-slate-400 sm:block">
@@ -28,7 +31,7 @@ export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
         </div>
 
         {/* Navigation Tabs */}
-        <nav className="flex items-center gap-1 rounded-2xl border border-white/10 bg-white/[0.04] p-1 shadow-inner">
+        <nav className="flex min-w-0 items-center gap-1 rounded-2xl border border-white/10 bg-white/[0.04] p-1 shadow-inner">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const isActive = currentTab === tab.id;
@@ -37,7 +40,7 @@ export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
                 key={tab.id}
                 type="button"
                 onClick={() => onTabChange(tab.id)}
-                className={`flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold transition-all sm:px-4 sm:text-sm ${
+                className={`flex items-center gap-1.5 rounded-xl px-2 py-1.5 text-xs font-semibold transition-all sm:px-4 sm:text-sm ${
                   isActive
                     ? 'bg-[#ff4757] text-white shadow-[0_4px_12px_rgba(255,71,87,0.35)]'
                     : 'text-slate-400 hover:bg-white/5 hover:text-white'
