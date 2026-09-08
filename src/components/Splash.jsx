@@ -56,7 +56,6 @@ export default function Splash({ onEnter, onOpenAbout }) {
         title="About Route7"
         className="absolute right-4 top-4 z-20 flex h-10 items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-3 text-xs font-semibold text-slate-300 transition hover:border-[#ff4757]/40 hover:bg-[#ff4757]/15 hover:text-white sm:right-6 sm:top-6"
       >
-        <HelpCircle className="h-4 w-4 text-[#ffbe0b]" />
         <span>About</span>
       </button>
 
