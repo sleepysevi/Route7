@@ -46,7 +46,7 @@ export default function AboutModal({ isOpen, onClose }) {
             <h2 className="font-['Syne',sans-serif] text-xl font-bold">
               About Route<span className="text-[#ffbe0b]">7</span>
             </h2>
-            <p className="text-xs text-slate-400">Sugbu Buddy • Cebu Transit & Commuter Guide</p>
+            <p className="text-xs text-slate-400">Sugbu Buddy • Cebu Commuting & Spots Guide</p>
           </div>
         </div>
 
@@ -55,20 +55,19 @@ export default function AboutModal({ isOpen, onClose }) {
           {/* Section 1: Intro */}
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <p className="leading-relaxed">
-              <strong className="text-white">Route7</strong> is a modern, fast, and interactive transit companion designed to help locals, students, and tourists navigate Cebu City and Metro Cebu’s jeepney routes with confidence.
+              <strong className="text-white">Route7</strong> is a modern, fast, and interactive transit companion designed to help locals, students, and tourists navigate Cebu City and Metro Cebu’s jeepney routes with ease.
             </p>
           </div>
 
           {/* Section 2: Commuter Etiquette */}
           <div className="space-y-3">
             <div className="flex items-center gap-2 font-semibold text-white">
-              <BookOpen className="h-4 w-4 text-[#ffbe0b]" />
-              <h3>Cebu Jeepney Commuter Tips</h3>
+              <h3>Cebu Commuting Tips</h3>
             </div>
             <ul className="space-y-2 text-xs leading-relaxed text-slate-300">
               <li className="flex items-start gap-2">
                 <span className="rounded bg-[#ff4757]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#ff4757]">1</span>
-                <span><strong>Paying your fare:</strong> Pass your money to the passenger next to you saying <em>"Palihug ko sa plete"</em> (Please pass my fare). Mention your destination and if you're a student/senior/PWD.</span>
+                <span><strong>Paying your fare:</strong> Pass your money to the passenger next to you saying <em>"Palihug ko sa plete"</em>  (Please pass my fare). Mention your destination and if you're a student/senior/PWD.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="rounded bg-[#ff4757]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#ff4757]">2</span>
@@ -84,8 +83,7 @@ export default function AboutModal({ isOpen, onClose }) {
           {/* Section 3: Credits */}
           <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-4 text-xs">
             <div className="flex items-center gap-2 font-semibold text-white">
-              <Heart className="h-4 w-4 text-[#ff4757]" />
-              <span>Created with care</span>
+              <span>Created by a commuter, for commuters</span>
             </div>
             <p className="mt-1 text-slate-400">
               Developed by <strong className="text-white">sleepysevi</strong> as a community transit guide for Sugbuanons and visitors of the Queen City of the South.
@@ -100,7 +98,7 @@ export default function AboutModal({ isOpen, onClose }) {
             onClick={onClose}
             className="w-full rounded-xl bg-[#ff4757] py-2.5 text-center text-sm font-semibold text-white shadow-lg transition hover:bg-[#ff2e43]"
           >
-            Got it, let's explore!
+            Tara, Laag!
           </button>
         </div>
       </div>
