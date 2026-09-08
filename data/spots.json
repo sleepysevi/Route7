@@ -90,7 +90,7 @@
     "description": "The largest and oldest public market in Cebu, established in 1910. A vibrant sensory explosion of fresh produce, dried fish, local delicacies, flowers, and ukay-ukay (thrift shops).",
     "address": "M. C. Briones St, Carbon, Cebu City",
     "location": "Downtown Cebu - Carbon",
-    "jeepney": ["41D", "42B", "43", "44", "45", "10G", "04D"],
+    "jeepney": ["41D", "42B", "43", "44A", "45", "10G", "04D"],
     "jeepney_tip": "Carbon is the terminal for many routes — just ask any driver 'Carbon?' and you'll get there. Routes 41D, 42B, 43, 44, and 45 all end here.",
     "hours": "Open 24 hours (busiest from 5 AM – 12 PM)",
     "entrance": "Free",
