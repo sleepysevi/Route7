@@ -157,7 +157,8 @@ export default function HotlinesTab() {
                       <a
                         key={`${entry.name}-${entry.number}`}
                         href={`tel:${cleanPhone}`}
-                        className="glass-card group flex items-center justify-between rounded-2xl p-3.5 transition-all hover:border-[#ff4757]/40"
+                        aria-label={`Call ${entry.name} at ${entry.number}`}
+                        className="glass-card group flex items-center justify-between rounded-2xl p-3.5 transition-all hover:border-[#ff4757]/40 focus:outline-none focus:ring-2 focus:ring-[#ff4757]"
                       >
                         <div className="flex items-center gap-3">
                           {/* Agency Icon Container */}
@@ -183,9 +184,12 @@ export default function HotlinesTab() {
                         </div>
 
                         {/* Phone Number Badge */}
-                        <div className="ml-2 flex-shrink-0 text-right">
+                        <div className="ml-2 flex flex-col items-end flex-shrink-0">
                           <span className="rounded-xl border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-extrabold text-white transition group-hover:border-[#ff4757]/40 group-hover:bg-[#ff4757]/15 group-hover:text-[#ff4757]">
                             {entry.number}
+                          </span>
+                          <span className="mt-0.5 text-[9px] text-slate-500 group-hover:text-[#ffbe0b]">
+                            Tap to call
                           </span>
                         </div>
                       </a>

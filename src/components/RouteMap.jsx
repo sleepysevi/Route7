@@ -7,12 +7,21 @@ import { ROUTE_COORDS } from '../../data/route-coords.js';
 const DEFAULT_CENTER = [10.2938, 123.895];
 const DEFAULT_ZOOM = 12;
 
-function createMarkerIcon(bg, border) {
+function createStartMarkerIcon(color = '#2563eb') {
   return L.divIcon({
     className: '',
-    html: `<div style="background:${bg};border:3px solid ${border};width:14px;height:14px;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.5)"></div>`,
-    iconSize: [14, 14],
-    iconAnchor: [7, 7],
+    html: `<div style="background:${color};border:2px solid #ffffff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#ffffff;font-size:9px;font-weight:900;font-family:system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.6)">A</div>`,
+    iconSize: [18, 18],
+    iconAnchor: [9, 9],
+  });
+}
+
+function createEndMarkerIcon(color = '#f59e0b') {
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};border:2px solid #ffffff;width:18px;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#ffffff;font-size:9px;font-weight:900;font-family:system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.6)">B</div>`,
+    iconSize: [18, 18],
+    iconAnchor: [9, 9],
   });
 }
 
@@ -58,10 +67,11 @@ export default function RouteMap({ selectedRoute, onClose }) {
       zoomControl: true,
     });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 19,
-    }).addTo(map);
+    });
+    tileLayer.addTo(map);
 
     mapInstanceRef.current = map;
 
@@ -124,9 +134,9 @@ export default function RouteMap({ selectedRoute, onClose }) {
     if (startPath) {
       const startColor = startPath.color || '#2563eb';
       const startMarker = L.marker(startPath.coords[0], {
-        icon: createMarkerIcon(startColor, '#ffffff'),
+        icon: createStartMarkerIcon(startColor),
       })
-        .bindTooltip('Start', { permanent: false, direction: 'top' })
+        .bindTooltip('Start (A)', { permanent: false, direction: 'top' })
         .addTo(map);
       markersRef.current.push(startMarker);
     }
@@ -135,18 +145,18 @@ export default function RouteMap({ selectedRoute, onClose }) {
       const endColor = endPath.color || '#f59e0b';
       const endCoords = endPath.coords[endPath.coords.length - 1];
       const endMarker = L.marker(endCoords, {
-        icon: createMarkerIcon(endColor, '#ffffff'),
+        icon: createEndMarkerIcon(endColor),
       })
-        .bindTooltip('End', { permanent: false, direction: 'top' })
+        .bindTooltip('End (B)', { permanent: false, direction: 'top' })
         .addTo(map);
       markersRef.current.push(endMarker);
     } else if (startPath) {
       // Single-path stub: mark last point as end with contrasting style
       const color = startPath.color || '#ff4757';
       const endMarker = L.marker(startPath.coords[startPath.coords.length - 1], {
-        icon: createMarkerIcon('#ffffff', color),
+        icon: createEndMarkerIcon(color),
       })
-        .bindTooltip('End', { permanent: false, direction: 'top' })
+        .bindTooltip('End (B)', { permanent: false, direction: 'top' })
         .addTo(map);
       markersRef.current.push(endMarker);
     }
@@ -199,21 +209,25 @@ export default function RouteMap({ selectedRoute, onClose }) {
             {paths.length > 0 && (
               <div className="flex flex-wrap items-center gap-3">
                 {startPath && (
-                  <span className="inline-flex items-center gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 font-medium">
                     <span
-                      className="inline-block h-2 w-4 rounded-sm"
+                      className="inline-flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white shadow-sm"
                       style={{ backgroundColor: startPath.color }}
-                    />
-                    <span className="text-slate-400">Start</span>
+                    >
+                      A
+                    </span>
+                    <span className="text-slate-300">Start</span>
                   </span>
                 )}
                 {endPath && (
-                  <span className="inline-flex items-center gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 font-medium">
                     <span
-                      className="inline-block h-2 w-4 rounded-sm"
+                      className="inline-flex h-4 w-4 items-center justify-center rounded-[3px] text-[9px] font-extrabold text-white shadow-sm"
                       style={{ backgroundColor: endPath.color }}
-                    />
-                    <span className="text-slate-400">End</span>
+                    >
+                      B
+                    </span>
+                    <span className="text-slate-300">End</span>
                   </span>
                 )}
                 {paths

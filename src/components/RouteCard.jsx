@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Map, Navigation, CheckCircle } from 'lucide-react';
-import { ROUTE_COORDS } from '../../data/route-coords.js';
+import { ChevronDown, Navigation, CheckCircle } from 'lucide-react';
 
 export default function RouteCard({
   route,
@@ -10,7 +9,6 @@ export default function RouteCard({
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const hasMapCoords = !!ROUTE_COORDS[route.code];
   const stops = route.stops || [];
   const stopCount = stops.length;
 
@@ -36,7 +34,13 @@ export default function RouteCard({
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-2">
           {/* Route Code Badge */}
-          <span className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#ff4757] to-[#e84152] px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-white shadow-[0_2px_10px_rgba(255,71,87,0.3)]">
+          <span
+            className={`inline-flex items-center justify-center rounded-xl px-3 py-1 text-xs font-extrabold uppercase tracking-wider transition-colors duration-200 ${
+              isSelected
+                ? 'bg-[#ffbe0b] text-[#0b0c10] shadow-[0_2px_10px_rgba(255,190,11,0.3)]'
+                : 'bg-gradient-to-r from-[#ff4757] to-[#e84152] text-white shadow-[0_2px_10px_rgba(255,71,87,0.3)]'
+            }`}
+          >
             {route.code}
           </span>
           <span className="text-[11px] font-medium text-slate-400">
@@ -44,16 +48,6 @@ export default function RouteCard({
           </span>
         </div>
 
-        {/* Map availability pill */}
-        {hasMapCoords && (
-          <span
-            title="Interactive map available"
-            className="flex items-center gap-1 rounded-full bg-[#10b981]/15 px-2 py-0.5 text-[10px] font-semibold text-[#10b981]"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#10b981] animate-pulse" />
-            Map
-          </span>
-        )}
       </div>
 
       {/* Route Name & Destination */}

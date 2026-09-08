@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Splash from './components/Splash';
 import RoutesTab from './components/RoutesTab';
@@ -22,6 +22,23 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('success');
 
+  // Keyboard shortcut listener ('?' to toggle guide)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const targetTag = e.target?.tagName?.toLowerCase();
+      if (targetTag === 'input' || targetTag === 'textarea' || e.target?.isContentEditable) {
+        return;
+      }
+      if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+        e.preventDefault();
+        setIsAboutOpen((prev) => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const showToast = (message, type = 'success') => {
     setToastMessage(message);
     setToastType(type);
@@ -36,6 +53,7 @@ export default function App() {
     setCurrentTab('routes');
     if (initialQuery) {
       setRouteSearchQuery(initialQuery);
+      showToast(`Starting with ${initialQuery}`);
     }
   };
 

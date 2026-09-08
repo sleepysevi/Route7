@@ -21,7 +21,16 @@ function createSpotIcon() {
   });
 }
 
-const SpotMap = forwardRef(function SpotMap({ spots }, ref) {
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+const SpotMap = forwardRef(function SpotMap({ spots = [] }, ref) {
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const markersRef = useRef([]);
@@ -85,12 +94,12 @@ const SpotMap = forwardRef(function SpotMap({ spots }, ref) {
       const marker = L.marker(spot.coords, { icon })
         .bindPopup(`
           <div style="min-width:180px;font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.4;">
-            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:#ffffff;">${spot.name}</div>
-            <div style="color:#94a3b8;font-size:11px;margin-bottom:6px;">${spot.address}</div>
-            <div style="color:#cbd5e1;margin-bottom:6px;">${spot.description ? spot.description.slice(0, 85) + '…' : ''}</div>
+            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:#ffffff;">${escapeHtml(spot.name)}</div>
+            <div style="color:#94a3b8;font-size:11px;margin-bottom:6px;">${escapeHtml(spot.address)}</div>
+            <div style="color:#cbd5e1;margin-bottom:6px;">${escapeHtml(spot.description ? spot.description.slice(0, 85) + '…' : '')}</div>
             <div style="display:flex;gap:6px;font-size:10px;font-weight:600;">
-              <span style="color:#ffbe0b;">${spot.hours || ''}</span>
-              <span style="color:#10b981;">${spot.entrance || ''}</span>
+              <span style="color:#ffbe0b;">${escapeHtml(spot.hours)}</span>
+              <span style="color:#10b981;">${escapeHtml(spot.entrance)}</span>
             </div>
           </div>
         `, { maxWidth: 220 })

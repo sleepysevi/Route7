@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Search, X, LayoutGrid, List, MapPin, Compass, AlertCircle } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import RouteCard from './RouteCard';
 import RouteMap from './RouteMap';
 
@@ -16,15 +16,15 @@ const GROUP_ORDER = [
 ];
 
 const GROUP_COLORS = {
-  All: { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/15 text-[#34d399] border-[#10b981]/30' },
-  'Cebu City': { active: 'bg-[#ff4757] text-white', inactive: 'bg-[#ff4757]/15 text-[#ff6b81] border-[#ff4757]/30' },
-  Mandaue: { active: 'bg-[#3b82f6] text-white', inactive: 'bg-[#3b82f6]/15 text-[#60a5fa] border-[#3b82f6]/30' },
-  'Mactan Island': { active: 'bg-[#64748b] text-white', inactive: 'bg-[#64748b]/15 text-[#94a3b8] border-[#64748b]/30' },
-  'North Cebu': { active: 'bg-[#0ea5e9] text-white', inactive: 'bg-[#0ea5e9]/15 text-[#38bdf8] border-[#0ea5e9]/30' },
-  'Talisay City': { active: 'bg-[#6366f1] text-white', inactive: 'bg-[#6366f1]/15 text-[#818cf8] border-[#6366f1]/30' },
-  Minglanilla: { active: 'bg-[#22c55e] text-white', inactive: 'bg-[#22c55e]/15 text-[#4ade80] border-[#22c55e]/30' },
-  'City of Naga': { active: 'bg-[#f59e0b] text-white', inactive: 'bg-[#f59e0b]/15 text-[#fbbf24] border-[#f59e0b]/30' },
-  'San Fernando': { active: 'bg-[#ef4444] text-white', inactive: 'bg-[#ef4444]/15 text-[#f87171] border-[#ef4444]/30' },
+  All: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
+  'Cebu City': { active: 'bg-[#ff4757] text-white', inactive: 'bg-[#ff4757]/10 text-[#ff7180] border-[#ff4757]/30' },
+  Mandaue: { active: 'bg-[#0ea5e9] text-white', inactive: 'bg-[#0ea5e9]/10 text-[#38bdf8] border-[#0ea5e9]/30' },
+  'Mactan Island': { active: 'bg-white/20 text-white', inactive: 'bg-white/[0.04] text-slate-300 border-white/10' },
+  'North Cebu': { active: 'bg-[#0ea5e9] text-white', inactive: 'bg-[#0ea5e9]/10 text-[#38bdf8] border-[#0ea5e9]/30' },
+  'Talisay City': { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
+  Minglanilla: { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
+  'City of Naga': { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
+  'San Fernando': { active: 'bg-[#10b981] text-white', inactive: 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30' },
 };
 
 function matchKeywords(kw, query) {
@@ -98,6 +98,8 @@ export default function RoutesTab({
     focusMapPanel();
   };
 
+  const isSearchActive = searchQuery.trim().length > 0;
+
   return (
     <div className="space-y-5">
       {/* Search & Layout Toggle Control Bar */}
@@ -124,65 +126,89 @@ export default function RoutesTab({
             )}
           </div>
 
-          {/* Layout Switcher (Grid / List) */}
-          <div className="flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1 self-end sm:self-auto">
+          {/* Controls: Map Toggle & Layout Switcher (Grid / List) */}
+          <div className="flex w-full items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1 sm:w-auto sm:self-auto">
+            <button
+              type="button"
+              onClick={() => setIsMapExpanded((prev) => !prev)}
+              title={isMapExpanded ? 'Hide Map' : 'Show Map'}
+              aria-label={isMapExpanded ? 'Hide Map' : 'Show Map'}
+              className={`flex flex-1 items-center justify-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition sm:flex-none ${
+                isMapExpanded
+                  ? 'bg-white/10 text-white'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <span>Map</span>
+            </button>
+            <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
             <button
               type="button"
               onClick={() => setLayout('list')}
               title="List View"
-              className={`flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition ${
+              className={`flex flex-1 items-center justify-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition sm:flex-none ${
                 layout === 'list'
                   ? 'bg-[#ff4757] text-white shadow'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <List className="h-4 w-4" />
-              <span className="hidden sm:inline">List</span>
+              <span>List</span>
             </button>
             <button
               type="button"
               onClick={() => setLayout('grid')}
               title="Grid View"
-              className={`flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition ${
+              className={`flex flex-1 items-center justify-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition sm:flex-none ${
                 layout === 'grid'
                   ? 'bg-[#ff4757] text-white shadow'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <LayoutGrid className="h-4 w-4" />
-              <span className="hidden sm:inline">Grid</span>
+              <span>Grid</span>
             </button>
           </div>
         </div>
 
-        {/* Group Filter Chips */}
-        <div className="mt-3 overflow-x-auto pb-1">
-          <div className="flex min-w-max gap-1.5">
-            {GROUP_ORDER.map((group) => {
-              const isActive = activeGroup === group;
-              const count =
-                group === 'All'
-                  ? routes.length
-                  : routes.filter((r) => r.group === group).length;
+        {/* Group Filter Chips with visual horizontal scroll cues */}
+        <div className="relative mt-3">
+          {/* Subtle gradient scroll hints for mobile */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-1 z-10 w-4 bg-gradient-to-r from-[#14161f] to-transparent sm:hidden" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-1 z-10 w-6 bg-gradient-to-l from-[#14161f] to-transparent sm:hidden" />
 
-              const styleConf = GROUP_COLORS[group] || GROUP_COLORS.All;
+          <div
+            className="overflow-x-auto pb-1.5 scrollbar-none"
+            role="tablist"
+            aria-label="Filter routes by city area"
+          >
+            <div className="flex min-w-max gap-1.5 px-0.5">
+              {GROUP_ORDER.map((group) => {
+                const isActive = activeGroup === group;
+                const count =
+                  group === 'All'
+                    ? routes.length
+                    : routes.filter((r) => r.group === group).length;
 
-              return (
-                <button
-                  key={group}
-                  type="button"
-                  onClick={() => setActiveGroup(group)}
-                  className={`flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all ${
-                    isActive
-                      ? `${styleConf.active} shadow-[0_2px_10px_rgba(0,0,0,0.3)]`
-                      : `${styleConf.inactive} hover:bg-white/10`
-                  }`}
-                >
-                  <span>{group}</span>
-                  <span className="text-[10px] opacity-70">({count})</span>
-                </button>
-              );
-            })}
+                const styleConf = GROUP_COLORS[group] || GROUP_COLORS.All;
+
+                return (
+                  <button
+                    key={group}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setActiveGroup(group)}
+                    className={`flex min-h-[34px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                      isActive
+                        ? `${styleConf.active} shadow-[0_2px_10px_rgba(0,0,0,0.3)]`
+                        : `${styleConf.inactive} hover:bg-white/10`
+                    }`}
+                  >
+                    <span>{group}</span>
+                    <span className="text-[10px] opacity-75">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -192,11 +218,11 @@ export default function RoutesTab({
         ref={mapSectionRef}
         className={`rounded-3xl transition-all duration-300 ${
           isMapHighlighting
-            ? 'ring-2 ring-[#ffbe0b]/80 shadow-[0_0_0_4px_rgba(255,190,11,0.15),0_0_30px_rgba(255,190,11,0.45)]'
+            ? 'route-focus-pulse ring-2 ring-[#ffbe0b]/80'
             : ''
         }`}
       >
-        {isMapExpanded && (
+        {isMapExpanded ? (
           <RouteMap
             selectedRoute={selectedRoute}
             onClose={() => {
@@ -204,6 +230,14 @@ export default function RoutesTab({
               onSelectRoute(null);
             }}
           />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setIsMapExpanded(true)}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] py-3 text-xs font-semibold text-slate-400 transition hover:border-[#ff4757]/40 hover:bg-white/[0.05] hover:text-white"
+          >
+            <span>Show Route Map & Selected Paths</span>
+          </button>
         )}
       </div>
 
@@ -221,7 +255,6 @@ export default function RoutesTab({
       {/* Routes Grid / List */}
       {filteredRoutes.length === 0 ? (
         <div className="glass-panel flex flex-col items-center justify-center rounded-3xl p-10 text-center text-slate-400">
-          <AlertCircle className="h-10 w-10 text-slate-500 mb-2" />
           <h4 className="text-base font-bold text-white">No routes found</h4>
           <p className="mt-1 text-xs text-slate-400">
             No jeepneys match "{searchQuery}". Try searching by area name, mall, or route code.
@@ -240,19 +273,29 @@ export default function RoutesTab({
       ) : (
         <div
           className={
-            layout === 'grid'
+            isSearchActive
+              ? 'hiking-rail flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4'
+              : layout === 'grid'
               ? 'grid gap-3 sm:grid-cols-2 lg:grid-cols-3'
               : 'space-y-3'
           }
         >
           {filteredRoutes.map((route) => (
-            <RouteCard
+            <div
               key={route.code}
-              route={route}
-              isSelected={selectedRoute?.code === route.code}
-              onSelectRoute={handleRouteSelect}
-              layout={layout}
-            />
+              className={
+                isSearchActive
+                  ? 'min-w-[min(86vw,360px)] snap-start transition-transform duration-300 hover:-translate-y-1 sm:min-w-[330px] lg:min-w-[360px]'
+                  : ''
+              }
+            >
+              <RouteCard
+                route={route}
+                isSelected={selectedRoute?.code === route.code}
+                onSelectRoute={handleRouteSelect}
+                layout={layout}
+              />
+            </div>
           ))}
         </div>
       )}

@@ -4,6 +4,7 @@ import { MapPin, Clock, Ticket, Bus, Navigation } from 'lucide-react';
 const CATEGORY_COLORS = {
   Historical: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
   Nature: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+  Hiking: 'bg-[#ffbe0b]/15 text-[#ffcf45] border-[#ffbe0b]/30',
   Landmark: 'bg-purple-500/15 text-purple-300 border-purple-500/30',
   Culture: 'bg-pink-500/15 text-pink-300 border-pink-500/30',
   Shopping: 'bg-blue-500/15 text-blue-300 border-blue-500/30',
@@ -16,26 +17,26 @@ export default function SpotCard({ spot, onFocusOnMap, onSelectJeepneyRoute }) {
   const catColor = CATEGORY_COLORS[spot.category] || 'bg-white/10 text-slate-300 border-white/20';
 
   return (
-    <div className="glass-card flex flex-col justify-between rounded-3xl p-5 transition-all hover:border-[#ff4757]/40">
+    <div className="glass-card flex min-w-0 flex-col justify-between rounded-3xl p-5 transition-all hover:border-[#ff4757]/40">
       <div>
         {/* Card Header: Name & Category */}
         <div className="flex items-start justify-between gap-3">
-          <div>
-            <h3 className="text-lg font-bold text-white">{spot.name}</h3>
-            <p className="mt-0.5 flex items-center gap-1 text-xs text-slate-400">
+          <div className="min-w-0">
+            <h3 className="break-words text-lg font-bold text-white">{spot.name}</h3>
+            <p className="mt-0.5 flex items-start gap-1 break-words text-xs text-slate-400">
               <MapPin className="h-3.5 w-3.5 text-[#ff4757] flex-shrink-0" />
               <span>{spot.address}</span>
             </p>
           </div>
           <span
-            className={`rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${catColor}`}
+            className={`max-w-[45%] break-words rounded-full border px-2.5 py-0.5 text-right text-[10px] font-bold uppercase tracking-wider ${catColor}`}
           >
             {spot.category}
           </span>
         </div>
 
         {/* Description */}
-        <p className="mt-3 text-xs leading-relaxed text-slate-300">
+        <p className="mt-3 break-words text-xs leading-relaxed text-slate-300">
           {spot.description}
         </p>
 

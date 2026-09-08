@@ -54,10 +54,15 @@ export default function Navbar({ currentTab, onTabChange, onOpenAbout }) {
         <button
           type="button"
           onClick={onOpenAbout}
-          title="Guide & About"
-          className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-[#ff4757]/40 hover:bg-[#ff4757]/15 hover:text-white"
+          aria-label="Route7 Commuter Guide & FAQ"
+          title="Commuter Guide & FAQ (Press ?)"
+          className="flex h-9 items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-2.5 text-xs font-medium text-slate-300 transition hover:border-[#ff4757]/40 hover:bg-[#ff4757]/15 hover:text-white"
         >
-          <HelpCircle className="h-4 w-4" />
+          <HelpCircle className="h-4 w-4 text-[#ffbe0b]" />
+          <span className="hidden sm:inline font-semibold">Guide</span>
+          <kbd className="hidden lg:inline-flex h-4 items-center rounded border border-white/20 bg-white/5 px-1 font-mono text-[9px] text-slate-400">
+            ?
+          </kbd>
         </button>
       </div>
     </header>

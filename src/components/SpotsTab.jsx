@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { Search, X, MapPin, Sparkles, AlertCircle } from 'lucide-react';
+import { Search, X, MapPin, AlertCircle } from 'lucide-react';
 import SpotCard from './SpotCard';
 import SpotMap from './SpotMap';
 
@@ -7,6 +7,7 @@ const SPOT_CATEGORIES = [
   'All',
   'Historical',
   'Nature',
+  'Hiking',
   'Landmark',
   'Culture',
   'Shopping',
@@ -36,11 +37,11 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
     if (q) {
       result = result.filter(
         (s) =>
-          s.name.toLowerCase().includes(q) ||
-          s.description.toLowerCase().includes(q) ||
-          s.address.toLowerCase().includes(q) ||
+          String(s.name || '').toLowerCase().includes(q) ||
+          String(s.description || '').toLowerCase().includes(q) ||
+          String(s.address || '').toLowerCase().includes(q) ||
           matchKeywords(s.keywords, q) ||
-          (s.jeepney || []).some((j) => j.toLowerCase().includes(q))
+          (s.jeepney || []).some((j) => String(j).toLowerCase().includes(q))
       );
     }
 
@@ -55,6 +56,9 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
       mapContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  const isSearchActive = searchQuery.trim().length > 0;
+  const isRailActive = isSearchActive || activeCategory === 'Hiking';
 
   return (
     <div className="space-y-5">
@@ -74,10 +78,11 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
           </div>
 
           {/* Search Box */}
-          <div className="relative min-w-[260px]">
+          <div className="relative w-full min-w-0 sm:min-w-[260px]">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#ff4757]" />
             <input
               type="text"
+              aria-label="Search spots, malls, and areas"
               placeholder="Search spots, malls, areas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -112,6 +117,7 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
+                  aria-pressed={isActive}
                   className={`flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition ${
                     isActive
                       ? 'border-[#ff4757] bg-[#ff4757] text-white shadow-[0_2px_10px_rgba(255,71,87,0.3)]'
@@ -152,14 +158,28 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
           </p>
         </div>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={
+            isRailActive
+              ? 'hiking-rail flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4'
+              : 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3'
+          }
+        >
           {filteredSpots.map((spot) => (
-            <SpotCard
+            <div
               key={spot.id}
-              spot={spot}
-              onFocusOnMap={handleFocusSpot}
-              onSelectJeepneyRoute={onSelectJeepneyRoute}
-            />
+              className={
+                isRailActive
+                  ? 'min-w-[min(86vw,360px)] snap-start transition-transform duration-300 hover:-translate-y-1 sm:min-w-[330px] lg:min-w-[360px]'
+                  : ''
+              }
+            >
+              <SpotCard
+                spot={spot}
+                onFocusOnMap={handleFocusSpot}
+                onSelectJeepneyRoute={onSelectJeepneyRoute}
+              />
+            </div>
           ))}
         </div>
       )}

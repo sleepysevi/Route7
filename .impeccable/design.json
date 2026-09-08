@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T00:00:00Z",
+  "title": "Design System: Route7",
+  "extensions": {
+    "colorMeta": {
+      "midnight-base": { "role": "neutral", "displayName": "Midnight Base", "canonical": "#0b0c10", "tonalRamp": ["#07070a", "#0b0c10", "#10121a", "#14161d", "#1c1f2a", "#343947", "#64748b", "#cbd5e1"] },
+      "route-signal": { "role": "primary", "displayName": "Coral Route Signal", "canonical": "#ff4757", "tonalRamp": ["#4a1119", "#711a25", "#a32637", "#d93549", "#ff4757", "#ff7180", "#ffadb6", "#ffe0e3"] },
+      "route7-yellow": { "role": "secondary", "displayName": "Route7 Yellow", "canonical": "#ffbe0b", "tonalRamp": ["#4b3700", "#765600", "#a87600", "#d79900", "#ffbe0b", "#ffcf45", "#ffe18a", "#fff2c7"] },
+      "route-green": { "role": "secondary", "displayName": "Route Green", "canonical": "#10b981", "tonalRamp": ["#033c2b", "#056345", "#078b60", "#0daf78", "#10b981", "#4dd4a8", "#8be6ca", "#cef8eb"] },
+      "body-white": { "role": "neutral", "displayName": "Body White", "canonical": "#f8fafc", "tonalRamp": ["#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f1f5f9", "#f8fafc"] },
+      "utility-slate": { "role": "neutral", "displayName": "Utility Slate", "canonical": "#94a3b8", "tonalRamp": ["#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f8fafc"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Syne Display", "purpose": "Expressive Route7 wordmark and splash title." },
+      "body": { "displayName": "DM Sans Utility", "purpose": "Legible route, search, navigation, and emergency information." }
+    },
+    "shadows": [
+      { "name": "glass-card-hover", "value": "0 10px 25px -5px rgba(0,0,0,0.4), 0 0 15px -3px rgba(255,71,87,0.1)", "purpose": "Small lift and coral atmosphere for interactive cards." },
+      { "name": "primary-action", "value": "0 10px 25px rgba(255,71,87,0.35)", "purpose": "Separates the splash entry action from the dark field." },
+      { "name": "map-popup", "value": "0 12px 30px rgba(0,0,0,0.6)", "purpose": "Keeps map annotations readable over tiles." }
+    ],
+    "motion": [
+      { "name": "standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default control and card state transitions." },
+      { "name": "splash-entry", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Brief directional entry for splash content." },
+      { "name": "route-focus", "value": "0.6s", "purpose": "Short highlight when a selected route brings the map into focus." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The coral entry action used to enter the route directory.",
+      "html": "<button class=\"ds-btn-primary\">Explore all routes</button>",
+      "css": ".ds-btn-primary { background: linear-gradient(90deg, #ff4757, #e84152); color: #f8fafc; padding: 12px 24px; border: 0; border-radius: 9999px; font: 600 14px/1.25 'DM Sans', sans-serif; box-shadow: 0 10px 25px rgba(255,71,87,0.35); transition: transform 0.2s, box-shadow 0.2s; } .ds-btn-primary:hover { transform: scale(1.05); box-shadow: 0 12px 30px rgba(255,71,87,0.5); } .ds-btn-primary:focus-visible { outline: 2px solid #ffbe0b; outline-offset: 3px; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "The main route and destination search control.",
+      "html": "<input class=\"ds-input-search\" placeholder=\"Where to? Try SM, Ayala, IT Park, Colon...\" />",
+      "css": ".ds-input-search { width: 100%; box-sizing: border-box; background: #12141c; color: #f8fafc; padding: 14px 16px 14px 48px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font: 500 14px/1.5 'DM Sans', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input-search::placeholder { color: #64748b; } .ds-input-search:focus-visible { border-color: #ff4757; outline: 0; box-shadow: 0 0 0 3px rgba(255,71,87,0.25); }"
+    },
+    {
+      "name": "Navigation Tabs",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "Sticky app navigation with a coral active state.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-tab ds-nav-tab-active\">Routes</button><button class=\"ds-nav-tab\">Phrases</button></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; padding: 4px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; } .ds-nav-tab { padding: 6px 16px; border: 0; border-radius: 12px; background: transparent; color: #94a3b8; font: 600 14px/1.25 'DM Sans', sans-serif; transition: background 0.2s, color 0.2s; } .ds-nav-tab:hover, .ds-nav-tab:focus-visible { color: #f8fafc; background: rgba(255,255,255,0.05); } .ds-nav-tab-active { color: #f8fafc; background: #ff4757; box-shadow: 0 4px 12px rgba(255,71,87,0.35); }"
+    },
+    {
+      "name": "Route Card",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "A scannable route result with route code, destination, stops, and map action.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-route-code\">04L</span><h3>Colon - Lahug</h3><p>via Mango Avenue</p><button class=\"ds-card-action\">View map</button></article>",
+      "css": ".ds-card { background: rgba(26,29,39,0.6); color: #f8fafc; padding: 16px; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; backdrop-filter: blur(12px); transition: transform 0.2s, background 0.2s, border-color 0.2s; } .ds-card:hover { transform: translateY(-2px); background: rgba(33,37,50,0.85); border-color: rgba(255,255,255,0.15); } .ds-route-code { display: inline-flex; padding: 4px 12px; border-radius: 12px; background: linear-gradient(90deg, #ff4757, #e84152); color: #f8fafc; font: 800 12px/1.25 'DM Sans', sans-serif; } .ds-card h3 { margin: 12px 0 4px; font: 700 16px/1.25 'DM Sans', sans-serif; } .ds-card p { margin: 0; color: #94a3b8; font: 400 12px/1.5 'DM Sans', sans-serif; } .ds-card-action { margin-top: 16px; border: 0; background: transparent; color: #94a3b8; font: 600 12px/1.25 'DM Sans', sans-serif; } .ds-card-action:hover, .ds-card-action:focus-visible { color: #f8fafc; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "button-primary",
+      "description": "A horizontally scrollable city-area filter with active and inactive states.",
+      "html": "<button class=\"ds-chip ds-chip-active\">All <span>(70)</span></button>",
+      "css": ".ds-chip { min-height: 34px; padding: 6px 14px; border: 1px solid rgba(16,185,129,0.3); border-radius: 9999px; background: rgba(16,185,129,0.15); color: #34d399; font: 600 12px/1.25 'DM Sans', sans-serif; } .ds-chip:hover { background: rgba(255,255,255,0.1); } .ds-chip-active { border-color: transparent; background: #10b981; color: #f8fafc; box-shadow: 0 2px 10px rgba(0,0,0,0.3); } .ds-chip span { font-size: 10px; opacity: 0.75; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Pocket Transit Console",
+    "overview": "Route7 is a compact, dependable instrument for making a transit decision while moving through Cebu. The interface treats route codes, search, filters, stops, maps, and emergency contacts as working controls rather than decorative content. Its dark field keeps attention on the route signal, while the interface stays dense enough to scan on a phone and structured enough to orient a visitor.\n\nThe visual language is a commuter tool with a local pulse: coral marks active route decisions, yellow carries the Route7 identity and navigational highlights, and translucent panels create a layered console over a deep midnight base. Motion is brief and purposeful, reserved for entering the app, revealing state, focusing the map, and showing route context.",
+    "keyCharacteristics": ["Mobile-first, high-contrast transit utility", "Layered glass surfaces over a midnight field", "Coral action signals with a yellow brand accent", "Dense cards, chips, and route controls designed for fast scanning", "Warm local voice without corporate polish"],
+    "rules": [
+      { "name": "The Two Signal Rule", "body": "Coral communicates action and route state; yellow communicates Route7 identity and orientation. Do not swap their jobs casually.", "section": "colors" },
+      { "name": "The Route First Rule", "body": "Route codes and destinations should win the first scan; supporting copy stays smaller and quieter.", "section": "typography" },
+      { "name": "The Layered Utility Rule", "body": "Blur and tonal layering should clarify working surfaces; they should never obscure route information.", "section": "elevation" }
+    ],
+    "dos": ["Do preserve coral for actions, selection, route emphasis, and focus states.", "Do use the yellow Route7 accent sparingly for identity and orientation.", "Do keep route codes, destinations, stop counts, and emergency actions easy to scan.", "Do use translucent dark panels, subtle borders, and blur to create layered depth.", "Do test every surface at 375px before treating the desktop layout as complete."],
+    "donts": ["Don't replace the compact commuter-tool voice with marketing-style hero copy.", "Don't flatten the hierarchy by giving metadata the same weight as route decisions.", "Don't add heavy borders, bright multi-color decoration, or ornamental cards that compete with the map and route data.", "Don't use rounded containers without a functional grouping or interaction reason.", "Don't rely on color alone for route timeline meaning; keep START, END, labels, and shape differences."]
+  }
+}
