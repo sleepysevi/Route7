@@ -1,0 +1,322 @@
+[
+  {
+    "code": "01B",
+    "name": "Cebu Jeepney Route No. 01B",
+    "description": "Sambag 1 (PRIVATE) - Pier 3&2 via Colon St.\nsambag 1 to ACT\nsambag 1 to e mall\nsambag 1 to colon\nsambag 1 to metro colon\nsambag 1 to colonnade\nsambag 1 to gaisano main\nsambag 1 to UV\nsambag 1 to t. padilla st.\nsambag 1 to Pier 4\nsambag 1 to peir 3\nsambag 1 to pier 2\nsambag 1 to cebu-mactan ferry terminal\nprivate to colon\nprivate to metro colon\nprivate to e mall\nprivate to t. padilla st.\nprivate to pier 4\nprivate to pier 3\nprivate to cebu-mactan ferry terminal\nprivate to pier 2\ncolon to t. padilla st.\ncolon to pier 4\ncolon to pier 3\ncolon to pier 2\ncolon to cebu-mactan ferry terminal\nt. padilla to pier 4\nt. padilla to pier 3\nt. padilla to pier 2\nt. padilla to ferry terminal\nPier 2 & 3 to Sambag 1\nPier 2 to t. padilla st.\nPier 2 to sikatuna st.\nPier 2 to parian\nPier 2 to sanciangko st.\nPier 2 to e mall\nPier 2 to sambag 1\nPier 2 to private\nPier 2 to usc- south campus\npier 3 to t. padilla st.\npier 3 to e mall\npier 3 to private"
+  },
+  {
+    "code": "01C",
+    "name": "Cebu Jeepney Route No. 01C",
+    "description": "V. rama Ave. to Pier 3\nV. rama to colon\nv. rama to zulueta\nv. rama to t. padilla\nv. rama to pier 4\nv. rama to pier 3\nprivate to colon\nprivate to zulueta\nprivate to pier 4\nprivate to pier 3\ncolon to pier 3\ncolon to pier 4\ncolon to s. osmena ave.\nPier 3 to v. rama ave.\nPier 3 to colon\npier 3 to university of cebu\npier 3 to gaisano main\npier 3 to sancianko\\\npier 3 to e-mall\npier 4 to colon\npier 4 to e-mall\npier 4 to private\npier 3 to private\nsancianko to private\nuv to private\nuv to v. rama\nuv to e-mall\nuv to usc - girls hs"
+  },
+  {
+    "code": "01K",
+    "name": "Cebu Jeepney Route No. 01K",
+    "description": "Urgello to Parkmall\nurgello to e mall\nurgello to colon\nurgello to metro colon\nurgello to nso\nurgello to white gold\nurgello to sm city cebu\nurgello to sm hypermarket\nurgello to north bus terminal\nurgello to mo2\nurgello to cebu doctors university\nurgello to parkmall\ncolon to nso\ncolon to cpils\ncolon to white gold club\ncolon to sm city cebu\ncolon to sm hypermarket(makro)\ncolon to north bus terminal\ncolon to cebu doctors university\ncolon to cicc\ncolon to parkmall\nsm to north bus terminal\nsm to cebu doctors university\nsm to cicc\nsm to s&r supermarket\nsm to cebu doctors university\nsm to parkmall\nnorth bus to s&r shopping\nnorth bus to cebu doctors university\nnorth bus to cicc\nnorth bus to parkmall\nParkmall to Urgello\nparkmall to MO2\nparkmall to north bus terminal\nparkmall to sm city cebu\nparkmall to white gold club\nparkmall to t. padilla st.\nparkmall to nso\nparkmall to CTU"
+  },
+  {
+    "code": "02B",
+    "name": "Cebu Jeepney Route No. 02B",
+    "description": "South Bus Terminal to Pier\nsouth terminal to colon\nsouth terminal to plaza independencia\nsouth bus terminal to pier 1\nsouth bus terminal to pier 2\nsouth bus terminal to pier 3\nsouth bus terminal to Ferry boat terminal\nsouth bus termnal to pier 4\nsouth bus terminal to pier 5\ncolon to plaza independendia\ncolon to fort san pedro\ncolon to pier 1\ncolon to pier 2\ncolon to pier 3\ncolon to pier 4\ncolon to pier 4\ncolon to ferry boat terminal\nPier to Cebu South Bus Terminal\nPier 3 to pier 5\npier 3 to city health\npier 3 to martires\npier 3 to sancianko st.\npier 3 to e mall\npier 3 to ccmc\npier 3 to cebu south bus terminal\npier 1 to e mall\npier 1 to sancianko st.\npier 1 to ccmc\npier 1 to south bus terminal\npier 4 to martires\npier 4 to sancianko st.\npier 4 to e mall\npier 4 to ccmc\npier 4 to south bus terminal"
+  },
+  {
+    "code": "03A",
+    "name": "Cebu Jeepney Route No. 03A",
+    "description": "Panagdait to Carbon\nPanagdait to mabolo\npanagdait to manalili\npanagdait to carbon\ncityscape hotel to mabolo\ncityscape hotel to mj cuenco ave.\ncityscape hotel to carbon\ncityscape hotel to manalili st.\ncityscape hotel to nso\nsykes to mabolo\nsykes to hipodromo\nsykes to cebu downtown\nsykes to manalili st.\nsykes to carbon\nsarrosa hotel to mabolo\nsarrosa hotel to manalili st.\nsarrossa hotel to carbon\ncastle peak hotel to mabolo\ncastle peak hotel to manalili st.\ncastle peak hotel to carbon\nkasambagan to mabolo church\nkasambagan to andoks mabolo\nkasambagan to manalili st.\nkasambagan to carbon\nmabolo to museo sugbo\nmabolo to cpils\nmabolo to manalili st.\nmabolo to carbon\nCarbon to Panagdait (Mabolo)\ncarbon to mj cuenco ave.\ncarbon to nso\ncarbon to museo sugbo\ncarbon to cpils\ncarbon to the persimmon\ncarbon to hipodromo\ncarbon to mabolo\ncarbon to carmelite monastery\ncarbon to mabolo church\ncarbon to pldt mabolo\ncarbon to kasambagan"
+  },
+  {
+    "code": "03B",
+    "name": "Cebu Jeepney Route No. 03B",
+    "description": "Mabolo to Colon via Jones Ave.\nSindulan to mabolo\nsindulan to mango ave.\nsindulan to mango\nsindulan to fuente osmena\nsindulan to robinsons fuente\nsindulan to jones ave.\nsindulan to osmena blvd.\nsindulan to metro colon\nsindulan to colon\nsindulan to carbon\nsindulan to sto nino\nmabolo to mango\nmabolo to mango ave\nmabolo to robinsons fuente\nmabolo to fuente osmena\nmabolo to jones ave.\nmabolo to osmena blvd.\nmabolo to abellana sports complex\nmabolo to CNU\nmabolo to metro colon\nmabolo to colon\nmabolo to usjr\nmabolo to carbon\nmabolo to sto. nino\nmango to jones ave\nmango to abellana sports complex\nmango metro colon\nmango to colon\nmango to usjr\nmango to carbon\nmango to sto. nino\nColon to Mabolo\nColon to sto nino\ncolon to cpils\ncolon to museo sugbo\ncolon to martires\ncolon to hipodromo\ncolon to carreta cemetery\ncolon to mabolo\ncolon to carwash\ncolon to sindulan\ncarbon to mj cuenco ave.\ncarbon to carreta cemetery\ncarbon to mabolo"
+  },
+  {
+    "code": "03L",
+    "name": "Cebu Jeepneys Route No. 03L",
+    "description": "MABOLO TO CARBON\nmabolo to metro colon\nmabolo to carbon\nmabolo to manalili\nmabolo to sto.nino\ncabantan to mabolo\ncabantan to carbon\ncabantan to manalili\nCARBON TO MABOLO\ncarbon to mabolo\ncarbon to mabolo (luyo)\ncarbon to hipodromo\nsto.nino to mabolo\ncebu city hall to mabolo\nnso to mabolo\ncarbon to cabantan"
+  },
+  {
+    "code": "03Q",
+    "name": "Cebu Jeepney Route No. 03Q",
+    "description": "Ayala to Sm\nAyala Center to Mabolo\nMabolo to SM City Cebu (puj terminal)"
+  },
+  {
+    "code": "04B",
+    "name": "Cebu Jeepney Route No. 04B",
+    "description": "Lahug (Campo) to Carbon\ncampo to jy\ncampo to capitol\ncampo to jones ave.\ncampo to fuente\ncampo to colon\ncampo to abellana\ncampo to metro\ncampo to carbon\ncampo to sto. nino\nlahug to fuente\nlahug to capitol\nlahug to colon\nlahug to sss\nlahug to metro colon\nlahug to carbon\nlahug to sto.nino\njy to colon\njy to fuente\njy to carbon\njy to sto.nino\ncapitol to metro colon\ncapitol to colon\ncapitol to carbon\nfuente to metro colon\nfuente to colon\nfuente to carbon\nCarbon to Lahug (Campo)\nCarbon to usc\ncarbon to abellana\ncarbon to fuente\ncarbon to capitol\ncarbon to lahug\ncarbon to up\ncarbon to jy\ncarbon to campo\ncathedral to fuente\ncathedral to lahug\ncathedral to jy\ncathedral to campo\nsto nino to jy\nsto nino to lahug\nsto. nino to capitol\nsto nino to campo\ncolon to lahug\ncolonnade to lahug\ncolon to fuente\ncolon to jy\nfuente to jy\nfuente to capitol\ncolon to capitol\nfuente to campo\ncapitol to jy\ncapitol to lahug\ncapitol to up\ncapitol to campo."
+  },
+  {
+    "code": "04C",
+    "name": "CEBU JEEPNEY ROUTE NO. 04C",
+    "description": "campo - jy - lahug - cor. sudlon - mormons church - lahug brgy hall - UP - harolds hotel - philhealth - golden peak hotel - gorordo ave. - asilo dela milagrosa - cebu city police station (camp sutero) - mango ave. - gen. maxilom ave. -usc north campus - fooda saversmart - mango square - National bookstore - Robinsons Place - Summit Circle Hotel - F. ramos st. - cebu institute of medicine - Diplomat hotel - Junquera St. ext. - University of San Carlos - junquera St. - sancianko st. - University of cebu - E mall - panganiban st. - magallanes st. - carbon public market.\ncarbon public market - lincoln st. - f. gonzales st. - M.C. Briones st. - Cebu city hall - basilica del sto. nino - la nueva (sto nino) - prince warehouse club (sto. nino) - Lapulapu st. - MCWD - DFA - OWWA - Legaspi st. - cebu eastern college - d. jakosalem st. - gaisano main - university of the visayas - ramos public market - f. ramos st. - city suites - diplomat"
+  },
+  {
+    "code": "04D",
+    "name": "Cebu Jeepney Route No. 04D",
+    "description": "Plaza Housing to Carbon\nPlaza to jy\nplaza to escario\nplaza to fuente\nplaza to sancianko\nplaza to taboan\nplaza to magallanes\nplaza to carbon\nplaza to sto. nino\njy to escario\njy to fuente\njy to sanciangko\njy to taboan\njy to carbon\nlahug to carbon\nlahug to taboan\nlahug to sto, nino\nfuente to carbon\nfuente to taboan\nfuente to sto. nino\nCarbon to Plaza Housing\ncarbon to sto rosario\ncarbon to fuente osmena\ncarbon to escario\ncarbon to jy square mall\ncarbon to lahug\ncarbon to busay\ncarbon to plaza housing\ncolon to fuente\ncolon to escario\ncolon to gorordo ave.\ncolon to up lahug\ncolon to lahug\ncolon to Jy\ncolon to Busay\ncolon to plaza housing\nfuente to jy\nfuente to plaza housing\nfuente to busay\nfuente to marco polo\nlahug to jy\nlahug to busay\nlahug to plaza housing"
+  },
+  {
+    "code": "04H",
+    "name": "Cebu Jeepney Route No. 04H",
+    "description": "Plaza Housing to Carbon\nbusay to jy\nbusay to gorordo ave.\nbusay to up lahug\nbusay to lahug\nbusay to provincial capitol\nbusay to fuente osmena\nbusay to robinsons fuente\nbusay to abellana sports center\nbusay to colon\nbusay to e mall\nbusay to carbon\nplaza housing to jy\nplaza housing to capitol\nplaza housing to fuente\nplaza housing to colon\nplaza housing to e mall\nplaza housing to carbon\njy to escario st\njy to fuente osmena\njy to robinsons place\njy to crown regency\njy to colon\njy to emall\njy to carbon\njy to basilica del sto. nino\njy to cebu metropolitan cathedral\ncapitol to fuente\ncapitol to abellana\ncapitol to colon\ncapitol to e mall\ncapitol to carbon\nfuente to sanciangko st.\nfuente to e mall\nfuente to carbon\nCarbon to Plaza Housing\ncarbon to colon\ncarbon to jones ave.\ncarbon to cebu normal university\ncarbon to fuente osmena\ncarbon to provincial capitol\ncarbon to escario st.\ncarbon to lahug\ncarbon to jy\ncarbon to plaza housing"
+  },
+  {
+    "code": "04I",
+    "name": "Cebu Jeepney Route No. 04i",
+    "description": "Busay(plaza housing) to Carbon\nBusay to jy\nbusay to gorordo\nbusay to mango\nbusay to robinsons fuente\nbusay to ramos\nbusay to junquera st.\nbusay to e mall\nbusay to carbon\nbusay to sto.nino\nplaza housing to mango\nplaza housing to ramos\nplaza housing to sanciangko\nplaza housing to carbon\nplaza housing to sto.nino\njy to gorordo\njy to mango ave.\njy to robinsons fuente\njy to ramos\njy to sanciangko\njy to elizabeth mall\njy to carbon\njy to sto.nino\ngorordo to mango\ngorordo to robinsons fuente\ngorordo to ramos\ngorordo to sanciangko st.\ngorordo to elizabeth mall\ngorordo to carbon\ngorordo to sto. nino\nmango to carbon\nmango to elizabeth mall\nmango to sto. nino\nCARBON TO BUSAY(plaza housing)\ncarbon to colon\ncarbon to ramos\ncarbon to robinsons fuente\ncarbon to mango ave\ncarbon to mango square\ncarbon to gorordo ave.\ncarbon to jy square\ncarbon to marco polo\ncarbon to busay\ncarbon to plaza housing\ncolon to ramos\ncolon to robinsons fuente\ncolon to mango ave\ncolon to the beat\ncolon to horizons 101 >>>"
+  },
+  {
+    "code": "04L",
+    "name": "Cebu Jeepney Route No. 04L",
+    "description": "Lahug to Sm via Ayala\nlahug to philhealth\nlahug to golden peak hotel\nlahug to harolds hotel\nlahug to cebu parklane hotel\nlahug to cebu business park\nlahug to ayala center cebu\nlahug to mabolo\nlahug to sm city cebu\nlahug to pag-ibig fund\nup cebu to ayala center cebu\nup cebu to mabolo\nup cebu to sm city cebu\nup cebu to pag-ibig fund\nJY to ayala center cebu\nJY to sm city cebu\nJY to philhealth\nJY to pag-ibig fund\nJY to mabolo\nJY to andoks mabolo\nJY to sm city cebu\nayala to mabolo church\nayala to andoks mabolo\nayala to sm city cebu\nayala to cebu daily news\nmabolo to sm\nayala to carmelite monastery\nlahug to carmelite monastery\nSM to Lahug\nsm to mabolo\nsm to tesda\nsm to waterfront hotel\nsm to cebu IT Park\nsm to jy square mall\nsm to lahug\nsm to up lahug\nsm to uspf\nsm to corner sudlon\nsm to corner dep-ed\nsm to mormons church\nsm to philhealth\nmabolo to IT park\nmabolo to waterfront hotel\nmabolo to lahug\nmabolo to JY\nmabolo to up cebu"
+  },
+  {
+    "code": "04M",
+    "name": "Cebu Jeepney Route No. 04M",
+    "description": "Ayala Terminal to Lahug (JY Square Mall)\nayala to gorordo ave.\nayala to harold hotel\nayala to up lahug\nayala to lahug\nayala to mormons church (church of jesus christ of latter day saints)\nayala to corner beverly hills\nayala to jy square mall\nayala to usp lahug\nayala to salinas drive\nayala to waterfront hotel lahug\nayala to tesda\nayala to cebu it park\nLahug to Ayala\nlahug to tesda\nlahug to arch. reyes ave.\nlahug to ayala terminal\nlahug to BIR\nlahug to brgy. luz\njy to ayala terminal\njy to cebu business park\njy to brgy. luz\njy to BIR\nsalinas drive to ayala\nsalinas drive to brgy luz\nit park to ayala\nup lahug to ayala\nusp lahug to ayala\nwaterfront hotel to ayala"
+  },
+  {
+    "code": "06B",
+    "name": "Cebu Jeepney Route No. 06B",
+    "description": "Guadalupe to Carbon\nguadalupe to capitol\nguadalupe to osmena blvd.\nguadalupe to fuente osmena\nguadalupe to robinsons fuente\nguadalupe to jones ave.\nguadalupe to abellana sports center\nguadalupe to metro colon\nguadalupe to colon\nguadalupe to USJ-R\nguadalupe to Carbon\nguadalupe to cebu city hall\nguadalupe to basilica del sto. nino\ncapitol to fuente\ncapitol to jones ave.\ncapitol to colon\ncapitol to metro colon\ncapitol to usjr\ncapitol to carbon\ncapitol to cebu city hall\ncapitol to basilica del sto. nino\nfuente to abellana\nfuente to colon\nfuente to metro colon\nfuente to usjr\nfuente to carbon\nfuente to basilica del sto. nino"
+  },
+  {
+    "code": "06C",
+    "name": "Cebu Jeepney Route No. 06C",
+    "description": "Guadalupe to Colon\nguadalupe to v. rama st.\nguadalupe to b.rodrigues st.\nguadalupe to vicente soto hospital\nguadalupe to fuente osmena\nguadalupe to robinsons fuente\nguadalupe to crown regency hotel\nguadalupe to osmena blvd.\nguadalupe to abellana sports center\nguadalupe to cebu normanl university\nguadalupe to SSS\nguadalupe to colon\nguadalupe to metro colon\nguadalupe to carbon\nguadalupe to cebu city hall\nguadalupe to basilica del sto. nino\nb. rodrigues st to fuente osmena\nb. rodrigues st to crown regency hotel\nb. rodrigues st to cebu normal university\nb. rodrigues st to abellana sports center\nb. rodrigues st to colon\nb. rodrigues st to SSS\nb. rodrigues st to metro colon\nb. rodrigues st to carbon\nb. rodrigues st basilica del sto. nino\nfuente to colon\nfuente to sss\nfuente to carbn\nfuente to sto.nino\nosmena blvd. to colon\nosmena blvd to carbon\nosmena blvd. to basilica del sto. nino\nColon to Guadalupe"
+  },
+  {
+    "code": "06G",
+    "name": "Cebu Jeepneys Route No. 06G",
+    "description": "GUADALUPE TO C. PADILLA\nGuadalupe to Calamba\nguadalupe to katipunan\nguadalupe to labangon\nguadalupe to tres de abril\nguadalupe to taboan\nguadalupe to pasil\nguadalupe to c. padilla\nlabangon to taboan\nlabangon to pasil\nlabangon to c. padilla\nC. PADILLA ST. TO GUADALUPE\ntaboan to guadalupe\npasil to hiway\npasil to c. padilla\npasil to guadalupe\nc. padilla to hiway\nc. padilla to guadalup\nc. padilla to v. rama\nc. padilla to PRC"
+  },
+  {
+    "code": "06H",
+    "name": "Cebu Jeepney Route No. 06H",
+    "description": "Guadalupe Church - V. rama ave. - crown regency residences - Fooda Saversmart (guadalupe branch) -corner banawa - cebu provincial capitol - bo's coffee (jones ave.) - cebu doctors university (jones ave.) - n. escario st. - philhealth - ayala center cebu - cabantan st. - juan luna avenue (mabolo) - mabolo church - Sm City cebu puj terminal\nsm terminal - mabolo church - ayala center terminal - asilo - fooda mango - mango avenue - robinsons fuente - fuente circle - vicente sotto hospital - b. rodriguez st. - v. rama avenue. corner banawa - PRC (professional regulations commission) - fooda (guadalupe branch) - guadalupe church."
+  },
+  {
+    "code": "07B",
+    "name": "Cebu Jeepneys Route No. 07B",
+    "description": "Banawa to Carbon\nBanawa to Fuente\nbanawa to robinsons\nbanawa to colon\nbanawa to metro colon\nbanawa to usjr\nbanawa to carbon\nbanawa to basilica sto. nino\nbanawa to abellana sports center\nfuente to colon\nfuente to carbon\nv. rama to fuente\nv. rama to colon\nv. rama to abellana\nv. rama to carbon\njones to carbon\njones to metro colon\nCarbon to Banawa\nCARBON TO BANAWA\nCarbon to Jones ave.\ncarbon to fuente\ncarbon to robinsons\ncarbon to capitol\ncarbon to nbi\ncarbon to banawa\ncarbon to rustans banawa\ncolon to fuente\ncolon to robinsosn fuente\ncolon to capitol\ncolon to banawa\ncolon to convergys banawa\nfuente to capitol\nfuente to nbi\nfuente to banawa\nfuente to rustans banawa\ncapitol to banawa"
+  },
+  {
+    "code": "08G",
+    "name": "Cebu Jeepney Route No. 08G",
+    "description": "Alumnos to Zulueta St.\nalumnos to c. padilla st.\nalumnos to pasil\nalumnos to taboan\nalumnos to colon\nalumnos to metro colon\nalumnos to colonnade\nalumnos to university of the visayas\nalumnos to gaisano main\nalumnos to zulueta st.\nalumnos to CTU\nc. padilla st. to pasil\nc. padilla st. to taboan\nc. padilla st. to colon st.\nc. padilla st. to metro colon\nc. padilla st. to colonnade\nc. padilla st. to UV\nc. padilla st. to gaisano main\nc. padilla st. to zulueta\nc. padilla st. to CTU\ncolon to CTU\ncolon to metropolitan cathedral\ncolon to basilica del sto. nino\nColon to Alumnos\ncolon to usjr\ncolon to c. padilla st.\ncolon to taboan\ncolon to san nicolas de tolintino church\ncolon to jai-alai\ncolon to mambaling\ncolon to alumnos\ncolon to university of cebu -mambaling (uc-metc)\nc. padilla st. to alumnos\nc. padilla st. to uc-metc"
+  },
+  {
+    "code": "09C",
+    "name": "Cebu Jeepney Route no. 09C",
+    "description": "Quiot - Sabellano St. - Basak - Mambaling - Shopwise - Fooda Mambaling - Mambaling Flyover - CIT - SCSIT - Citilink Terminal - CCMC - Cebu South Bus Terminal - E.mall - P.del Rosario St. - University of San Carlos - Sikatuna St. - Colon Obelisk - P. Burgos St.- Shamrock - University of Southern Philippines Foundation - Metropolitan Cathedral\nMetropolitan Cathedral - Basilica Menore del Santo Nin o - Magellan's Cross - Cebu City Hall - D. Jakosalem St. - Magallanes St. - Carbon Public Market - University of San Jose Recoletos - Tres de Abril St. - C. Padilla St. - R. Padilla St. - Cebu Institute of Technology-University - N. Bacalso Ave. (hi-way) - Mambaling Flyover - Mambaling - Fooda (Mambaling) - Shopwise - Basak - Bayanihan Village - Sabellano St. - Brgy Quiot (Basak/Ibabao)"
+  },
+  {
+    "code": "09F",
+    "name": "Cebu Jeepney Route No. 09F",
+    "description": "Basak-Ibabao to Colon\nibabao to mambaling\nibabao to cit\nibabao to hiway\nibabao to south bus terminal\nibabao to e mall\nibabao to San carlos\nibabao to colon\nibabao to UV\nibabao to zulueta St\nibabao to metropolitan cathedral\nbasak to mambaling\nbasak to cit\nbasak to highway\nbasak to citilink\nbasak to south bus terminal\nbasak to e mall\nbasak to act\nbasak to university of san carlos\nbasak to junquera st\nbasak to colon\nbasak to gaisano main\nbasak to UV\nbasak to zulueta st\nbasak to CTU\nbasak to metropolitan cathedral\nmambaling to CIT\nmambaling to south bus terminal\nmambaling to e mall\nmambaling to USC\nmambaling to colon\nmambaling to CTU\nmambaling to cathedral\ncit to e mall\ncit to san carlos\ncit to colon\ncit to UV\ne mall to zulueta st\ne mall to cathedral\nsouth bus terminal to colon\nsouth bus terminal to gaisano main\nsouth bus terminal to UV\nsouth bus terminal to CTU\nsouth bus terminal to Cathedral\nColon to Basak-Ibabao"
+  },
+  {
+    "code": "09G",
+    "name": "Cebu Jeepney Route No. 09G",
+    "description": "Basak (Ibabao) to Colon\nibabao to mambaling\nibabao to c. padilla st.\nibabao to jai-alai\nibabao to pasil\nibabao to taboan\nibabao to colon\nibabao to usjr\nibabao to carbon\nibabao to magallanes\nibabao to basilica del sto. nino\nbasak to mambaling\nbasak to c. padilla st.\nbasak to pasil\nbasak to taboan\nbasak to colon\nbasak to USJR\nbasak to carbon\nbasak to magallanes\nbasak to magellans cross\nbasak to basilica del sto. nino\nbasak to cebu city hall\nmambaling to c. padilla st.\nmambaling to pasil\nmambaling to taboan\nmambaling to san nicolas church\nmambaling to colon\nmambaling to USJR\nmambaling to carbon\nmambaling to magallanes\nmambaling to magellans cross\nmambaling to basilica del sto. nino\nmambaling to cathedral\nc. padilla st. to pasil\nc. padilla st. to taboan\nc. padilla st. to san nicolas church\nc. padilla st. to colon\nc. padilla st. to USJR\nc. padilla st. to carbon\nc. padilla st. to Magallanes\nc. padilla st. to basilica del sto.nino"
+  },
+  {
+    "code": "10F",
+    "name": "Cebu Jeepneys Route No. 10F",
+    "description": "Bulacao - Pardo - Basak - Mambaling - CIT - SCSIT - Cor. V. Rama Ave.\nCor. V. Rama Ave. - Citilink Terminal - CCMC - Cebu South Bus Terminal - E.mall - P.del Rosario St. - University of San Carlos - Junquera St.\nJunquera St. - Colon St. - Metro Gaisano - Borromeo St. - Sancianco St. - Panganiban St. - CCMC - N. Bacalso Ave. (hi-way) - CIT - Mambaling - Fooda (Basak) - Shopwise - Basak - Pardo - Bulacao"
+  },
+  {
+    "code": "10G",
+    "name": "Cebu Jeepney Route No. 10G",
+    "description": "Pardo to Magallanes (Basilica del Sto. Nino)\npardo to basak\npardo to mambaling\npardo to c. padilla st.\npardo to pasil\npardo to taboan\npardo to colon\npardo to usjr\npardo to carbon public market\npardo to magallanes st.\npardo to basilica del sto. nino\nbasak to mambaling\nbasak to c. padilla st.\nbasak to jai-alai\nbasak to pasil\nbasak to taboan\nbasak to colon\nbasak to usjr\nbasak to carbon\nbasak to magallanes st.\nbasak to cebu city hall\nbasak to basilica del sto. nino\nmambaling to c. padilla st.\nmambaling to pasil\nmambaling to colon\nmambaling to carbon\nmambaling to basilica del sto. nino\nc. padilla st. to colon st.\nc. padilla st. to magallanes st.\nc. padilla st. to usjr\nc. padilla st. to carbon\nc. padilla st. to sto.nino\nMagallanes st. to Pardo\ncarbon to colon\ncarbon to c.padilla st.\ncarbon to jai-alai\ncarbon to mambaling\ncarbon to fooda (mambaling)\ncarbon to Shopwise\ncarbon to Super Metro - mambaling\ncarbon to basak\ncarbon to pardo"
+  },
+  {
+    "code": "10H",
+    "name": "Cebu Jeepney Route no. 10H",
+    "description": "From bulacao (Saint Paul College foundation) - Pardo - Basak - mambaling - CIT -SCSIT - Citilink - CCMC - Cebu South Bus terminal - E. mall - ACT - P.del Rosario - Sikatun st. - T. padilla st. - white gold house - white gold club - Sm.\nsm - white gold - cebu city registrars office - DSWD - Imus ave. - M. J. Cuenco Ave. - cor. t. Padilla St. - NSO - Legaspi St. - Cebu Metropolitan Cathedral - Manalili st. - Borromeo St. - Sancianko st. - Aerol Pensione House - CCMC - N. Bacalso Avenue - Citilink - SCSIT - Napolcom - CIT - Mambaling - Shopwise - Basak - Pardo - Bulacao."
+  },
+  {
+    "code": "10M",
+    "name": "Cebu Jeepney Route No. 10M",
+    "description": "BULACAO TO SM\nbulacao to basak\nbulacao to mambaling\nbulacao to cit\nbulacao to ccmc\nbulacao to e mall\nbulacao to colon\nbulacao to t. padilla\nbulacao to white gold\nbulacao to SM\nbasak to colon\nbasak to mambaling\nbasak to sm\ncolon to sm\ncolon to white gold club\ncolon to t. padilla\nSM TO BULACAO\nsm to t. padilla\nsm to CTU\nsm to cathedral\nsm to basilica del sto. nino\nsm to colon\nsm to ccmc\nsm to basak\nsm to mambaling\nsm to pardo\nsm to bulacao"
+  },
+  {
+    "code": "11A",
+    "name": "Cebu Jeepney Route No. 11A",
+    "description": "INAYAWAN TO COLON\ninayawan to c. padilla\ninayawan to magallanes\ninayawan to carbon\ninayawan to basilica del sto. nino\ninayawan to colon\ninayawan to pasil\ncogon pardo to colon\ncogon pardo to magallanes\ncogon pardo to carbon\ncogon pardo to basilica del sto. nino\ncogon pardo to pasil\nc. padilla to pasil\nc. padilla to carbon\nc. padilla to magallanes\nc. padilla to sto. nino\nc. padilla to gaisano main\npasil to carbon\npasil basilica del sto. nino\nCOLON TO INAYAWAN\ncolon to c. padilla\ncolon to tagunol\ncolon to cogon pardo\ncolon to inayawan\ncolon to tabada\ncolon to mambaling\ncolon to sn. roque\nc. padilla to inayawan\nc. padilla to tagunol\nc. padilla to tabada mambaling"
+  },
+  {
+    "code": "12D",
+    "name": "Cebu Jeepney Route No. 12D (sign board: TRES)",
+    "description": "more jeepney route maps at cebujeepneys.weebly.com\nNOTE: when going to labangon be sure to look for the sign board that says \"TRES\", then this is the route map for it.\nLabangon to Colon (from Katipunan St.)\nlabangon to colon\npunta princesa to colon\ntisa to colon\nlabangon to hiway\nlabangon to south bus terminal\nlabangon to E.Mall\nlabangon to university of san carlos\nlabangon to UV\nlabangon to Cathedral\npunta princesa to Elizabeth Mall\npunta princesa to University of San Carlos\ntisa to e. mall\ntisa to usc\ntisa to p.del rosario\ntisa to junquera st.\ntisa to cathedral\nColon to Labangon (via Tres de Abril st.)\ncolon to labangon\ncolon to tres de abril labangon\ncolon to punta prinsesa\ncathedral to colonnade\nsto.nino to colonnade\ncathedral to e. mall\nsto. nino to e. mall\ncathedral to labangon\ncathedral to tisa\ncathedral to punta prinsesa\ncathedral to ccmc\ncathedral to citilink\ncolonnade to labangon\ncolonnade to e. mall\ncolonnade to ccmc\ncolonnade to citilink\ncolonnade to tres de abril st."
+  },
+  {
+    "code": "12G",
+    "name": "Cebu Jeepney Route No. 12G",
+    "description": "Sm City Cebu to Labangon via Katipunan St.\nSm to pier 4\nsm to sugbutel\nsm to t. padilla st.\nsm to sancianko\nsm to e mall\nsm to ccmc\nsm to labangon\nsm to katipunan st.\nsm to tisa\nsm to punta princesa\nt. padilla to e mall\nt. padilla to sancianko\nt. padilla to labangon\npier 4 to labangon\ne mall to labangon\nsancianko st to labangon\nLabangon to SM\nLabangon to taboan\nlabangon to pasil\nlabangon to carbon\nlabangon to magallanes\nlabangon to sto. nino\nlabangon to plaza independencia\nlabangon to pier 1, 2, 3, 4, 5, 6\nlabangon to sm\ntaboan to sto nino\ntaboan to plaza independencia\ntaboan to pier 1, 2, 3, 4, 5, 6\ntaboan to sm\ncarbon to plaza independencia\ncarbon to pier 1, 2, 3, 4, 5, 6\ncarbon to sm\ncarbon to sugbutel\ncarbon to pcso\nmagallanes to sm\nmagallanes to pier 1, 2, 3, 4, 5, 6\nmagallanes to sugbutel\nmagallanes to pcso\nlabangon to usjr\nplaza independencia to sm\nplaza independencia to pier 1, 2, 3, 4, 5, 6\nusjr to SM"
+  },
+  {
+    "code": "12I",
+    "name": "Cebu Jeepneys Route No. 12i",
+    "description": "SM to Labangon (Tres de Abril St.)\nSm to pier 4\nSm to pier 3\nSm to plaza independencia\nSm to Fort San Pedro\nSm to Legaspi st.\nSm to Cathedral\nSm to Sto. Nino\nSm to Manalilii St.\nSm to CCMC\nSm to N. Bacalso Hiway\nSm to Labangon (tres de abril st.)\nSm to Punta Princesa\nPier 3 to cathedral\npier 3 to manalili st\npier 3 to ccmc\npier 3 to colon\npier 3 to labangon\npier 3 to tres de abril st.\npier 3 to punta princesa\nplaza independencia to colon\nplaza independencia to ccmc\nplaza independencia to labangon\nplaza independencia to tres de abril st.\nplaza independencia to punta princesa\ncolon to labangon\ncolon to tres de abril st.\ncolon to punta princesa\nLabangon to SM City Cebu\nLabangon to E Mall\nLabangon to San carlos\nLabangon to Junquera st.\nLabangon to colon\nLabangon to cathedral\nlabangon to plaza independencia\nlabangon to pier 3\nlabangon to pier 4\nlabangon to pier 5\nlabangon to SM\nKatipunan st to e mall\nkatipunan to colon"
+  },
+  {
+    "code": "12L",
+    "name": "Cebu Jeepney Route no. 12L",
+    "description": "Labangon to Ayala Center Cebu\nlabangon to v. rama ave.\nlabangon to b. rodriguez\nlabangon to fuente osmena circle\nlabangon to robinsons Fuente\nlabangon to vicente sotto hospital\nlabangon to mango\nlabangon to mango square mall\nlabangon to cebu city police station\nlabangon to cebu business park\nlabangon to metro ayala\nlabangon to ayala center\nlabangon to ayala terminal\npunta princesa to v. rama ave.\npunta princesa to fuente osmena\npunta princesa to mango ave.\npunta princesa to ayala\nv.rama ave. to fuente osmena\nv.rama ave. to robinsons fuente\nv.rama ave. to mango square\nv.rama ave. to ayala center\nfuente to ayala\nfuente to metro ayala\nfuente to ayala terminal\nmango to ayala center\nmango to metro ayala\nmango to ayala terminal\nAyala to Labangon\nayala to escario st.\nayala to provincial capitol\nayala to banawa\nayala to rustans banawa\nayala to convergys banawa\nayala to labangon(katipunan st.)\nayala to tisa\nayala to punta princesa"
+  },
+  {
+    "code": "13B",
+    "name": "Cebu Jeepney Route No. 13B",
+    "description": "Talamban to Carbon\ntintay to country mall\ntintay to ayala\ntintay to echavez\ntintay to ramos\ntintay to carbon\ntintay to colon\ntalamban to country mall\ntalamban to ayala\ntalamban to gorordo ave.\ntalamban to ramos\ntalamban to usc main\ntalamban to colon\ntalamban to carbon\ntalamban to sto. nino\nusc talamban to ayala\nusc talamban to colon\nusc talamban to carbon\nusc talamban to sto. nino\ncountry mall to ayala\ncountry mall to ramos\ncountry mall to colon\ncountry mall to carbon\ncountry mall to sto. nino\nayala to ramos\nayala to colon\nayala to carbon\nayala to sto. nino\nramos to colon\nramos to carbon\nramos to sto. nino\nCarbon to Talamban via Ramos\nCarbon to uv\ncarbon to ayala\ncarbon to marriot hotel\ncarbon to banilad\ncarbon to uc banilad\ncarbon to country mall\ncarbon to usc talamban\ncarbon to talamban\ncarbon to the family park\ncarbon to tintay\nuv to ayala\nuv to country mall\nuv to san carlos talamban\nuv to banilad\nuv to talamban"
+  },
+  {
+    "code": "13C",
+    "name": "Cebu Jeepney Route No. 13C",
+    "description": "Talamban to Colon\ntalamban to banilad\ntalamban to country mall\ntalamban to ayala\ntalamban to echavez st.\ntalamban to sikatuna st.\ntalamban to colon\nusc to country mall\nusc to ayala\nusc to colon\nbanilad to ayala\nbanilad to echabez st.\nbanilad to sikatuna st.\nbanilad to colon\ncountry mall to ayala\ncountry mall to echavez st\ncountry mall to sikatuna st\ncountry mall to colon\nayala to echavez st\nayala to sikatuna\nayala to colon\nCOLON TO TALAMBAN\ncolon to hipodromo\ncolon to ayala\ncolon to banilad\ncolon to country mall\ncolon to talamban\nhipodromo to ayala\nhipodromo to banilad\nhipodromo to countrymall\nhipodromo to talamban\nayala to banilad\nayala to country mall\nayala to talamban\nayala to usc- talamban\ncolon to usc-talamban\nbanilad to talamban\nbanilad to usc-talamban\ncountry mall to usc-talamban\ncountry mall to talamban"
+  },
+  {
+    "code": "13H",
+    "name": "Cebu Jeepney Route No. 13H",
+    "description": "Pit-os to Mandaue Public Market\nvia AS. Fortuna St.\nPit-os to Bacayan\npit-os to talamban\npit-os to san carlos\npit-os to uv banilad\npit-os to foodland\npit-os to as. fortuna st.\npit-os to j centre mall\npit-os to highway\npit-os to centro mandaue\npit-os to colonnade mandaue\npit-os to new mandaue public market\ntalamban to foodland\ntalamban to j centre mall\ntalamban to highway\ntalamban to centro mandaue\ntalamban to colonnade mandaue\ntalamban to new public market\nbanilad to j centre mall\nbanilad to centro mandaue\nbanilad to new public market\nj centre mall to centro mandaue\nj centre mall to new public market\nas fortuna st. to highway\nas fortuna st. to new public market\nas fortuna st. to centro mandaue\nNew Public Market to Pit-os\nvia AS. Fortuna St.\nPublic market to highway\npublic market to guizo\npublic market to san miguel corportatio\npublic market to as fortuna st.\npublic market to j centre mall"
+  },
+  {
+    "code": "14D",
+    "name": "Cebu Jeepney Route No. 14D",
+    "description": "Ayala Terminal to Colon\nayala to escario st.\nayala to provincial capitol\nayala to osmena blvd.\nayala to cebu doctors hospital\nayala to fuente osmena\nayala to robinsons fuente\nayala to f. ramos st.\nayala to cogon ramos\nayala to university of san carlos\nayala to junquera st\nayala to colon st.\nayala to gaisano main\nayala to university of the visayas\nayala to shamrock\nayala to manalili st.\nayala to metro colon\nescario to fuente osmena\nescario to f. ramos st.\nescario to university of san carlos\nescario to colon st\nescario to gaisano main\nescario to shamrock\nescario to manalili st.\ncapitol to fuente osmena\ncapitol to robinsons fuente\ncapitol to f. ramos st.\ncapitol to cogon ramos\ncapitol to university of san carlos\ncapitol to colon\ncapitol to gaisano main\nfuente to ramos\nfuente to colon\nfuente to university of san carlos\nfuente to gaisano main\nfuente to shamrock\nfuente to metro colon\nramos to colon\nramos to gaisano main\nramos to usc"
+  },
+  {
+    "code": "17B",
+    "name": "Cebu Jeepneys Route No. 17B",
+    "description": "APAS TO CARBON\napas to jy\napas to fuente\napas to colon\napas to carbon\nit park to jy\nit park to capitol\nit park to fuente\nit park to colon\nit park to carbon\njy to fuente\njy to capitol\njy to colon\njy to carbon\njy to basilica sto nino\ncapitol to fuente\ncapitol to carbo\ncapitol to metro colon\ncapitol to basilica del sto. nino\nfuente to colon\nfuente to carbon\nCARBON TO APAS\ncarbon to fuente\ncarbon to capitol\ncarbon to escario\ncarbon to gorordo\ncarbon to it park\ncarbon to apas\ncarbon to jy\ncolon to it park\ncolon to fuente\ncolon to capitol\ncolon to lahug\ncolon to jy\nfuente to jy\nfuente to lahug\nfuente to it park\nfuente to apas\ngorordo to it park\ngorordo to apas\ngorordo to jy."
+  },
+  {
+    "code": "17C",
+    "name": "Cebu Jeepney Route No. 17C",
+    "description": "Apas to Carbon\nApas to jy\nApas to gorordo ave.\napas to mango ave.\napas to ramos\napas to e mall\napas to carbon\napas to cebu city hall\napas to sto. nino\nit park to jy\nit park to gorordo ave.\nit park to mango ave\nit park to mango square\nit park to robinsons fuente\nit park to ramos\nit park to sanciangko\nit park to carbon\nit parkt to sto.nino\nmango to e mall\nmango to carbon\nmango to sto nino\nmango to ramos\nramos to e mall\nramos to panganiban\nramos to carbon\nramos to sto.nino\nCarbon to Apas\nCarbon to ramos\ncarbon to Robinsons Fuente\ncarbon to mango\ncarbon to gorordo ave\ncarbon to royal concourse\ncarbon to philhealth\ncarbon to jy square mall\ncarbon to it park\ncarbon to apas\nramos to mango\nramos to royal concourse\nramos to philhealth\nramos to jy square mall\nramos to it park\nramos to apas\nmango to royal concourse\nmango to philhealth\nmango to golden peak hotel\nmango to jy\nmango to it park\nmango to apas\ngorordo ave. to IT park"
+  },
+  {
+    "code": "17D",
+    "name": "Cebu Jeepney Route No. 17D",
+    "description": "Apas to Carbon via Taboan\nApas to it park\napas to jy\napas to lahug\napas to capitol\napas to cebu doc hospital\napas to jones ave.\napas to fuente\napas to robinsons fuente\napas to abellan\napas to sanciangko\napas to uc\napas to e mall\napas to taboan\napas to pasil\napas to carbon\nlahug to fuente\nlahug to abellana\nlahug to sanciangko\nlahug to e mall\nlahug to taboan\nlahug to pasil\nlahug to carbon\ncapitol to sanciangko\ncapitol to taboan\ncapitol to pasil\ncapitol to carbon\nfuente to sanciangko\nfuente to e mall\nfuente to taboan\nfuente to pasil\nfuente to carbon\nCarbon to Apas\ncarbon to colonnade\ncarbon to cebu normal university\ncarbon to abellana\ncarbon to fuente\ncarbon to robinsons place\ncarbon to cebu doc. hospital\ncarbon to capitol\ncarbon to lahug\ncarbon to philhealth\ncarbon to mormons\ncarbon to jy\ncarbon to salinas\ncarbon to it park\ncarbon to apas\ncolon to fuente\ncolon to capitol\ncolon to lahug\ncolon to jy\ncolon to it park"
+  },
+  {
+    "code": "20A",
+    "name": "Cebu Jeepney Route No. 20A (Even)",
+    "description": "ayala terminal - mabolo - subandako - wireless - tipolo - san miguel corporation - Parkmall - CICC - Guizo - Uwell - Mantuyong - Sosyoland Supermarket - Colonnade Supermarket - North reclamation area - mandaue public market (NEW) - BIR (mandaue) - Bureau of Immigration - Mandaue City Hall - Saint Joseph Parish - SB. Cabahug St. - Mandaue Colliseum - Estancia-ibabao - Super Metro Mandaue - Pacific Mall - Department of Foreign Affairs(mandaue)\nPacific Mall - Super metro mandaue - UN Ave. - Plaridel St. - AC Cortes Ave. - Maguikay Flyover - Hi-way - Coca Cola plant - San Miguel Plant - tipolo - Wireless - Subangdako - Mabolo - Dela Montana St. (Pope John Paul Ave.) - Cardinal Rosales Ave. - Mindanao ave. - Ayala Terminal"
+  },
+  {
+    "code": "20B",
+    "name": "Cebu Jeepney Route No. 20B (odd)",
+    "description": "Ayala terminal - mabolo - subandako - wireless - tipolo - San miguel brewery plant - coca cola bottlers plant - maguikay flyover - ibabao (estancia).\nibabao (estancia) mandaue colliseum - sb cabahug st. - centro mandaue - gaisano grand (centro mandaue) - a. del rosario st. - guizo mandaue - caltex ( san miguel brewery) - tipolo - wireless - subandako - mabolo - cebu business park - ayala terminal."
+  },
+  {
+    "code": "21A",
+    "name": "Cebu Jeepney Route No. 21A - (even)",
+    "description": "cathedral to mandaue\ncathedral to pacific mall\ncathedral to sm\ncathedral to north bus terminal\ncathedral to centro mandaue\ncathedral to CICC\nSm to mandaue\nSm to CICC\nSm to BIR\nSm to Pacific Mall\nSm to Metro Mandaue\nPacific mall to wireless\nmetro to wireless\npacific mall to sm\nsuper metro to sm\nsuper metro to pier 4\npacific mall to pier 4\nmandaue to pier 4\nmandaue to sm\nmandaue to north bus terminal\nmetro to cathedral\nmetro to pier 3\npacific mall to pier 3\npacific mall to cathedral\nsm to pier 3\nsm to pier 4\nsm to cathedral"
+  },
+  {
+    "code": "21D",
+    "name": "Cebu Jeepney Route Map No. 21D (even)",
+    "description": "cathedral - plaza independencia - pier 3 - pier 4 - t. padilla st. - b. benedicto st. - white gold house - a. soriano ave. - white gold club - queen city memorial garden - sm city cebu - sm hypermarket - aboitiz football field - cebu north bus termina - M. Logarta ave. - wireless - tipolo - san miguel brewery - parkmall - CICC - guizo - uwell - centro mandaue - sioland supermarket - colonnade supermarket - new mandaue public market - bureau of immigration - pj burgos st. - mandaue city hall - st. joseph parish - s.b. cabahug st. - mandaue coliseum - brgy estancia - pacific mall - super metro mandaue.\npacific mall - metro mandaue - hiland - plaridel st. - maguikay flyover - hi way - san miguel brewery - tipolo - wireless - subangdako - mabolo - hipodromo - mj. cuenco ave. - NSO - CITU - cebu metropolitan cathedral."
+  },
+  {
+    "code": "22A",
+    "name": "Cebu Jeepney Route No. 22A",
+    "description": "CATHEDRAL TO OUANO (MANDAUE)\nCathedral to mandaue\ncathedral to ouano mandaue\ncathedral to mabolo\ncathedral to hiway\ncathedral to merkado\ncathedral to Bir mandaue\ncebu city to mabolo\ncebu city to mandaue city\nmabolo to merkado\nmabolo to new public market\nmabolo to ouano\nmandaue to ouano\nmandaue public market to ouano.\nOUANO TO CATHEDRAL\nouano to sm\nouano to pier 4\nouano to pier 3\nmandaue to sm\nmandaue to pier 3\nmandaue to pier 4\nmandaue to cathedral\nsm to pier 3\nsm to pier 4\nsm to cathedral"
+  },
+  {
+    "code": "22D",
+    "name": "Cebu Jeepneys Route No. 22D",
+    "description": "Cathedral to Mandaue (ouano)\nCathedral to Sm\ncathedral to wireless\ncathedral to mandaue\ncathedral to centro mandaue\ncathedral to mandaue public market\ncathedral to ouano\nsm to mandaue\nsm to ouano\nsm to BIR mandaue\nsm to new Mandaue public Market\nMandaue(ouano) to Cathedral\nouano to mabolo\nmandaue to mabolo\nouano to cathedral\nouano to nso\nouano to cebu technological university\nmandaue to innodata\nmandaue to persimmon\nmandaue to cathedral\nmandaue to ctu\nmandaue to nso\nmabolo to cathedral\nmabolo to ctu"
+  },
+  {
+    "code": "22G",
+    "name": "Cebu Jeepney Route No. 22G",
+    "description": "Cathedral to Mandaue(Ouano)\nCathedral to mandaue\ncathedral to sm\ncathedral to t. padilla\ncathedral to north bus terminal\ncathedral to wireless\ncathedral to CICC\ncathedral to colonnade mandaue\ncathedral to merkado\ncathedral to new pub. market\ncathedral to ouano\nsm to mandaue\nsm to ouano\nsm to cicc\nsm to wireless\nsm to merkado mandaue\nsm to new public market\nsm to bir mandaue\nMANDAUE (ouano) to CATHEDRAL\nouano to grand mall mandaue\nouano to wireless\nouano to mabolo\nouano to sm\nouano to pier 3\nouano to pier 4\nouano to cathedral\nouano to ctu\nmandaue to sm\nmandaue to mabolo\nmandaue to white gold\nmandaue to pier 3\nmandaue to pier 4\nmandaue to cathedral\nmabolo to white gold\nmabolo to pier 3\nmabolo to pier 4\nsm to pier 3\nsm to pier 4\nsm to ctu\nsm to cathedral\nmabolo to ctu\nmabolo to cathedral."
+  },
+  {
+    "code": "22I",
+    "name": "Cebu Jeepney Route No. 22i",
+    "description": "Country Mall to Mandaue Public Market\nCountry mall to As. Fortuna St\ncountry mall to larsian banilad\ncountry mall to benedicto college\ncountry mall to j centre mall\ncountry mall to mantuyong mandue\ncountry mall to sioland\ncountry mall to colonnade mandaue\ncountry mall to mandaue public market (merkado)\ncountry mall to bureau of immigration\nbanilad to j centre mall\nbanilad to mantuyong\nbanilad to colonnade mandaue\nbanilad to gaisano grand mandaue\nbanilad to mandaue public market\nas fortuna st to j centre mall\nas fortuna st. to mantuyong\nas fortuna st. to sioland\nas fortuna st to gaisano grand mandaue\nas fortuna st. to gaisano grand mandaue\nas fortuna st to mandaue public market\nj mall to mandaue public market\nj mall to mantuyong\nj mall to colonnade mandaue\nj mall to gaisano grand mall mandaue\nj mall to mandaue public market\nMandaue public market to Country Mall\npublic market to country mall"
+  },
+  {
+    "code": "23",
+    "name": "Cebu Jeepney Route No. 23 (mandaue to punta engano)",
+    "description": "Parkmall to Punta Engano\nParkmall to umapad\nparkmall to new mactan-mandaue bridge\nparkmall to pusok\nparkmall to mepz 1\nparkmall to punta engano\nparkmall to hilton\nparkmall to mactan shrine\nparkmall to sharila's mactan\nparkmall to palm beach\nmandaue to pusok\nmandaue to mepz 1\nmandaue to punta engano\nmandaue to shangrila's mactan\nmandaue to mactan shrine\nmandaue to amisa\nhighway to mepz 1\nhighway to punta engano\nhighway to mactan shrine\nhighway to shangrila's mactan\nhighway to movenpick\nmarina mall to punta engano\nmarina mall to mactan shrine\nmarina mall to shangrila\nmarina mall to movenpick\nmarina mall to palm beach\nmarina mall to amisa\nmarina mall to hilton\nmepz 1 to punta engano\nmepz 1 to mactan shrine\nmepz 1 to shanrila\nmepz 1 to amisa\nmepz 1 to hilton\nmepz 1 to palm beach\nPunta Engano to Parkmall\nP. engano to mepz 1\np. engano to pusok\np. engano to new mactan-mandaue bridge\np. engano to marina mall\np. engano to mandaue"
+  },
+  {
+    "code": "23D",
+    "name": "Cebu Jeepney Route No. 23D / MI-23A (Opon)",
+    "description": "Opon to Mandaue\nopon to uc-lm\nopon to mandaue\nopon to highway\nopon to guizo\nopon to cicc\nopon to parkmall\nopon to s&r shopping\nopon to cebu doctors university\nmactan to uclm\nmactan to mandaue\nmactan to cicc\nmactan to guizo\nmactan to san miguel\nmactan to parkmall\nmactan to s&r shopping\nmactan to cebu doctors university\nuclm to parkmall\nuclm to cdu\nsti to parkmall\nsti to cdu\nsti cicc\nguizo to parkmall\nguizo to s&r shopping\nguizo to cebu doctors university\nMandaue to Opon\nMandaue to opon public market\nmandaue to GMC\nparkmall to old mandaue public market\nparkmall to nature spring plant\nparkmall to uc-lm\nparkmall to old bridge\nparkmall to opon public market\nparkmall to mactan\ncdu to new mandaue public market\ncdu to natures spring plant\ncdu to uc-lm\ncdu to mactan\ncdu to opon public market\nmandaue public market to uclm\nmandaue public market to mactan\nmandaue public market to opon public market"
+  },
+  {
+    "code": "24",
+    "name": "Cebu Jeepney Route No. 24 (Consolacion to Sm & White Gold) via Highway",
+    "description": "Consolacion to White Gold via Mabolo\nConsolacion to Sm Consolacion\nConsolacion to Fooda Consolacion\nConsolacion to cor. Canduman\nConsolacion to basak\nConsolacion to Pacific Mall\nConsolacion to Metro Mandaue\nConsolacion to highway\nConsolacion to subandako\nConsolacion to mabolo\nConsolacion to sm city cebu\nConsolacion to white gold\nsm consolacion to fooda consolacion\nsm consolacion to basak\nsm consolacion to pacific mall\nsm consolacion to highway\nsm consolacion to subangdako\nsm consolacion to mabolo\nsm consolacion to Sm City Cebu\nsm consolacion to white gold\ncanduman to pacific mall\ncanduman to highway\ncanduman to subandako\ncanduman to mabolo\ncanduman to sm city cebu\ncanduman to white gold\npacific mall to highway\npacific mall to subangdako\npacific mall to mabolo\npacific mall to sm city cebu\npacific mall to white gold\nhighway to mabolo\nhighway to sm city cebu\nhighway to white gold\nWhite Gold to Consolacion\nwhite gold to north bus terminal\nwhite gold to tipolo\nwhite gold to highway......"
+  },
+  {
+    "code": "25",
+    "name": "Cebu Jeepney Route No. 25 (Liloan to SM & White Gold via Highway)",
+    "description": ""
+  },
+  {
+    "code": "43D",
+    "name": "43D",
+    "description": ""
+  },
+  {
+    "code": "44A",
+    "name": "44A",
+    "description": ""
+  },
+  {
+    "code": "62B",
+    "name": "Cebu Jeepney Route No. 62B",
+    "description": "Pit-os to Carbon\nPit-os to talamban\nPit-os to Country mall\nPit-os to Ayala\npit-os to gorordo ave.\npit-os to gen. echavez st.\npit-os to manalili st.\npit-os to carbon\npit-os to sto. nino\ntalamban to san carlos\ntalamban to gaisano country mall\ntalamban to ayala\ntalamban to echavez st.\ntalamban to manalili st.\ntalamban to carbon\ntalamban to sto. nino\ncountry mall to ayala\ncountry mall to manalili st.\ncountry mall to carbon\ncountry mall to sto. nino\nayala to manalili st.\nayala to carbon\nayala to sto. nino\nCarbon to Pit-os\nCarbon to imus ave.\ncarbon to ayala\ncarbon to metro ayala\ncarbon to country mall\ncarbon to uc banilad\ncarbon to banilad\ncarbon to san carlos banilad\ncarbon to talamban\ncarbon to bacayan\ncarbon to pit-os\nuv to ayala\nuv to country mall\nuv to banilad\nuv to san carlos banilad\nuv to talamban\nuv to bacayan\nuv to pit-os\nayala to country mall\nayala to banilad\nayala to san carlos banilad\nayala to talamban\nayala to bacaya\nayala to pit-os\ncountry mall to san carlos"
+  },
+  {
+    "code": "62C",
+    "name": "Cebu Jeepney Route No. 62C",
+    "description": "PIT-OS TO CARBON\npit-os to talamban\npit-os to banilad\npit-os to country mall\npit-os to ayala\npit-os to colon\npit-os to carbon\nbacayan to colon\nbacayan to ayala\ntalamban to banilad\ntalamban to Ayala\ntalamban to colon\ntalamban to carbon\nbanilad to ayala\nbanilad to usc seminary\nbanilad to echavez st.\nbanilad to ramos\ntalamban to ramos\npit-os to ramos\nbacayan to ramos\nbanilad to colon\nbanilad to uv\nbanilad to carbon\nramos to carbon\nCARBON TO PIT-OS\ncarbon to ramos\ncarbon to ayala\ncarbon to banilad\ncarbon to talamban\ncarbon to bacayan\ncarbon to pit-os\ncolon to ramos\ncolon to ayala\ncolon to banilad\ncolon to talamban\ncolon to bacayan\ncolon to pit-os\nramos to ayala\nramos to banilad\nramos to country mall\nramos to talamban\nramos to usc talamban\nramos to pit-os\nayala to country mall\nayala to paradise\nayala to banilad\nayala to usc talamban\nayala to talamban\nayala to pit-os\nbanilad to talamban\nbanilad to pit-os\nbanilad to bacayan\nbanilad to country mall\nbanilad to usc talamban"
+  },
+  {
+    "code": "MI-01A",
+    "name": "Cebu Jeepney Route No. MI-01A",
+    "description": "Punta Engano to Opon Public Market\nPunta Engano to Mepza\nPunta Engano to Marina Mall0\nPunta Engano to Pusok\nPunta Engano to Lapulapu City Hall\nPunta Engano to Gaisano Mactan\nPunta Engano to Metro Mactan\nPunta Engano to Opon Public Market\nMepza to Pusok\nMepza to Lapulapu city Hall\nMepza to SSS\nMepza to Gaisano Island Mall\nMepza to Metro-Opon\nMepza to Opon Public Market\nPusok to Gaisano Island Mall\nPusok to Metro-lapulapu\nPusok to Opon Public Market\ngaisano island mall to metro-lapulapu\ngaisano island mall to opon public market\nOpon Public Market to Punta Engano\nOpon to gaisano island mall\nOpon to lapulapu city hall\nOpon to SSS\nOpon to Pusok\nOpon to marina mall\nOpon to mepza\nOpon to ibo\nOpon to mactan shrine\nOpon to punta engano\nOpon to shanrila mactan\ngaisano island mall to pusok\ngaisano island mall to marina mall\ngaisano island mall to mepza\ngaisano island mall to mactan shrine\ngaisano island mall to punta engano\nmepza to mactan shrine\nmepza to punta engano\nmepza to shangrila...."
+  },
+  {
+    "code": "MI-02B",
+    "name": "Cebu Jeepney Route No. MI-02B",
+    "description": "Mandaue to Maribago\nmandaue to highland\nmandaue to new bridge\nmandaue to pusok\nmandaue to mepz 1\nmandaue to mactan\nmandaue to maribago\nmandaue to agus\nparkmall to new mandaue public market\nparkmall to highland\nparkmall to new mactan-mandaue bridge\nparkmall to pusok\nparkmall to marina mall\nparkmall to savemore mactan\nparkmall to mepz 1\nparkmall to gate 1, 2, 3, 4, 5\nparkmall to ibo\nparkmall to soong\nparkmall to brgy mactan\nparkmall to mactan oceantown\nparkmall to maribago\nparkmall to agus\nhighland to pusok\nhighland to marina mall\nhighland to savemore mactan\nhighland to mepz 1\nhighland to so-ong\nhighland to mactan\nhighland to maribago bluewaters resort\nhighland to agus\npusok to soong\npusok to mactan\npusok to maribago\nmarina mall to maribago\nmarina mall to agus\nmepz 1 to soong\nmepz 1 to maribago\nmepz 1 to agus\nbrgy.mactan to maribago\nMaribago to Mandaue\nmaribago to mepz 1\nmaribago to marina mall\nmaribago to savemore mactan\nmaribago to pusok\nmaribago to mandaue\nmaribago to parkmall..."
+  },
+  {
+    "code": "MI-03A",
+    "name": "Cebu Jeepney Route No. MI-03A",
+    "description": "Cordova to Lapulapu City Public Market\ncordova to babag 2\ncordova to deca homes\ncordova to babag 1\ncordova to Looc\ncordova to yanadia\ncordova to lapulapu city public market\ncordova to opon public market\nbabag 1 to lapu lapu city public market\nbabag 2 to lapulapu city public market\nlooc to lapulapu city public market\nLapulapu City Public Market to Cordova\nOpon Public market to LOoc\npublic market to babag 1\npublic market to deca homes\npublic market to babag 2\npublic market to cordova\nbabag 1 to cordova\nbabag 2 to cordova\nlooc to cordova\ndeca homes to cordova"
+  },
+  {
+    "code": "MI-03B",
+    "name": "Cebu Jeepney Route No. MI-03B via opon public market",
+    "description": "Cordova to Mepz 1 via opon public market\nCordova to babag 1\ncordova to babag 2\ncordova to looc\ncordova to lapulapu public market\ncordova to la nueva\ncordova to gaisano mactan island mall\ncordova to lapulapu city hall\ncordova to pusok\ncordova to marina mall\ncordova to savemore supermarket\ncordova to piza\ncordova to mepz 1\ncordova to gate 1\ncordova to gate 2\ncordova to gate 3\ncordova to gate 4\nbabag 2 to opon public market\nbabag 2 to gaisano mactan island mall\nbabag 2 to pusok\nbabag 2 to mepz 1\nopon public market to gaisano mactan island mall\nopon public market to pusok\nopon public market to marina mall\nopon public market to savemore market\nopon public market to mepz 1\ngaisano mactan to pusok\ngaisano mactan to mepz 1\nMepz 1 to Cordova via Muelle Osmena Port\nMepz 1 to Pusok\nmepz 1 to gaisano mactan island mall\nmepz 1 to opon public market\nmepz 1 to lapulapu public market\nmepz 1 to Muelle osmena port\nmepz 1 to cordova"
+  },
+  {
+    "code": "MI-04A",
+    "name": "Cebu Jeepney Route No. MI-04A(Tamiya to Mandaue)",
+    "description": "TAMIYA TERMINAL TO MANDAUE\ntamiya terminal to mandaue\ntamiya to mandaue\nrobinsons supermarket mactan to mandaue\nmepz 2 to mandaue\ntamiya to UCLM\nMepz 2 to UCLM\nMepz 2 to Parkmall\ntamiya to parkmall\nrobinsons mactan to parkmall\ntamiya to cdu\nrobinsons mactan to cdu\nmepz2 to cdu\ntamiya to MO2\nmepz2 to MO2\nmactan to mandaue\nmactan to parkmall\nmactan to cicc\nmactan to cdu\nUclm to cdu\nuclm to parkmall\nuclm to mo2\nMANDAUE TO TAMIYA TERMINAL\nmandaue to tamiya terminal\nmandaue to mactan\nmandaue to uclm\nmandaue to cdu\nmandaue to parkmall\nparkmall to uclm\nparkmall to robinsons mactan\nparkmall to tamiya\\\nparkmall to mepz2\nparkmall to crown regency suites mactan\ncdu to mactan\ncdu to uclm\ncdu to old mactan bridge\ncdu to crown regency suites mactan\ncdu to tamiya\ncdu to mepz2\ncdu to robinsons mactan\nold mactan bridge to mepz 2\\\nold mactan bridge to tamiya\nold mactan bridge to robinsons supermarket mactan"
+  },
+  {
+    "code": "MI-04B",
+    "name": "Cebu Jeepney Route No. MI-04B",
+    "description": "Tamiya (Mepz 2) - Mepz 1\nTamiya to crown regency suites\ntamiya to gaisano mactan\ntamiya to lapulapu city hall\ntamiya to SSS\ntamiya to pusok\ntamiya to marina mall\ntamiya to savemore mactan\ntamiya to Mepz 1\ntamiya to Gate 1, 2, 3, 4\ngaisano to sss\ngaisano to pusok\ngaisano to marina mall\ngaisano to savemore mactan\ngaisano to mepz 1\ngaisano to Gate 1, 2, 3, 4\npusok to marina mall\npusok to mepz 1\nMepz 1 to Mepz 2 (Tamiya Terminal)\nMepz 1 to pusok\nmepz 1 to gaisano island mall\nmepz 1 to sss\nmepz 1 to lapulapu city hall\nmepz 1 to crown regency suites\nmepz 1 to mepz 2\nmepz 1 to tamiya terminal\npusok to gaisano island mall\npusok to SSS\npusok to crown regency suites\npusok to mepz 2\npusok to tamiya terminal\npusok to pueblo verde\ngaisano to crown regency suites\ngaisano to mepz 2\ngaisano to pueblo verde\ngaisano to tamiya terminal\ngaisano to robinsons tamiya"
+  },
+  {
+    "code": "MI-05A",
+    "name": "Cebu Jeepneys Route No. MI-05A",
+    "description": "Mactan airport to Opon (Muelle osmena ferry boat terminal)\nMactan airport to marina mall\nmactan airport to pusok\nmactan airport to lapulapu city hall\nmactan airport to gaisano mactan island mall\nmactan airport general milling corp.\nmactan airport to opon parish church\nmactan airport to ferry boat port\nmactan airport to muelle osmena port\nOpon to MACTAN AIRPORT\nopon to gaisano island mall\nopon to pusok\nopon to marina mall\nopon to mactan airport\nferry boat terminal to gaisano island mall\nferry boat port to pusok\nferry boat port to lapulapu city hall\nferry boat port to marina mall\nferry boat port to mactan airport\ngaisano island mall to marina mall\ngaisano island mall to mactan airport\ngaisano island mall to pusok."
+  },
+  {
+    "code": "TUBURAN",
+    "name": "Tuburan Vhire",
+    "description": ""
+  }
+]

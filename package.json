@@ -5,14 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/convert-kml.js",
+    "prebuild": "node scripts/convert-kml.js && node scripts/extract-kml-routes.js",
     "build": "vite build",
     "preview": "vite preview",
     "convert-kml": "node scripts/convert-kml.js",
+    "extract-kml": "node scripts/extract-kml-routes.js",
     "postinstall": "node -e \"process.platform!=='win32'&&require('child_process').execSync('chmod +x node_modules/.bin/*')\""
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "fast-xml-parser": "^5.11.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.31.0",
     "motion": "^13.1.0",
