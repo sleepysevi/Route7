@@ -27,66 +27,66 @@ export default function AboutModal({ isOpen, onClose }) {
       />
 
       {/* Modal Dialog */}
-      <div className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-white/10 bg-[#14161f] p-6 text-white shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+      <div className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-line bg-solid p-6 text-ink shadow-float">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-full border border-white/10 bg-white/5 p-2 text-slate-400 transition hover:bg-white/10 hover:text-white"
+          className="absolute right-4 top-4 rounded-full border border-line bg-chip p-2 text-muted transition hover:bg-hover hover:text-ink"
         >
           <X className="h-5 w-5" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#ff4757]/15 text-[#ff4757]">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/15 text-primary-ink">
             <Bus className="h-6 w-6" />
           </div>
           <div>
             <h2 className="font-['Syne',sans-serif] text-xl font-bold">
               About Route<span className="text-[#ffbe0b]">7</span> 
             </h2>
-            <p className="text-xs text-slate-400">Sugbu Buddy • Cebu Commuting & Spots Guide</p>
+            <p className="text-xs text-muted">Sugbu Buddy • Cebu Commuting & Spots Guide</p>
           </div>
         </div>
 
         {/* Modal Sections */}
-        <div className="mt-6 space-y-5 text-sm text-slate-300">
+        <div className="mt-6 space-y-5 text-sm text-soft">
           {/* Section 1: Intro */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="rounded-2xl border border-line bg-wash p-4">
             <p className="leading-relaxed">
-              <strong className="text-white">Route7</strong> is a modern, fast, and interactive transit companion designed to help locals, students, and tourists navigate Cebu City and Metro Cebu’s jeepney routes with ease.
+              <strong className="text-ink">Route7</strong> is a modern, fast, and interactive transit companion designed to help locals, students, and tourists navigate Cebu City and Metro Cebu’s jeepney routes with ease.
             </p>
           </div>
 
           {/* Section 2: Commuter Etiquette */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2 font-semibold text-white">
+            <div className="flex items-center gap-2 font-semibold text-ink">
               <h3>Cebu Commuting Tips</h3>
             </div>
-            <ul className="space-y-2 text-xs leading-relaxed text-slate-300">
+            <ul className="space-y-2 text-xs leading-relaxed text-soft">
               <li className="flex items-start gap-2">
-                <span className="rounded bg-[#ff4757]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#ff4757]">1</span>
+                <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[10px] font-bold text-primary-ink">1</span>
                 <span><strong>Paying your fare:</strong> Pass your money to the passenger next to you saying <em>"Palihug ko sa plete"</em>  (Please pass my fare). Mention your destination and if you're a student/senior/PWD.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="rounded bg-[#ff4757]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#ff4757]">2</span>
+                <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[10px] font-bold text-primary-ink">2</span>
                 <span><strong>Getting off:</strong> When approaching your stop, announce <em>"Lugar lang!"</em> or <em>"Sa eskina lang palihug"</em> clearly so the driver can pull over safely.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="rounded bg-[#ff4757]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#ff4757]">3</span>
+                <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[10px] font-bold text-primary-ink">3</span>
                 <span><strong>Route Codes:</strong> Cebu jeepneys use 2 to 4 character route codes on their windshields and sides (e.g. <code>04L</code>, <code>13C</code>, <code>62B</code>). Check the map and stops list to confirm your route.</span>
               </li>
             </ul>
           </div>
 
           {/* Section 3: Credits */}
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-4 text-xs">
-            <div className="flex items-center gap-2 font-semibold text-white">
+          <div className="rounded-2xl border border-line bg-chip p-4 text-xs">
+            <div className="flex items-center gap-2 font-semibold text-ink">
               <span>Created by a commuter, for commuters</span>
             </div>
-            <p className="mt-1 text-slate-400">
-              Developed by <strong className="text-white">sleepysevi</strong> as a community transit guide for Sugbuanons and visitors of the Queen City of the South.
+            <p className="mt-1 text-muted">
+              Developed by <strong className="text-ink">sleepysevi</strong> as a community transit guide for Sugbuanons and visitors of the Queen City of the South.
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function AboutModal({ isOpen, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="w-full rounded-xl bg-[#ff4757] py-2.5 text-center text-sm font-semibold text-white shadow-lg transition hover:bg-[#ff2e43]"
+            className="w-full rounded-xl bg-primary py-2.5 text-center text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover"
           >
             Tara, Laag!
           </button>

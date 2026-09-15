@@ -94,12 +94,12 @@ const SpotMap = forwardRef(function SpotMap({ spots = [] }, ref) {
       const marker = L.marker(spot.coords, { icon })
         .bindPopup(`
           <div style="min-width:180px;font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.4;">
-            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:#ffffff;">${escapeHtml(spot.name)}</div>
-            <div style="color:#94a3b8;font-size:11px;margin-bottom:6px;">${escapeHtml(spot.address)}</div>
-            <div style="color:#cbd5e1;margin-bottom:6px;">${escapeHtml(spot.description ? spot.description.slice(0, 85) + '…' : '')}</div>
+            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--ink);">${escapeHtml(spot.name)}</div>
+            <div style="color:var(--muted);font-size:11px;margin-bottom:6px;">${escapeHtml(spot.address)}</div>
+            <div style="color:var(--ink-soft);margin-bottom:6px;">${escapeHtml(spot.description ? spot.description.slice(0, 85) + '…' : '')}</div>
             <div style="display:flex;gap:6px;font-size:10px;font-weight:600;">
-              <span style="color:#ffbe0b;">${escapeHtml(spot.hours)}</span>
-              <span style="color:#10b981;">${escapeHtml(spot.entrance)}</span>
+              <span style="color:var(--accent-ink);">${escapeHtml(spot.hours)}</span>
+              <span style="color:var(--green-ink);">${escapeHtml(spot.entrance)}</span>
             </div>
           </div>
         `, { maxWidth: 220 })
@@ -119,15 +119,15 @@ const SpotMap = forwardRef(function SpotMap({ spots = [] }, ref) {
   }, [spots]);
 
   return (
-    <div className="glass-panel overflow-hidden rounded-3xl border border-white/10 shadow-lg">
-      <div className="flex items-center justify-between border-b border-white/10 bg-[#14161f]/90 px-4 py-2.5">
+    <div className="glass-panel overflow-hidden rounded-3xl border border-line shadow-lg">
+      <div className="flex items-center justify-between border-b border-line bg-solid/90 px-4 py-2.5">
         <div className="flex items-center gap-2">
-          <MapPin className="h-4 w-4 text-[#ff4757]" />
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+          <MapPin className="h-4 w-4 text-primary-ink" />
+          <span className="text-xs font-bold uppercase tracking-wider text-soft">
             Cebu Tourist Attractions Map
           </span>
         </div>
-        <span className="text-[11px] text-slate-400">
+        <span className="text-[11px] text-muted">
           Tap any pin to view details
         </span>
       </div>

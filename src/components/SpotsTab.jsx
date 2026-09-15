@@ -66,12 +66,12 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
       <div className="glass-panel rounded-3xl p-4 shadow-lg sm:p-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ff4757]/15 text-[#ff4757]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary-ink">
               <MapPin className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-white">Cebu Attractions & Spots</h2>
-              <p className="text-xs text-slate-400">
+              <h2 className="text-base font-bold text-ink">Cebu Attractions & Spots</h2>
+              <p className="text-xs text-muted">
                 Discover tourist landmarks, malls, and nature spots with jeepney access guides
               </p>
             </div>
@@ -86,13 +86,13 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
               placeholder="Search spots, malls, areas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#12141c] py-2 pl-9 pr-8 text-xs text-white placeholder:text-slate-500 focus:border-[#ff4757] focus:outline-none"
+              className="w-full rounded-xl border border-line bg-inset py-2 pl-9 pr-8 text-xs text-ink placeholder:text-dim focus:border-primary focus:outline-none"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 hover:text-white"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted hover:text-ink"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -118,10 +118,10 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
                   type="button"
                   onClick={() => setActiveCategory(cat)}
                   aria-pressed={isActive}
-                  className={`flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold transition-colors rounded-lg ${
                     isActive
-                      ? 'border-[#ff4757] bg-[#ff4757] text-white shadow-[0_2px_10px_rgba(255,71,87,0.3)]'
-                      : 'border-white/10 bg-white/[0.03] text-slate-300 hover:bg-white/10 hover:text-white'
+                      ? 'bg-active-plate text-active-ink'
+                      : 'text-dim hover:bg-hover-soft hover:text-soft'
                   }`}
                 >
                   <span>{cat}</span>
@@ -139,21 +139,21 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
       </div>
 
       {/* Spot Count Summary */}
-      <div className="flex items-center justify-between px-1 text-xs text-slate-400">
+      <div className="flex items-center justify-between px-1 text-xs text-muted">
         <span>
-          Showing <strong className="text-white">{filteredSpots.length}</strong> spots
+          Showing <strong className="text-ink">{filteredSpots.length}</strong> spots
         </span>
         {activeCategory !== 'All' && (
-          <span className="text-slate-500">Category: {activeCategory}</span>
+          <span className="text-dim">Category: {activeCategory}</span>
         )}
       </div>
 
       {/* Spot Cards Grid */}
       {filteredSpots.length === 0 ? (
-        <div className="glass-panel flex flex-col items-center justify-center rounded-3xl p-10 text-center text-slate-400">
-          <AlertCircle className="h-10 w-10 text-slate-500 mb-2" />
-          <h4 className="text-base font-bold text-white">No spots found</h4>
-          <p className="mt-1 text-xs text-slate-400">
+        <div className="glass-panel flex flex-col items-center justify-center rounded-3xl p-10 text-center text-muted">
+          <AlertCircle className="h-10 w-10 text-dim mb-2" />
+          <h4 className="text-base font-bold text-ink">No spots found</h4>
+          <p className="mt-1 text-xs text-muted">
             No attractions match "{searchQuery}". Try searching for historical spots, mountains, or malls.
           </p>
         </div>

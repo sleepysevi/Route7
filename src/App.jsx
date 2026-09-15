@@ -76,7 +76,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex min-h-screen w-full min-w-0 flex-col bg-[#0b0c10] text-slate-100 selection:bg-[#ff4757] selection:text-white">
+    <div className="flex min-h-screen w-full min-w-0 flex-col bg-canvas text-ink selection:bg-primary selection:text-white">
       {/* Toast Notification Container */}
       <Toast message={toastMessage} type={toastType} />
 
@@ -118,21 +118,21 @@ export default function App() {
           </main>
 
           {/* App Footer */}
-          <footer className="border-t border-white/10 bg-[#090a0e] py-8 text-center text-xs text-slate-500">
+          <footer className="border-t border-line bg-canvas-deep py-8 text-center text-xs text-dim">
             <div className="mx-auto max-w-6xl px-4 space-y-2">
               <div className="flex items-center justify-center gap-2">
-                <span className="font-['Syne',sans-serif] text-sm font-bold text-white">
-                  Route<span className="text-[#ffbe0b]">7</span>
+                <span className="font-['Syne',sans-serif] text-sm font-bold text-ink">
+                  Route<span className="text-accent-ink">7</span>
                 </span>
               </div>
               <p>
-                Made by a fellow commuter <strong className="text-slate-400">sleepysevi</strong>.
+                Made by a fellow commuter <strong className="text-muted">sleepysevi</strong>.
               </p>
-              <div className="flex justify-center gap-4 pt-1 text-[11px] text-slate-400">
+              <div className="flex justify-center gap-4 pt-1 text-[11px] text-muted">
                 <button
                   type="button"
                   onClick={() => setIsAboutOpen(true)}
-                  className="hover:text-white"
+                  className="hover:text-ink"
                 >
                   Transit Guide
                 </button>
@@ -140,7 +140,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => handleTabChange('hotlines')}
-                  className="hover:text-white"
+                  className="hover:text-ink"
                 >
                   Emergency Hotlines
                 </button>
@@ -148,7 +148,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => setShowSplash(true)}
-                  className="hover:text-white"
+                  className="hover:text-ink"
                 >
                   Godspeed
                 </button>

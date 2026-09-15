@@ -171,11 +171,11 @@ export default function RouteMap({ selectedRoute, onClose }) {
   }, [routeCode, routeName, paths, startPath, endPath]);
 
   return (
-    <div className="glass-panel overflow-hidden rounded-3xl border border-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.5)]">
-      <div className="flex items-center justify-between border-b border-white/10 bg-[#14161f]/90 px-4 py-2.5">
+    <div className="glass-panel overflow-hidden rounded-3xl border border-line shadow-panel">
+      <div className="flex items-center justify-between border-b border-line bg-solid/90 px-4 py-2.5">
         <div className="flex items-center gap-2">
-          <Navigation className="h-4 w-4 text-[#ff4757]" />
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+          <Navigation className="h-4 w-4 text-primary-ink" />
+          <span className="text-xs font-bold uppercase tracking-wider text-soft">
             Interactive Route Map
           </span>
         </div>
@@ -183,7 +183,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1 text-slate-400 hover:bg-white/10 hover:text-white"
+            className="rounded-lg p-1 text-muted hover:bg-hover hover:text-ink"
             title="Hide Map"
           >
             <X className="h-4 w-4" />
@@ -195,43 +195,43 @@ export default function RouteMap({ selectedRoute, onClose }) {
         <div ref={mapContainerRef} className="h-full w-full" />
       </div>
 
-      <div className="flex flex-col gap-2 border-t border-white/10 bg-[#12141c] px-4 py-2.5 text-xs text-slate-300 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-2 border-t border-line bg-inset px-4 py-2.5 text-xs text-soft sm:flex-row sm:items-center sm:justify-between">
         {selectedRoute ? (
           <>
             <div className="flex min-w-0 items-center gap-2">
-              <span className="font-bold text-white">{selectedRoute.code}</span>
-              <span className="truncate text-slate-400">{selectedRoute.route}</span>
+              <span className="font-bold text-ink">{selectedRoute.code}</span>
+              <span className="truncate text-muted">{selectedRoute.route}</span>
               {paths.length === 0 && (
-                <span className="rounded bg-yellow-500/20 px-1.5 py-0.5 text-[10px] text-yellow-400">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-dim">
                   Coordinates coming soon
                 </span>
               )}
             </div>
             {paths.length > 0 && (
               <div className="flex flex-wrap items-center gap-2">
-                <span className="mr-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                <span className="mr-1 text-[10px] font-bold uppercase tracking-wider text-dim">
                   Route markers
                 </span>
                 {startPath && (
-                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1 font-medium">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-chip px-2 py-1 font-medium">
                     <span
                       className="inline-flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white shadow-sm"
                       style={{ backgroundColor: startPath.color }}
                     >
                       A
                     </span>
-                    <span className="text-slate-300">Start</span>
+                    <span className="text-soft">Start</span>
                   </span>
                 )}
                 {endLegendPath && (
-                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1 font-medium">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-chip px-2 py-1 font-medium">
                     <span
                       className="inline-flex h-4 w-4 items-center justify-center rounded-[3px] text-[9px] font-extrabold text-white shadow-sm"
                       style={{ backgroundColor: endLegendPath.color }}
                     >
                       B
                     </span>
-                    <span className="text-slate-300">End</span>
+                    <span className="text-soft">End</span>
                   </span>
                 )}
                 {paths
@@ -239,13 +239,13 @@ export default function RouteMap({ selectedRoute, onClose }) {
                   .map((p, i) => (
                     <span
                       key={`${p.name}-${i}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-chip px-2 py-1"
                     >
                       <span
                         className="inline-block h-2 w-4 rounded-sm"
                         style={{ backgroundColor: p.color }}
                       />
-                      <span className="max-w-[100px] truncate text-slate-400">
+                      <span className="max-w-[100px] truncate text-muted">
                         {p.name || 'Extra'}
                       </span>
                     </span>
@@ -254,7 +254,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
             )}
           </>
         ) : (
-          <span className="text-slate-400">Select any route below to preview its path</span>
+          <span className="text-muted">Select any route below to preview its path</span>
         )}
       </div>
     </div>

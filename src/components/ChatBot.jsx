@@ -28,8 +28,8 @@ export default function ChatBot() {
         style={{
           position: 'fixed', bottom: 20, right: 20, zIndex: 1000,
           width: 56, height: 56, borderRadius: '50%',
-          background: '#e11d2e', color: 'white', border: 'none',
-          fontSize: 24, cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+          background: 'var(--primary)', color: 'white', border: 'none',
+          fontSize: 24, cursor: 'pointer', boxShadow: 'var(--shadow-fab)'
         }}
       >
         {open ? '✕' : '💬'}
@@ -39,11 +39,11 @@ export default function ChatBot() {
       {open && (
         <div style={{
           position: 'fixed', bottom: 90, right: 20, zIndex: 1000,
-          width: 320, height: 420, background: '#1a1a1a', color: 'white',
+          width: 320, height: 420, background: 'var(--surface-solid)', color: 'var(--ink)',
           borderRadius: 12, display: 'flex', flexDirection: 'column',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.4)', overflow: 'hidden'
+          boxShadow: 'var(--shadow-chat)', overflow: 'hidden'
         }}>
-          <div style={{ padding: 12, borderBottom: '1px solid #333', fontWeight: 'bold' }}>
+          <div style={{ padding: 12, borderBottom: '1px solid var(--line)', fontWeight: 'bold' }}>
             Ask Route7
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: 12 }}>
@@ -53,15 +53,15 @@ export default function ChatBot() {
               </p>
             ))}
           </div>
-          <div style={{ display: 'flex', padding: 8, borderTop: '1px solid #333' }}>
+          <div style={{ display: 'flex', padding: 8, borderTop: '1px solid var(--line)' }}>
             <input
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && sendMessage()}
               placeholder="Ask about routes or fares..."
-              style={{ flex: 1, padding: 8, borderRadius: 6, border: 'none', marginRight: 8 }}
+              style={{ flex: 1, padding: 8, borderRadius: 6, border: 'none', marginRight: 8, background: 'var(--inset)', color: 'var(--ink)' }}
             />
-            <button onClick={sendMessage} style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: '#e11d2e', color: 'white' }}>
+            <button onClick={sendMessage} style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: 'var(--primary)', color: 'white' }}>
               Send
             </button>
           </div>

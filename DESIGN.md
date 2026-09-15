@@ -15,6 +15,17 @@ colors:
   dim-slate: "#64748b"
   border-subtle: "rgba(255,255,255,0.08)"
   border-active: "rgba(255,71,87,0.4)"
+  light-canvas: "#eef0f4"
+  light-canvas-deep: "#e4e7ed"
+  light-surface: "#ffffff"
+  light-inset: "#e8ebf0"
+  light-ink: "#171a21"
+  light-ink-soft: "#3d4450"
+  light-muted: "#4d5665"
+  light-dim: "#5f6875"
+  light-primary-ink: "#d92d3f"
+  light-accent-ink: "#a16207"
+  light-green-ink: "#047857"
 typography:
   display:
     fontFamily: "Syne, sans-serif"
@@ -71,8 +82,8 @@ components:
     rounded: "{rounded.xl}"
     padding: "1rem"
   nav-active:
-    backgroundColor: "{colors.route-signal}"
-    textColor: "{colors.body-white}"
+    backgroundColor: "{colors.body-white}"
+    textColor: "{colors.midnight-base}"
     rounded: "{rounded.md}"
     padding: "0.375rem 1rem"
 ---
@@ -119,6 +130,8 @@ The palette is a dark operational field with two deliberate signals: coral for a
 ### Named Rules
 **The Two Signal Rule.** Coral communicates action and route state; yellow communicates Route7 identity and orientation. Do not swap their jobs casually.
 
+**Theming.** All surfaces consume semantic tokens defined in `src/index.css` (exposed to Tailwind via `@theme inline` utilities like `bg-canvas`, `text-ink`, `border-line`). The dark palette above is the brand default and boots on `<html class="dark">`; the light theme is a soft slate-day canvas that activates when `.dark` is absent (ThemeToggle). Signal hues stay identical on fills and borders in both themes; as text or icons on light surfaces they use the darkened `light-*-ink` variants to preserve contrast.
+
 ## Typography
 
 **Display Font:** Syne (with sans-serif fallback)
@@ -156,7 +169,7 @@ This is a layered glass utility. Depth comes primarily from translucent dark sur
 
 ## Shapes
 
-The shape language is soft but controlled: rounded-xl inputs and controls, rounded-2xl cards and panels, rounded-3xl map and empty-state containers, and pill-shaped chips for filters and quick tags. Borders are thin and low-contrast, usually white at 8-10% opacity. Route timeline markers use circles for starts and square corners for ends, making direction legible without extra copy.
+The shape language is soft but controlled: rounded-xl inputs and controls, rounded-2xl cards and panels, rounded-3xl map and empty-state containers. Labels and filters carry no chrome of their own — the warm-white active plate and the route-code signage are the only filled chrome. Borders are thin and low-contrast, usually white at 8-10% opacity. Route timeline markers use circles for starts and square corners for ends, making direction legible without extra copy.
 
 ## Components
 
@@ -167,8 +180,8 @@ The shape language is soft but controlled: rounded-xl inputs and controls, round
 - **Secondary / Ghost:** Translucent white surfaces or quiet slate text, with subtle borders and stronger contrast on hover.
 
 ### Chips
-- **Style:** Pill-shaped route filters and quick-search tags with a translucent color wash, thin border, compact label, and optional count.
-- **State:** Active chips use the group color as a solid fill; inactive chips preserve the color as a low-opacity background and border.
+- **Style:** Typographic by default. Tags and metadata are bare 10px semibold uppercase labels with wide tracking in dim slate — no border, no fill, no per-category colors. Filters are borderless text buttons with a dim tabular count.
+- **State:** One active treatment site-wide — a warm-white plate (body-white) with midnight-base text at rounded-lg. Inactive filters are quiet slate type that lifts on hover. Coral stays reserved for primary actions and selected route content.
 
 ### Cards / Containers
 - **Corner Style:** Rounded-2xl route cards and rounded-3xl map or empty-state panels.

@@ -16,18 +16,6 @@ const GROUP_ORDER = [
   'San Fernando',
 ];
 
-const GROUP_COLORS = {
-  All: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'Cebu City': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  Mandaue: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'Mactan Island': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'North Cebu': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  Tuburan: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'Talisay City': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  Minglanilla: { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'City of Naga': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-  'San Fernando': { active: 'bg-[#ffbe0b] text-[#0b0c10]', inactive: 'bg-[#ffbe0b]/10 text-[#ffcf45] border-[#ffbe0b]/30' },
-};
 
 function matchKeywords(kw, query) {
   return String(kw || '').toLowerCase().includes(query);
@@ -109,19 +97,19 @@ export default function RoutesTab({
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           {/* Search Box */}
           <div className="relative flex-1">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#ff4757]" />
+            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-ink" />
             <input
               type="text"
               placeholder="Search by code (04L, 13C), destination, via, or stop..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#12141c] py-2.5 pl-10 pr-10 text-sm text-white placeholder:text-slate-500 focus:border-[#ff4757] focus:outline-none focus:ring-1 focus:ring-[#ff4757]"
+              className="w-full rounded-xl border border-line bg-inset py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-dim focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => onSearchChange('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 hover:text-white"
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted hover:text-ink"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -129,7 +117,7 @@ export default function RoutesTab({
           </div>
 
           {/* Controls: Map Toggle & Layout Switcher (Grid / List) */}
-          <div className="flex w-full items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1 sm:w-auto sm:self-auto">
+          <div className="flex w-full items-center gap-1 rounded-xl border border-line bg-wash p-1 sm:w-auto sm:self-auto">
             <button
               type="button"
               onClick={() => setIsMapExpanded((prev) => !prev)}
@@ -137,21 +125,21 @@ export default function RoutesTab({
               aria-label={isMapExpanded ? 'Hide Map' : 'Show Map'}
               className={`flex flex-1 items-center justify-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition sm:flex-none ${
                 isMapExpanded
-                  ? 'bg-white/10 text-white'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-hover text-ink'
+                  : 'text-muted hover:text-ink'
               }`}
             >
               <span>Map</span>
             </button>
-            <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+            <div className="h-3 w-[1px] bg-line mx-0.5" />
             <button
               type="button"
               onClick={() => setLayout('list')}
               title="List View"
               className={`flex flex-1 items-center justify-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition sm:flex-none ${
                 layout === 'list'
-                  ? 'bg-[#ff4757] text-white shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-primary text-white shadow'
+                  : 'text-muted hover:text-ink'
               }`}
             >
               <span>List</span>
@@ -162,8 +150,8 @@ export default function RoutesTab({
               title="Grid View"
               className={`flex flex-1 items-center justify-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition sm:flex-none ${
                 layout === 'grid'
-                  ? 'bg-[#ff4757] text-white shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-primary text-white shadow'
+                  : 'text-muted hover:text-ink'
               }`}
             >
               <span>Grid</span>
@@ -174,8 +162,8 @@ export default function RoutesTab({
         {/* Group Filter Chips with visual horizontal scroll cues */}
         <div className="relative mt-3">
           {/* Subtle gradient scroll hints for mobile */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-1 z-10 w-4 bg-gradient-to-r from-[#14161f] to-transparent sm:hidden" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-1 z-10 w-6 bg-gradient-to-l from-[#14161f] to-transparent sm:hidden" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-1 z-10 w-4 bg-gradient-to-r from-solid to-transparent sm:hidden" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-1 z-10 w-6 bg-gradient-to-l from-solid to-transparent sm:hidden" />
 
           <div
             className="overflow-x-auto pb-1.5 scrollbar-none"
@@ -190,8 +178,6 @@ export default function RoutesTab({
                     ? routes.length
                     : routes.filter((r) => r.group === group).length;
 
-                const styleConf = GROUP_COLORS[group] || GROUP_COLORS.All;
-
                 return (
                   <button
                     key={group}
@@ -199,14 +185,14 @@ export default function RoutesTab({
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActiveGroup(group)}
-                    className={`flex min-h-[34px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                    className={`flex min-h-[34px] items-center gap-1.5 px-3 py-1.5 text-xs font-semibold transition-colors ${
                       isActive
-                        ? `${styleConf.active} shadow-[0_2px_10px_rgba(0,0,0,0.3)]`
-                        : `${styleConf.inactive} hover:bg-white/10`
+                        ? 'rounded-lg bg-active-plate text-active-ink'
+                        : 'rounded-lg text-dim hover:bg-hover-soft hover:text-soft'
                     }`}
                   >
                     <span>{group}</span>
-                    <span className="text-[10px] opacity-75">({count})</span>
+                    <span className="text-[10px] tabular-nums opacity-75">({count})</span>
                   </button>
                 );
               })}
@@ -236,7 +222,7 @@ export default function RoutesTab({
           <button
             type="button"
             onClick={() => setIsMapExpanded(true)}
-            className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] py-3 text-xs font-semibold text-slate-400 transition hover:border-[#ff4757]/40 hover:bg-white/[0.05] hover:text-white"
+            className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-line-strong bg-wash py-3 text-xs font-semibold text-muted transition hover:border-primary/40 hover:bg-hover-soft hover:text-ink"
           >
             <span>Show Route Map & Selected Paths</span>
           </button>
@@ -244,21 +230,21 @@ export default function RoutesTab({
       </div>
 
       {/* Result Status Count */}
-      <div className="flex items-center justify-between px-1 text-xs font-medium text-slate-400">
+      <div className="flex items-center justify-between px-1 text-xs font-medium text-muted">
         <span>
-          Showing <strong className="text-white">{filteredRoutes.length}</strong>{' '}
+          Showing <strong className="text-ink">{filteredRoutes.length}</strong>{' '}
           {filteredRoutes.length === 1 ? 'route' : 'routes'}
         </span>
         {activeGroup !== 'All' && (
-          <span className="text-slate-500">Filtered by {activeGroup}</span>
+          <span className="text-dim">Filtered by {activeGroup}</span>
         )}
       </div>
 
       {/* Routes Grid / List */}
       {filteredRoutes.length === 0 ? (
-        <div className="glass-panel flex flex-col items-center justify-center rounded-3xl p-10 text-center text-slate-400">
-          <h4 className="text-base font-bold text-white">No routes found</h4>
-          <p className="mt-1 text-xs text-slate-400">
+        <div className="glass-panel flex flex-col items-center justify-center rounded-3xl p-10 text-center text-muted">
+          <h4 className="text-base font-bold text-ink">No routes found</h4>
+          <p className="mt-1 text-xs text-muted">
             No jeepneys match "{searchQuery}". Try searching by area name, mall, or route code.
           </p>
           <button
@@ -267,7 +253,7 @@ export default function RoutesTab({
               onSearchChange('');
               setActiveGroup('All');
             }}
-            className="mt-4 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white hover:bg-white/10"
+            className="mt-4 rounded-xl border border-line bg-chip px-4 py-2 text-xs font-semibold text-ink hover:bg-hover"
           >
             Reset Filters
           </button>

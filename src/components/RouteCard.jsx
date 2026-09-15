@@ -26,8 +26,8 @@ export default function RouteCard({
       onClick={handleCardClick}
       className={`glass-card cursor-pointer rounded-2xl p-4 transition-all duration-200 ${
         isSelected
-          ? 'border-[#ff4757] bg-[#1d212d] shadow-[0_0_20px_rgba(255,71,87,0.25)] ring-1 ring-[#ff4757]'
-          : 'border-white/10 hover:border-white/20'
+          ? 'border-primary bg-selected shadow-[0_0_20px_rgba(255,71,87,0.25)] ring-1 ring-primary'
+          : 'border-line hover:border-line-strong'
       }`}
     >
       {/* Top Header Row */}
@@ -37,13 +37,13 @@ export default function RouteCard({
           <span
             className={`inline-flex items-center justify-center rounded-xl px-3 py-1 text-xs font-extrabold uppercase tracking-wider transition-colors duration-200 ${
               isSelected
-                ? 'bg-[#ffbe0b] text-[#0b0c10] shadow-[0_2px_10px_rgba(255,190,11,0.3)]'
-                : 'bg-gradient-to-r from-[#ff4757] to-[#e84152] text-white shadow-[0_2px_10px_rgba(255,71,87,0.3)]'
+                ? 'bg-[#ffbe0b] text-[#0b0c10]'
+                : 'bg-gradient-to-r from-[#ff4757] to-[#e84152] text-white'
             }`}
           >
             {route.code}
           </span>
-          <span className="text-[11px] font-medium text-slate-400">
+          <span className="text-[11px] font-medium text-muted">
             {route.group || 'Cebu'}
           </span>
         </div>
@@ -52,26 +52,26 @@ export default function RouteCard({
 
       {/* Route Name & Destination */}
       <div className="mt-3">
-        <h3 className="text-base font-bold text-white group-hover:text-[#ff4757]">
+        <h3 className="text-base font-bold text-ink group-hover:text-primary-ink">
           {route.route}
         </h3>
-        <p className="mt-1 text-xs text-slate-400">
-          <span className="font-semibold text-slate-300">via</span> {route.via}
+        <p className="mt-1 text-xs text-muted">
+          <span className="font-semibold text-soft">via</span> {route.via}
         </p>
       </div>
 
       {/* Action Footer: Stops trigger & Map View trigger */}
-      <div className="mt-4 flex items-center justify-between border-t border-white/5 pt-3">
+      <div className="mt-4 flex items-center justify-between border-t border-line-soft pt-3">
         {stopCount > 0 ? (
           <button
             type="button"
             onClick={handleToggleStops}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-chip px-2.5 py-1 text-xs font-medium text-soft transition hover:bg-hover hover:text-ink"
           >
             <span>{stopCount} stops</span>
             <ChevronDown
               className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                isExpanded ? 'rotate-180 text-[#ff4757]' : ''
+                isExpanded ? 'rotate-180 text-primary-ink' : ''
               }`}
             />
           </button>
@@ -84,8 +84,8 @@ export default function RouteCard({
           onClick={handleCardClick}
           className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-semibold transition ${
             isSelected
-              ? 'bg-[#ff4757]/20 text-[#ff4757]'
-              : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'
+              ? 'bg-primary/15 text-primary-ink'
+              : 'text-muted hover:bg-hover-soft hover:text-soft'
           }`}
         >
           <Navigation className="h-3 w-3" />
@@ -95,8 +95,8 @@ export default function RouteCard({
 
       {/* Collapsible Stops Timeline */}
       {isExpanded && stopCount > 0 && (
-        <div className="mt-3 rounded-xl border border-white/10 bg-[#10121a] p-3 text-xs">
-          <div className="mb-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+        <div className="mt-3 rounded-xl border border-line bg-wash p-3 text-xs">
+          <div className="mb-2.5 text-[10px] font-bold uppercase tracking-wider text-muted">
             Route Stops Timeline ({stopCount} stations)
           </div>
           <div className="space-y-1.5">
@@ -104,32 +104,32 @@ export default function RouteCard({
               const isFirst = idx === 0;
               const isLast = idx === stopCount - 1;
               const dotColor = isFirst
-                ? 'bg-[#10b981]'
+                ? 'bg-green'
                 : isLast
-                ? 'bg-[#ff4757]'
-                : 'bg-slate-600';
+                ? 'bg-primary'
+                : 'bg-timeline-dot';
 
               return (
                 <div key={`${route.code}-${stop}-${idx}`} className="flex items-start gap-2.5">
                   <div className="flex flex-col items-center pt-1">
                     <div className={`h-2.5 w-2.5 rounded-full ${dotColor} flex-shrink-0`} />
-                    {!isLast && <div className="h-4 w-[2px] bg-slate-700/60" />}
+                    {!isLast && <div className="h-4 w-[2px] bg-connector" />}
                   </div>
                   <div className="flex flex-1 items-center justify-between pb-1">
                     <span
                       className={`text-xs ${
-                        isFirst || isLast ? 'font-bold text-white' : 'text-slate-300'
+                        isFirst || isLast ? 'font-bold text-ink' : 'text-soft'
                       }`}
                     >
                       {stop}
                     </span>
                     {isFirst && (
-                      <span className="rounded bg-[#10b981]/20 px-1.5 py-0.5 text-[9px] font-extrabold text-[#10b981]">
+                      <span className="rounded bg-green/20 px-1.5 py-0.5 text-[9px] font-extrabold text-green-ink">
                         START
                       </span>
                     )}
                     {isLast && (
-                      <span className="rounded bg-[#ff4757]/20 px-1.5 py-0.5 text-[9px] font-extrabold text-[#ff4757]">
+                      <span className="rounded bg-primary/20 px-1.5 py-0.5 text-[9px] font-extrabold text-primary-ink">
                         END
                       </span>
                     )}

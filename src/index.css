@@ -1,20 +1,216 @@
 @import 'tailwindcss';
 
+/* Class-based dark mode (Tailwind v4): dark: utilities activate on <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+   Semantic theme tokens.
+   Light theme lives on :root (absence of .dark); the dark theme — Route7's
+   brand default — is applied under <html class="dark"> and holds the exact
+   pre-existing visual values. Components consume these through the
+   @theme inline utilities below (bg-canvas, text-ink, border-line, ...).
+--------------------------------------------------------------------------- */
 :root {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color-scheme: dark;
-  --bg: #0b0c10;
-  --bg-card: #14161d;
-  --bg-card-hover: #1c1f2a;
+  color-scheme: light;
+
+  /* Page canvas */
+  --bg: #eef0f4;
+  --bg-deep: #e4e7ed;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #fbfcfd 0%, #eef0f4 55%, #e6e9ef 100%);
+
+  /* Surfaces */
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
+  --surface-raised: rgba(255, 255, 255, 0.85);
+  --selected: #ffffff;
+  --inset: #e8ebf0;
+  --inset-raised: #f6f7f9;
+
+  /* Text */
+  --ink: #171a21;
+  --ink-soft: #3d4450;
+  --muted: #4d5665;
+  --dim: #5f6875;
+
+  /* Lines & washes */
+  --line: rgba(23, 26, 33, 0.1);
+  --line-soft: rgba(23, 26, 33, 0.06);
+  --line-strong: rgba(23, 26, 33, 0.18);
+  --wash: rgba(23, 26, 33, 0.03);
+  --chip: rgba(23, 26, 33, 0.05);
+  --hover-soft: rgba(23, 26, 33, 0.06);
+  --hover: rgba(23, 26, 33, 0.1);
+
+  /* Signals — fills/borders keep brand hues in both themes;
+     as text or icons on light surfaces they use the darkened *-ink variants */
   --primary: #ff4757;
   --primary-hover: #ff2e43;
-  --primary-glow: rgba(255, 71, 87, 0.28);
+  --primary-ink: #d92d3f;
   --accent: #ffbe0b;
-  --accent-glow: rgba(255, 190, 11, 0.25);
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(255, 71, 87, 0.4);
+  --accent-ink: #a16207;
+  --green: #10b981;
+  --green-ink: #047857;
+
+  /* Active plate — the inverse of the field, both themes */
+  --active-bg: #171a21;
+  --active-text: #f8fafc;
+
+  /* Route timeline */
+  --connector: rgba(23, 26, 33, 0.16);
+  --dot: #8a94a6;
+
+  /* Shadows */
+  --shadow-panel: 0 15px 35px rgba(23, 26, 33, 0.1);
+  --shadow-card-hover: 0 10px 25px -5px rgba(23, 26, 33, 0.12), 0 0 15px -3px rgba(255, 71, 87, 0.08);
+  --shadow-search: 0 10px 30px rgba(23, 26, 33, 0.12);
+  --shadow-float: 0 20px 50px rgba(23, 26, 33, 0.18);
+  --shadow-popup: 0 12px 30px rgba(23, 26, 33, 0.16);
+  --shadow-chat: 0 8px 30px rgba(23, 26, 33, 0.2);
+  --shadow-fab: 0 4px 12px rgba(23, 26, 33, 0.18);
+  --shadow-toast: 0 10px 30px rgba(23, 26, 33, 0.16);
+
+  /* Glass surfaces */
+  --panel-border: rgba(23, 26, 33, 0.08);
+  --glass-border: rgba(23, 26, 33, 0.07);
+  --glass-card-hover: rgba(255, 255, 255, 0.98);
+  --glass-card-border-hover: rgba(23, 26, 33, 0.15);
+
+  /* Scrollbar */
+  --scrollbar-track: rgba(23, 26, 33, 0.06);
+  --scrollbar-thumb: rgba(23, 26, 33, 0.22);
+  --scrollbar-thumb-hover: rgba(23, 26, 33, 0.32);
+
+  /* Map attribution */
+  --attribution-bg: rgba(255, 255, 255, 0.78);
+
+  /* Splash jeep illustration (translucent ink on canvas) */
+  --jeep-body: rgba(23, 26, 33, 0.1);
+  --jeep-stroke: rgba(23, 26, 33, 0.28);
+  --jeep-glass: rgba(23, 26, 33, 0.45);
+  --jeep-window: rgba(23, 26, 33, 0.3);
+  --jeep-roof: rgba(23, 26, 33, 0.16);
+  --jeep-detail: rgba(23, 26, 33, 0.3);
+
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Page canvas */
+  --bg: #0b0c10;
+  --bg-deep: #090a0e;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #171a24 0%, #0b0c10 70%, #07070a 100%);
+
+  /* Surfaces */
+  --surface: rgba(20, 22, 29, 0.75);
+  --surface-solid: #14161f;
+  --surface-raised: rgba(26, 29, 39, 0.6);
+  --selected: #1d212d;
+  --inset: #12141c;
+  --inset-raised: #181b24;
+
+  /* Text */
+  --ink: #f8fafc;
+  --ink-soft: #cbd5e1;
+  --muted: #94a3b8;
+  --dim: #64748b;
+
+  /* Lines & washes */
+  --line: rgba(255, 255, 255, 0.1);
+  --line-soft: rgba(255, 255, 255, 0.05);
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --wash: rgba(255, 255, 255, 0.02);
+  --chip: rgba(255, 255, 255, 0.04);
+  --hover-soft: rgba(255, 255, 255, 0.06);
+  --hover: rgba(255, 255, 255, 0.1);
+
+  /* Signals */
+  --primary: #ff4757;
+  --primary-hover: #ff2e43;
+  --primary-ink: #ff4757;
+  --accent: #ffbe0b;
+  --accent-ink: #ffbe0b;
+  --green: #10b981;
+  --green-ink: #10b981;
+
+  /* Active plate */
+  --active-bg: #f8fafc;
+  --active-text: #0b0c10;
+
+  /* Route timeline */
+  --connector: rgba(51, 65, 85, 0.6);
+  --dot: #475569;
+
+  /* Shadows */
+  --shadow-panel: 0 15px 35px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px -3px rgba(255, 71, 87, 0.1);
+  --shadow-search: 0 10px 35px rgba(0, 0, 0, 0.5);
+  --shadow-float: 0 20px 50px rgba(0, 0, 0, 0.7);
+  --shadow-popup: 0 12px 30px rgba(0, 0, 0, 0.6);
+  --shadow-chat: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-fab: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-toast: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  /* Glass surfaces */
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-card-hover: rgba(33, 37, 50, 0.85);
+  --glass-card-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Scrollbar */
+  --scrollbar-track: rgba(0, 0, 0, 0.2);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.15);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.25);
+
+  /* Map attribution */
+  --attribution-bg: rgba(11, 12, 16, 0.75);
+
+  /* Splash jeep illustration (translucent white on midnight) */
+  --jeep-body: rgba(255, 255, 255, 0.14);
+  --jeep-stroke: rgba(255, 255, 255, 0.25);
+  --jeep-glass: rgba(255, 255, 255, 0.6);
+  --jeep-window: rgba(255, 255, 255, 0.45);
+  --jeep-roof: rgba(255, 255, 255, 0.18);
+  --jeep-detail: rgba(255, 255, 255, 0.3);
+}
+
+/* Expose tokens as Tailwind utilities (bg-canvas, text-ink, border-line, ...) */
+@theme inline {
+  --color-canvas: var(--bg);
+  --color-canvas-deep: var(--bg-deep);
+  --color-surface: var(--surface);
+  --color-solid: var(--surface-solid);
+  --color-raised: var(--surface-raised);
+  --color-selected: var(--selected);
+  --color-inset: var(--inset);
+  --color-inset-raise: var(--inset-raised);
+  --color-ink: var(--ink);
+  --color-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-line-strong: var(--line-strong);
+  --color-wash: var(--wash);
+  --color-chip: var(--chip);
+  --color-hover: var(--hover);
+  --color-hover-soft: var(--hover-soft);
+  --color-active-plate: var(--active-bg);
+  --color-active-ink: var(--active-text);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-ink: var(--primary-ink);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-green: var(--green);
+  --color-green-ink: var(--green-ink);
+  --color-connector: var(--connector);
+  --color-timeline-dot: var(--dot);
+  --shadow-panel: var(--shadow-panel);
+  --shadow-search: var(--shadow-search);
+  --shadow-float: var(--shadow-float);
+  --shadow-toast: var(--shadow-toast);
 }
 
 html, body, #root {
@@ -24,14 +220,14 @@ html, body, #root {
   max-width: 100vw;
   min-height: 100%;
   background-color: var(--bg);
-  color: var(--text-main);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   overflow-x: hidden;
-  background: radial-gradient(circle at 50% 0%, #171a24 0%, #0b0c10 70%, #07070a 100%);
+  background: var(--bg-gradient);
   background-attachment: fixed;
 }
 
@@ -42,16 +238,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--scrollbar-thumb);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Keyframe animations */
@@ -174,32 +370,47 @@ body {
   }
 }
 
-/* Glassmorphism panel utility */
+/* Theme cross-fade: keep the old snapshot static under the circular reveal */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Glassmorphism panel utilities (token-driven, both themes) */
 .glass-panel {
-  background: rgba(20, 22, 29, 0.75);
+  background: var(--surface);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--panel-border);
 }
 
 .glass-card {
-  background: rgba(26, 29, 39, 0.6);
+  background: var(--surface-raised);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--glass-border);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  background: rgba(33, 37, 50, 0.85);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--glass-card-hover);
+  border-color: var(--glass-card-border-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px -3px rgba(255, 71, 87, 0.1);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .hiking-rail {
   scroll-padding-inline: 1rem;
-  scrollbar-color: rgba(255, 190, 11, 0.45) rgba(255, 255, 255, 0.05);
+  scrollbar-color: rgba(255, 190, 11, 0.45) var(--scrollbar-track);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -208,28 +419,28 @@ body {
   }
 }
 
-/* Leaflet map styles */
+/* Leaflet map styles (token-driven, both themes) */
 .leaflet-container {
   width: 100%;
   height: 100%;
   border-radius: 1rem;
-  background: #12141a !important;
+  background: var(--inset) !important;
   font-family: inherit;
   z-index: 10;
 }
 
 .leaflet-popup-content-wrapper {
-  background: #181b24;
-  color: #f8fafc;
+  background: var(--inset-raised);
+  color: var(--ink);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-popup);
   padding: 4px;
 }
 
 .leaflet-popup-tip {
-  background: #181b24;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--inset-raised);
+  border: 1px solid var(--line);
 }
 
 .leaflet-popup-content {
@@ -239,22 +450,22 @@ body {
 }
 
 .leaflet-control-zoom a {
-  background-color: #1a1d27 !important;
-  color: #f8fafc !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background-color: var(--inset-raised) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
 }
 
 .leaflet-control-zoom a:hover {
-  background-color: #242938 !important;
+  background-color: var(--selected) !important;
 }
 
 .leaflet-control-attribution {
-  background: rgba(11, 12, 16, 0.75) !important;
-  color: #64748b !important;
+  background: var(--attribution-bg) !important;
+  color: var(--dim) !important;
   font-size: 10px !important;
   backdrop-filter: blur(4px);
 }
 
 .leaflet-control-attribution a {
-  color: #94a3b8 !important;
+  color: var(--muted) !important;
 }
