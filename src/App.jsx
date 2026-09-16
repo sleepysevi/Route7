@@ -7,7 +7,6 @@ import SpotsTab from './components/SpotsTab';
 import HotlinesTab from './components/HotlinesTab';
 import AboutModal from './components/AboutModal';
 import Toast from './components/Toast';
-import ChatBot from './components/ChatBot';
 import routesData from '../data/routes.json';
 import dictData from '../data/dictionary.json';
 import spotsData from '../data/spots.json';
@@ -165,8 +164,6 @@ export default function App() {
         onClose={() => setIsAboutOpen(false)}
       />
 
-      {/* Floating AI ChatBot */}
-      <ChatBot />
     </div>
   );
 }
