@@ -30,6 +30,7 @@ export default function RoutesTab({
 }) {
   const [activeGroup, setActiveGroup] = useState('All');
   const [layout, setLayout] = useState('list');
+  const [showAllRoutes, setShowAllRoutes] = useState(false);
   const [isMapExpanded, setIsMapExpanded] = useState(true);
   const [isMapHighlighting, setIsMapHighlighting] = useState(false);
   const mapSectionRef = useRef(null);
@@ -89,6 +90,12 @@ export default function RoutesTab({
   };
 
   const isSearchActive = searchQuery.trim().length > 0;
+  const displayedRoutes =
+    showAllRoutes || isSearchActive
+      ? filteredRoutes
+      : selectedRoute
+        ? filteredRoutes.filter((route) => route.code === selectedRoute.code)
+        : [];
 
   return (
     <div className="w-full min-w-0 space-y-5">
@@ -235,28 +242,47 @@ export default function RoutesTab({
           Showing <strong className="text-ink">{filteredRoutes.length}</strong>{' '}
           {filteredRoutes.length === 1 ? 'route' : 'routes'}
         </span>
-        {activeGroup !== 'All' && (
-          <span className="text-dim">Filtered by {activeGroup}</span>
-        )}
+        <div className="flex items-center gap-3">
+          {activeGroup !== 'All' && <span className="text-dim">Filtered by {activeGroup}</span>}
+          <button
+            type="button"
+            aria-pressed={showAllRoutes}
+            onClick={() => setShowAllRoutes((visible) => !visible)}
+            className="rounded-lg border border-line bg-chip px-3 py-1.5 font-semibold text-soft transition hover:bg-hover hover:text-ink"
+          >
+            {showAllRoutes ? 'Hide all routes' : 'Show all routes'}
+          </button>
+        </div>
       </div>
 
       {/* Routes Grid / List */}
-      {filteredRoutes.length === 0 ? (
+      {displayedRoutes.length === 0 ? (
         <div className="glass-panel flex flex-col items-center justify-center rounded-3xl p-10 text-center text-muted">
-          <h4 className="text-base font-bold text-ink">No routes found</h4>
-          <p className="mt-1 text-xs text-muted">
-            No jeepneys match "{searchQuery}". Try searching by area name, mall, or route code.
-          </p>
-          <button
-            type="button"
-            onClick={() => {
-              onSearchChange('');
-              setActiveGroup('All');
-            }}
-            className="mt-4 rounded-xl border border-line bg-chip px-4 py-2 text-xs font-semibold text-ink hover:bg-hover"
-          >
-            Reset Filters
-          </button>
+          {filteredRoutes.length === 0 ? (
+            <>
+              <h4 className="text-base font-bold text-ink">No routes found</h4>
+              <p className="mt-1 text-xs text-muted">
+                No jeepneys match "{searchQuery}". Try searching by area name, mall, or route code.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  onSearchChange('');
+                  setActiveGroup('All');
+                }}
+                className="mt-4 rounded-xl border border-line bg-chip px-4 py-2 text-xs font-semibold text-ink hover:bg-hover"
+              >
+                Reset Filters
+              </button>
+            </>
+          ) : (
+            <>
+              <h4 className="text-base font-bold text-ink">Routes are hidden</h4>
+              <p className="mt-1 text-xs text-muted">
+                Show all routes to browse the complete route list.
+              </p>
+            </>
+          )}
         </div>
       ) : (
         <div
@@ -268,7 +294,7 @@ export default function RoutesTab({
               : 'space-y-3'
           }
         >
-          {filteredRoutes.map((route) => (
+          {displayedRoutes.map((route) => (
             <div
               key={route.code}
               className={

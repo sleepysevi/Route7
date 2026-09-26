@@ -1,5 +1,6 @@
-  import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Search, Compass, Sparkles, HelpCircle } from 'lucide-react';
+import { animate, stagger, svg } from 'animejs';
 
 const QUICK_TAGS = [
   'SM City',
@@ -18,6 +19,67 @@ export default function Splash({ onEnter, onOpenAbout }) {
   const [query, setQuery] = useState('');
   const [isExiting, setIsExiting] = useState(false);
   const inputRef = useRef(null);
+  const titleWrapRef = useRef(null);
+  const letterRefs = useRef([]);
+  const [cornerMetrics, setCornerMetrics] = useState({ width: 0, height: 0, paths: [] });
+  const routeTraceAnimationRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const titleWrap = titleWrapRef.current;
+    if (!titleWrap) return undefined;
+
+    const measureCorners = () => {
+      const wrapRect = titleWrap.getBoundingClientRect();
+      if (!wrapRect.width || !wrapRect.height) return;
+
+      const paths = letterRefs.current.map((letter, index) => {
+        if (!letter) return null;
+        const rect = letter.getBoundingClientRect();
+        const x = rect.left - wrapRect.left;
+        const y = rect.top - wrapRect.top;
+        const width = rect.width;
+        const height = rect.height;
+        const tick = Math.max(8, Math.min(16, Math.min(width, height) * 0.28));
+
+        // Alternate corners to create a deliberate circuit-trace rhythm.
+        if (index % 2 === 0) {
+          return `M${x.toFixed(1)} ${(y + tick).toFixed(1)} V${y.toFixed(1)} H${(x + tick).toFixed(1)}`;
+        }
+        return `M${(x + width - tick).toFixed(1)} ${(y + height).toFixed(1)} H${(x + width).toFixed(1)} V${(y + height - tick).toFixed(1)}`;
+      });
+
+      setCornerMetrics({ width: wrapRect.width, height: wrapRect.height, paths });
+    };
+
+    measureCorners();
+    const observer = new ResizeObserver(measureCorners);
+    observer.observe(titleWrap);
+    letterRefs.current.filter(Boolean).forEach((letter) => observer.observe(letter));
+    window.addEventListener('resize', measureCorners);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', measureCorners);
+    };
+  }, []);
+
+  useEffect(() => {
+    const routeTraces = svg.createDrawable('.splash-route-trace');
+    if (!routeTraces.length) return undefined;
+
+    routeTraceAnimationRef.current = animate(routeTraces, {
+      draw: ['0 0', '0 1', '0 0'],
+      duration: 2200,
+      delay: stagger(140, { from: 'first' }),
+      ease: 'inOutSine',
+      loop: true,
+    });
+
+    return () => {
+      routeTraceAnimationRef.current?.cancel();
+      routeTraceAnimationRef.current = null;
+    };
+  }, [cornerMetrics.paths.length]);
 
   const handleStart = (searchQuery = '') => {
     setIsExiting(true);
@@ -106,10 +168,37 @@ export default function Splash({ onEnter, onOpenAbout }) {
           Sugbu Buddy
         </div>
 
-        {/* Title */}
-        <h1 className="splash-enter-up font-['Syne',sans-serif] text-[clamp(52px,14vw,84px)] font-extrabold leading-[0.9] tracking-[-3px] text-ink">
-          Route<span className="text-accent-ink drop-shadow-[0_0_20px_rgba(255,190,11,0.5)]">7</span>
-        </h1>
+        {/* Title with measured corner accents */}
+        <div ref={titleWrapRef} className="relative z-10">
+          <svg
+            aria-hidden="true"
+            viewBox={`0 0 ${cornerMetrics.width || 1} ${cornerMetrics.height || 1}`}
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute inset-0 z-20 h-full w-full overflow-visible opacity-80"
+            fill="none"
+            stroke="#FF5722"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {cornerMetrics.paths.map((path, index) => path && (
+              <path key={index} className="splash-route-trace" d={path} />
+            ))}
+          </svg>
+          <h1 className="relative z-10 splash-enter-up font-['Syne',sans-serif] text-[clamp(52px,14vw,84px)] font-extrabold leading-[0.9] tracking-[-3px] text-ink">
+            {'Route'.split('').map((letter, index) => (
+              <span key={`${letter}-${index}`} ref={(element) => { letterRefs.current[index] = element; }}>
+                {letter}
+              </span>
+            ))}
+            <span
+              ref={(element) => { letterRefs.current[5] = element; }}
+              className="text-accent-ink drop-shadow-[0_0_20px_rgba(255,190,11,0.5)]"
+            >
+              7
+            </span>
+          </h1>
+        </div>
 
         <p className="splash-enter-up text-[15px] font-medium text-muted">
           Find your way around Cebu City with ease

@@ -1,11 +1,34 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { animate, svg } from 'animejs';
 import { X, Navigation } from 'lucide-react';
 import { ROUTE_COORDS } from '../../data/route-coords.js';
 
 const DEFAULT_CENTER = [10.2938, 123.895];
 const DEFAULT_ZOOM = 12;
+const ROUTE_COLOR = '#FF5722';
+
+function savePathDrawState(pathElement) {
+  return {
+    dashArray: pathElement.getAttribute('stroke-dasharray'),
+    dashOffset: pathElement.getAttribute('stroke-dashoffset'),
+    pathLength: pathElement.getAttribute('pathLength'),
+    strokeLinecap: pathElement.style.strokeLinecap,
+  };
+}
+
+function restorePathDrawState(pathElement, state) {
+  const restoreAttribute = (name, value) => {
+    if (value === null) pathElement.removeAttribute(name);
+    else pathElement.setAttribute(name, value);
+  };
+
+  restoreAttribute('stroke-dasharray', state.dashArray);
+  restoreAttribute('stroke-dashoffset', state.dashOffset);
+  restoreAttribute('pathLength', state.pathLength);
+  pathElement.style.strokeLinecap = state.strokeLinecap;
+}
 
 function createStartMarkerIcon(color = '#2563eb') {
   return L.divIcon({
@@ -49,6 +72,19 @@ export default function RouteMap({ selectedRoute, onClose }) {
   const mapInstanceRef = useRef(null);
   const layersRef = useRef([]);
   const markersRef = useRef([]);
+  const routeAnimationRef = useRef(null);
+
+  const stopRouteAnimation = () => {
+    const activeAnimation = routeAnimationRef.current;
+    if (!activeAnimation) return;
+
+    activeAnimation.frameIds.forEach((frameId) => cancelAnimationFrame(frameId));
+    activeAnimation.pathStates.forEach(({ animation, pathElement, drawState }) => {
+      animation?.cancel();
+      restorePathDrawState(pathElement, drawState);
+    });
+    routeAnimationRef.current = null;
+  };
 
   const routeCode = selectedRoute?.code;
   const routeName = selectedRoute?.route;
@@ -93,6 +129,9 @@ export default function RouteMap({ selectedRoute, onClose }) {
 
     map.invalidateSize();
 
+    // Leaflet owns these paths, so leave a clean SVG state whenever a route changes.
+    stopRouteAnimation();
+
     layersRef.current.forEach((layer) => map.removeLayer(layer));
     layersRef.current = [];
     markersRef.current.forEach((marker) => map.removeLayer(marker));
@@ -104,9 +143,9 @@ export default function RouteMap({ selectedRoute, onClose }) {
     }
 
     const allBounds = [];
+    const routePolylines = [];
 
     paths.forEach((path) => {
-      const color = path.color || '#ff4757';
       const label =
         path.role === 'start'
           ? 'Start'
@@ -115,7 +154,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
             : path.name || 'Extra';
 
       const polyline = L.polyline(path.coords, {
-        color,
+        color: ROUTE_COLOR,
         weight: path.role === 'extra' ? 4 : 5,
         opacity: path.role === 'extra' ? 0.7 : 0.9,
         lineJoin: 'round',
@@ -129,13 +168,13 @@ export default function RouteMap({ selectedRoute, onClose }) {
         .addTo(map);
 
       layersRef.current.push(polyline);
+      routePolylines.push(polyline);
       path.coords.forEach((c) => allBounds.push(c));
     });
 
     if (startPath) {
-      const startColor = startPath.color || '#2563eb';
       const startMarker = L.marker(startPath.coords[0], {
-        icon: createStartMarkerIcon(startColor),
+        icon: createStartMarkerIcon(ROUTE_COLOR),
       })
         .bindTooltip('Start (A)', { permanent: false, direction: 'top' })
         .addTo(map);
@@ -143,19 +182,17 @@ export default function RouteMap({ selectedRoute, onClose }) {
     }
 
     if (endPath) {
-      const endColor = endPath.color || '#f59e0b';
       const endCoords = endPath.coords[endPath.coords.length - 1];
       const endMarker = L.marker(endCoords, {
-        icon: createEndMarkerIcon(endColor),
+        icon: createEndMarkerIcon(ROUTE_COLOR),
       })
         .bindTooltip('End (B)', { permanent: false, direction: 'top' })
         .addTo(map);
       markersRef.current.push(endMarker);
     } else if (startPath) {
       // Single-path stub: mark last point as end with contrasting style
-      const color = startPath.color || '#ff4757';
       const endMarker = L.marker(startPath.coords[startPath.coords.length - 1], {
-        icon: createEndMarkerIcon(color),
+        icon: createEndMarkerIcon(ROUTE_COLOR),
       })
         .bindTooltip('End (B)', { permanent: false, direction: 'top' })
         .addTo(map);
@@ -166,8 +203,55 @@ export default function RouteMap({ selectedRoute, onClose }) {
       map.fitBounds(L.latLngBounds(allBounds), {
         padding: [36, 36],
         maxZoom: 15,
+        // Keep Leaflet's camera transition from cancelling the draw-in on route selection.
+        animate: false,
       });
     }
+
+    const activeAnimation = { frameIds: new Set(), pathStates: [] };
+    routeAnimationRef.current = activeAnimation;
+
+    const animatePolyline = (polyline, attempts = 0) => {
+      const frameId = requestAnimationFrame(() => {
+        activeAnimation.frameIds.delete(frameId);
+        if (routeAnimationRef.current !== activeAnimation) return;
+
+        // addTo() has fired by now; wait until Leaflet has also written its SVG path data.
+        const pathElement = polyline.getElement?.() || polyline._path;
+        if (!pathElement?.getAttribute('d')) {
+          if (attempts < 2) animatePolyline(polyline, attempts + 1);
+          return;
+        }
+
+        const drawState = savePathDrawState(pathElement);
+        const pathState = { pathElement, drawState, animation: null };
+        activeAnimation.pathStates.push(pathState);
+        pathState.animation = animate(svg.createDrawable(pathElement), {
+          draw: ['0 0', '0 1'],
+          duration: 800,
+          ease: 'outQuad',
+          onComplete: () => {
+            // Return control of the path attributes fully to Leaflet once it is drawn.
+            if (routeAnimationRef.current === activeAnimation) {
+              restorePathDrawState(pathElement, drawState);
+            }
+          },
+        });
+      });
+      activeAnimation.frameIds.add(frameId);
+    };
+
+    routePolylines.forEach((polyline) => animatePolyline(polyline));
+
+    // A Leaflet redraw can replace path geometry during a pan or zoom. Finish cleanly
+    // instead of letting the one-shot animation continue against stale geometry.
+    const handleMapViewChange = () => stopRouteAnimation();
+    map.on('movestart zoomstart', handleMapViewChange);
+
+    return () => {
+      map.off('movestart zoomstart', handleMapViewChange);
+      stopRouteAnimation();
+    };
   }, [routeCode, routeName, paths, startPath, endPath]);
 
   return (
@@ -216,7 +300,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
                   <span className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-chip px-2 py-1 font-medium">
                     <span
                       className="inline-flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-extrabold text-white shadow-sm"
-                      style={{ backgroundColor: startPath.color }}
+                      style={{ backgroundColor: ROUTE_COLOR }}
                     >
                       A
                     </span>
@@ -227,7 +311,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
                   <span className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-chip px-2 py-1 font-medium">
                     <span
                       className="inline-flex h-4 w-4 items-center justify-center rounded-[3px] text-[9px] font-extrabold text-white shadow-sm"
-                      style={{ backgroundColor: endLegendPath.color }}
+                      style={{ backgroundColor: ROUTE_COLOR }}
                     >
                       B
                     </span>
@@ -243,7 +327,7 @@ export default function RouteMap({ selectedRoute, onClose }) {
                     >
                       <span
                         className="inline-block h-2 w-4 rounded-sm"
-                        style={{ backgroundColor: p.color }}
+                        style={{ backgroundColor: ROUTE_COLOR }}
                       />
                       <span className="max-w-[100px] truncate text-muted">
                         {p.name || 'Extra'}
