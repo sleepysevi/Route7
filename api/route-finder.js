@@ -17,9 +17,18 @@ function normalizeStop(name) {
 // Treat terminal suffixes and terminal parentheticals as the same physical
 // stop for matching (for example, "SM City Cebu" and "SM City Cebu Terminal").
 function stopGroupKey(name) {
-  return normalizeStop(name)
+  const normalized = normalizeStop(name);
+  if (normalized === 'ayala terminal' || normalized.startsWith('ayala center cebu')) {
+    return 'ayala center cebu';
+  }
+
+  const key = normalized
     .replace(/\s*\(?terminal\)?$/i, '')
     .trim();
+
+  // These labels refer to the same Ayala interchange in the route data and
+  // descriptions, even though some routes call it "Ayala Terminal".
+  return key;
 }
 
 function sameStop(a, b) {
@@ -107,7 +116,13 @@ export function suggestStops(message, routes, alreadyFound = []) {
   const norm = normalizeStop(message);
   const foundKeys = new Set(alreadyFound.map(stopGroupKey));
   const suggestions = new Map();
-  const words = norm.split(' ').filter((word) => word.length >= 3);
+  const ignoredSuggestionWords = new Set([
+    'a', 'an', 'and', 'center', 'cebu', 'city', 'from', 'go', 'how', 'i',
+    'in', 'is', 'me', 'of', 'the', 'to', 'want',
+  ]);
+  const words = norm
+    .split(' ')
+    .filter((word) => word.length >= 3 && !ignoredSuggestionWords.has(word));
 
   for (const route of routes) {
     for (const stop of route.stops || []) {
@@ -125,7 +140,17 @@ export function suggestStops(message, routes, alreadyFound = []) {
 
 // Interpret a user message as a routing request.
 // The first two distinct stops mentioned are origin and destination.
-export function parseRequest(message, routes) {
+export function parseRequest(message, routes, context = {}) {
+  // A new chat sends a null context; normalize it before reading follow-up state.
+  const safeContext = context || {};
+  const suggestedStops = safeContext.suggestedStops || [];
+  const exactSuggested = suggestedStops.find(
+    (stop) => normalizeStop(stop) === normalizeStop(message)
+  );
+  if (exactSuggested && safeContext.destination) {
+    return { kind: 'query', origin: exactSuggested, destination: safeContext.destination, fromSuggestion: true };
+  }
+
   const stops = extractStops(message, routes);
   if (stops.length < 2) return { kind: 'unknown', stops, suggestions: suggestStops(message, routes, stops) };
 
@@ -202,13 +227,31 @@ export function findRoute(origin, destination, routes) {
   if (originKey === destKey) return null; // same stop: nothing to find
 
   // --- Step 1: direct route -------------------------------------------
-  for (const route of routes) {
+  // Prefer a route whose named endpoints match the request. This avoids
+  // returning a route that merely passes both stops when a route actually
+  // runs between them (for example, 14D for Colon ↔ Ayala).
+  const directCandidates = [];
+  for (const [routeIndex, route] of routes.entries()) {
     const stops = route.stops || [];
-    const hasOrigin = stops.some((s) => stopGroupKey(s) === originKey);
-    const hasDest = stops.some((s) => stopGroupKey(s) === destKey);
+    const originIndex = stops.findIndex((s) => stopGroupKey(s) === originKey);
+    const destinationIndex = stops.findIndex((s) => stopGroupKey(s) === destKey);
+    const hasOrigin = originIndex >= 0;
+    const hasDest = destinationIndex >= 0;
     if (hasOrigin && hasDest) {
-      return { type: 'direct', route: route.code, from: origin, to: destination, routeName: route.route };
+      const lastIndex = stops.length - 1;
+      const endpointScore =
+        (originIndex === 0 || originIndex === lastIndex ? 2 : 0) +
+        (destinationIndex === 0 || destinationIndex === lastIndex ? 2 : 0);
+      const routeText = normalizeStop(route.route);
+      const namedEndpointScore =
+        (routeText.includes(originKey) ? 1 : 0) + (routeText.includes(destKey) ? 1 : 0);
+      directCandidates.push({ route, score: endpointScore + namedEndpointScore, routeIndex });
     }
+  }
+  if (directCandidates.length) {
+    directCandidates.sort((a, b) => b.score - a.score || a.routeIndex - b.routeIndex);
+    const route = directCandidates[0].route;
+    return { type: 'direct', route: route.code, from: origin, to: destination, routeName: route.route };
   }
 
   // --- Step 2: one-transfer search (BFS over routes) -------------------

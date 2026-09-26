@@ -4,6 +4,7 @@ export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [pendingContext, setPendingContext] = useState(null);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -11,13 +12,24 @@ export default function ChatBot() {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setInput('');
 
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: userMsg })
-    });
-    const { reply } = await res.json();
-    setMessages(prev => [...prev, { role: 'bot', text: reply }]);
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMsg, context: pendingContext })
+      });
+      const response = await res.json();
+      if (!res.ok) throw new Error(response.error || 'Route service failed');
+      const { reply } = response;
+      setMessages(prev => [...prev, { role: 'bot', text: reply }]);
+      setPendingContext(response.context || null);
+    } catch (error) {
+      console.error('Chatbot request failed:', error);
+      setMessages(prev => [...prev, {
+        role: 'bot',
+        text: 'I couldn’t reach the route service. Please try again.'
+      }]);
+    }
   };
 
   return (

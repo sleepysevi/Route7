@@ -50,13 +50,13 @@ export default async function handler(req, res) {
     body = await readBody(req);
   }
 
-  const { message } = body;
+  const { message, context } = body;
 
   // Fully rule-based matching — no LLM involved.
   // 1. Pull confidently matched stop names from the user's message.
   // 2. Find a direct route; if none, a one-transfer combination.
   // 3. Format the result into a plain-text chat reply.
-  const request = parseRequest(message ?? '', routesData);
+  const request = parseRequest(message ?? '', routesData, context);
 
   if (request.kind === 'query') {
     const result = findRoute(request.origin, request.destination, routesData);
@@ -73,6 +73,10 @@ export default async function handler(req, res) {
     return res.status(200).json({
       reply: `I found a few possible matches: ${request.suggestions.join(', ')}. Try naming one of these exactly.`,
       suggestions: request.suggestions,
+      context: {
+        suggestedStops: request.suggestions,
+        destination: request.stops?.[0] || null,
+      },
       result: null,
     });
   }

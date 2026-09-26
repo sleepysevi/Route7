@@ -81,10 +81,13 @@ export default function Splash({ onEnter, onOpenAbout }) {
     };
   }, [cornerMetrics.paths.length]);
 
-  const handleStart = (searchQuery = '') => {
+  const handleStart = (searchQuery = '', event) => {
+    const origin = event?.clientX != null && event?.clientY != null
+      ? { x: event.clientX, y: event.clientY }
+      : { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     setIsExiting(true);
     setTimeout(() => {
-      onEnter(searchQuery);
+      onEnter(searchQuery, origin);
     }, 400);
   };
 
@@ -217,7 +220,7 @@ export default function Splash({ onEnter, onOpenAbout }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') handleStart(query.trim());
+                if (e.key === 'Enter') handleStart(query.trim(), e);
             }}
             className="w-full rounded-2xl border border-line bg-solid/90 py-3.5 pl-12 pr-4 text-sm font-medium text-ink shadow-search backdrop-blur-md transition placeholder:text-dim focus:border-primary focus:bg-inset-raise focus:shadow-[0_0_0_3px_rgba(255,71,87,0.25)] focus:outline-none"
           />
@@ -229,7 +232,7 @@ export default function Splash({ onEnter, onOpenAbout }) {
             <button
               key={tag}
               type="button"
-              onClick={() => handleStart(tag)}
+              onClick={(e) => handleStart(tag, e)}
               className="rounded-md px-2.5 py-1 text-xs font-medium text-dim transition-colors hover:bg-hover-soft hover:text-ink"
             >
               {tag}
@@ -240,7 +243,7 @@ export default function Splash({ onEnter, onOpenAbout }) {
         {/* Explore All Routes CTA Button */}
         <button
           type="button"
-          onClick={() => handleStart(query.trim())}
+          onClick={(e) => handleStart(query.trim(), e)}
           className="splash-enter-up mt-2 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff4757] to-[#e84152] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(255,71,87,0.35)] transition-all hover:scale-105 hover:shadow-[0_12px_30px_rgba(255,71,87,0.5)] active:scale-95"
         >
           Explore all routes

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import Navbar from './components/Navbar';
 import Splash from './components/Splash';
 import RoutesTab from './components/RoutesTab';
@@ -20,6 +21,9 @@ export default function App() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('success');
+  const [enterOrigin, setEnterOrigin] = useState({ x: 0, y: 0, radius: 2000 });
+  const [isIrisEntering, setIsIrisEntering] = useState(false);
+  const [showAllRoutes, setShowAllRoutes] = useState(false);
 
   // Keyboard shortcut listener ('?' to toggle guide)
   useEffect(() => {
@@ -47,7 +51,18 @@ export default function App() {
   };
 
   // Called when exiting splash screen
-  const handleEnterApp = (initialQuery = '') => {
+  const handleEnterApp = (initialQuery = '', origin) => {
+    const x = origin?.x ?? window.innerWidth / 2;
+    const y = origin?.y ?? window.innerHeight / 2;
+    const radius = Math.max(
+      Math.hypot(x, y),
+      Math.hypot(window.innerWidth - x, y),
+      Math.hypot(x, window.innerHeight - y),
+      Math.hypot(window.innerWidth - x, window.innerHeight - y),
+    );
+    setEnterOrigin({ x, y, radius });
+    setIsIrisEntering(true);
+    window.setTimeout(() => setIsIrisEntering(false), 720);
     setShowSplash(false);
     setCurrentTab('routes');
     if (initialQuery) {
@@ -83,7 +98,9 @@ export default function App() {
       {showSplash ? (
         <Splash onEnter={handleEnterApp} onOpenAbout={() => setIsAboutOpen(true)} />
       ) : (
-        <>
+        <motion.div
+          className="flex min-h-screen w-full min-w-0 flex-col"
+        >
           {/* Top Sticky Glassmorphic Navbar */}
           <Navbar
             currentTab={currentTab}
@@ -92,32 +109,53 @@ export default function App() {
 
           {/* Main Workspace Container */}
           <main className="mx-auto w-full min-w-0 max-w-6xl flex-1 px-4 py-6 sm:px-6 sm:py-8">
-            {currentTab === 'routes' && (
-              <RoutesTab
-                routes={routesData}
-                searchQuery={routeSearchQuery}
-                onSearchChange={setRouteSearchQuery}
-                selectedRoute={selectedRoute}
-                onSelectRoute={setSelectedRoute}
-              />
-            )}
+            <div className="relative overflow-hidden">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={currentTab}
+                  initial={{ clipPath: 'inset(0 100% 0 0)', opacity: 0.8 }}
+                  animate={{ clipPath: 'inset(0 0% 0 0)', opacity: 1 }}
+                  exit={{ clipPath: 'inset(0 0 0 100%)', opacity: 0.8 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {currentTab === 'routes' && (
+                    <RoutesTab
+                      routes={routesData}
+                      searchQuery={routeSearchQuery}
+                      onSearchChange={setRouteSearchQuery}
+                      selectedRoute={selectedRoute}
+                      onSelectRoute={setSelectedRoute}
+                onShowAllRoutesChange={setShowAllRoutes}
+                    />
+                  )}
 
-            {currentTab === 'dict' && (
-              <DictTab dictionary={dictData} onToast={showToast} />
-            )}
+                  {currentTab === 'dict' && (
+                    <DictTab dictionary={dictData} onToast={showToast} />
+                  )}
 
-            {currentTab === 'spots' && (
-              <SpotsTab
-                spots={spotsData}
-                onSelectJeepneyRoute={handleSelectJeepneyRoute}
-              />
-            )}
+                  {currentTab === 'spots' && (
+                    <SpotsTab
+                      spots={spotsData}
+                      onSelectJeepneyRoute={handleSelectJeepneyRoute}
+                    />
+                  )}
 
-            {currentTab === 'hotlines' && <HotlinesTab />}
+                  {currentTab === 'hotlines' && <HotlinesTab />}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </main>
 
           {/* App Footer */}
-          <footer className="border-t border-line bg-canvas-deep py-8 text-center text-xs text-dim">
+          <motion.footer
+            initial={{ opacity: 0.72, y: 20 }}
+            animate={{
+              opacity: showAllRoutes ? 1 : 0.72,
+              y: showAllRoutes ? 0 : 20,
+            }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="border-t border-line bg-canvas-deep py-8 text-center text-xs text-dim"
+          >
             <div className="mx-auto max-w-6xl px-4 space-y-2">
               <div className="flex items-center justify-center gap-2">
                 <span className="font-['Syne',sans-serif] text-sm font-bold text-ink">
@@ -153,9 +191,20 @@ export default function App() {
                 </button>
               </div>
             </div>
-          </footer>
+          </motion.footer>
 
-        </>
+        </motion.div>
+      )}
+
+      {/* Retracting iris curtain. The app stays unclipped underneath it. */}
+      {isIrisEntering && (
+        <motion.div
+          initial={{ clipPath: `circle(${enterOrigin.radius}px at ${enterOrigin.x}px ${enterOrigin.y}px)` }}
+          animate={{ clipPath: `circle(0px at ${enterOrigin.x}px ${enterOrigin.y}px)` }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none fixed inset-0 z-[60] bg-canvas"
+          aria-hidden="true"
+        />
       )}
 
       {/* About / Guide Modal */}

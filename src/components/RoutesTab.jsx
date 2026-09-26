@@ -27,6 +27,7 @@ export default function RoutesTab({
   onSearchChange,
   selectedRoute,
   onSelectRoute,
+  onShowAllRoutesChange,
 }) {
   const [activeGroup, setActiveGroup] = useState('All');
   const [layout, setLayout] = useState('list');
@@ -247,7 +248,11 @@ export default function RoutesTab({
           <button
             type="button"
             aria-pressed={showAllRoutes}
-            onClick={() => setShowAllRoutes((visible) => !visible)}
+            onClick={() => setShowAllRoutes((visible) => {
+              const nextVisible = !visible;
+              onShowAllRoutesChange?.(nextVisible);
+              return nextVisible;
+            })}
             className="rounded-lg border border-line bg-chip px-3 py-1.5 font-semibold text-soft transition hover:bg-hover hover:text-ink"
           >
             {showAllRoutes ? 'Hide all routes' : 'Show all routes'}
