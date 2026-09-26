@@ -56,12 +56,12 @@ export default function ChatBot() {
           boxShadow: 'var(--shadow-chat)', overflow: 'hidden'
         }}>
           <div style={{ padding: 12, borderBottom: '1px solid var(--line)', fontWeight: 'bold' }}>
-            Ask Route7
+            Wayfinder
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: 12 }}>
             {messages.map((m, i) => (
               <p key={i} style={{ margin: '4px 0' }}>
-                <strong>{m.role === 'user' ? 'You' : 'Bot'}:</strong> {m.text}
+                <strong>{m.role === 'user' ? 'You' : 'Henry'}:</strong> {m.text}
               </p>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, Navigation, CheckCircle } from 'lucide-react';
+import { calculateFare, routePolylineDistanceKm } from '../../lib/fare.js';
 
 export default function RouteCard({
   route,
@@ -11,6 +12,7 @@ export default function RouteCard({
 
   const stops = route.stops || [];
   const stopCount = stops.length;
+  const routeFare = calculateFare(routePolylineDistanceKm(route.code));
 
   const handleCardClick = () => {
     onSelectRoute(route);
@@ -57,6 +59,9 @@ export default function RouteCard({
         </h3>
         <p className="mt-1 text-xs text-muted">
           <span className="font-semibold text-soft">via</span> {route.via}
+        </p>
+        <p className="mt-2 text-xs font-semibold text-primary-ink">
+          Fare: ₱{routeFare.regularFare} <span className="font-normal text-muted">(₱{routeFare.discountedFare} discounted)</span>
         </p>
       </div>
 

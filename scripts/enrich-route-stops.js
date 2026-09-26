@@ -26,7 +26,13 @@ const keyFor = (value) => cleanLocation(value)
   .replace(/\s+/g, ' ')
   .trim();
 
+const isUsableLocation = (value) => {
+  const name = cleanLocation(value);
+  return name.length >= 2 && name.length <= 80 && !/\b(?:via|vice versa|route map)\b/i.test(name);
+};
+
 for (const route of routes) {
+  route.stops = (route.stops || []).filter(isUsableLocation);
   const description = byCode.get(String(route.code).toUpperCase());
   if (!description) continue;
 
@@ -43,7 +49,7 @@ for (const route of routes) {
   const existingKeys = new Set((route.stops || []).map(keyFor));
   for (const location of locations) {
     const key = keyFor(location);
-    if (key && !existingKeys.has(key)) {
+    if (isUsableLocation(location) && key && !existingKeys.has(key)) {
       route.stops = [...(route.stops || []), location];
       existingKeys.add(key);
     }

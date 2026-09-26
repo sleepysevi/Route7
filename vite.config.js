@@ -6,7 +6,7 @@ import chatHandler from './api/chat.js';
 export default defineConfig(({ mode }) => {
   // Expose .env vars (e.g. GEMINI_API_KEY) to the /api/chat middleware
   const env = loadEnv(mode, process.cwd(), '');
-  process.env.GEMINI_API_KEY = env.GEMINI_API_KEY ?? process.env.GEMINI_API_KEY;
+  process.env.GEMINI_API_KEY = env.GEMINI_API_KEY ?? env.Gemini ?? process.env.GEMINI_API_KEY;
 
   return {
     plugins: [

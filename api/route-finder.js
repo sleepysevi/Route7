@@ -9,6 +9,34 @@
 // - 2+ transfers: raise MAX_TRANSFERS; the BFS already tracks leg counts.
 // - Distance weighting: prefer paths whose legs span fewer stops.
 
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const stopEmbeddingData = require('../data/stop-embeddings.json');
+const STOP_EMBEDDING_THRESHOLD = 0.7;
+let embedderPromise;
+
+async function getEmbedder() {
+  if (!embedderPromise) {
+    embedderPromise = import('@xenova/transformers').then(({ pipeline }) =>
+      pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2')
+    );
+  }
+  return embedderPromise;
+}
+
+async function embedText(text) {
+  const embedder = await getEmbedder();
+  const output = await embedder(text, { pooling: 'mean', normalize: true });
+  return Array.from(output.data);
+}
+
+function cosineSimilarity(a, b) {
+  let score = 0;
+  for (let i = 0; i < Math.min(a.length, b.length); i += 1) score += a[i] * b[i];
+  return score;
+}
+
 // Stop names vary in case/punctuation ("E-Mall", "Pit-os", "Sto. Niño").
 function normalizeStop(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -18,7 +46,12 @@ function normalizeStop(name) {
 // stop for matching (for example, "SM City Cebu" and "SM City Cebu Terminal").
 function stopGroupKey(name) {
   const normalized = normalizeStop(name);
-  if (normalized === 'ayala terminal' || normalized.startsWith('ayala center cebu')) {
+  if (
+    normalized === 'ayala' ||
+    normalized === 'metro ayala' ||
+    normalized === 'ayala terminal' ||
+    normalized.startsWith('ayala center')
+  ) {
     return 'ayala center cebu';
   }
 
@@ -112,6 +145,87 @@ export function extractStops(message, routes) {
     .map(({ group }) => group.canonical);
 }
 
+function semanticCandidates(message) {
+  const norm = normalizeStop(message);
+  const ignored = new Set([
+    'a', 'an', 'and', 'from', 'go', 'how', 'i', 'in', 'is', 'me', 'of',
+    'the', 'to', 'want', 'get', 'take', 'ride', 'please', 'can', 'you',
+    'center', 'city', 'cebu',
+  ]);
+  const segments = [];
+  const fromMatch = norm.match(/\bfrom\s+(.+)$/);
+  const toMatch = norm.match(/\bto\s+(.+?)(?:\s+from\s+|$)/);
+  if (toMatch) segments.push(toMatch[1]);
+  if (fromMatch) segments.push(fromMatch[1]);
+  if (!segments.length) segments.push(norm);
+
+  const candidates = [];
+  for (const segment of segments) {
+    const words = segment.split(' ').filter((word) => word.length >= 3 && !ignored.has(word));
+    // Prefer the user's complete place phrase. Only fall back to a single
+    // token when the user actually supplied a single-token place name; this
+    // prevents generic fragments such as "center" or "cebu" from becoming
+    // unrelated semantic matches.
+    if (words.length) {
+      candidates.push({ phrase: words.join(' '), index: norm.indexOf(words.join(' ')) });
+    }
+  }
+  return [...new Map(candidates.map((candidate) => [candidate.phrase, candidate])).values()];
+}
+
+// Semantic fallback for names that exact/substring matching cannot resolve.
+// This intentionally does not alter route graph or transfer selection.
+export async function extractStopsSemantic(message, routes, exactMatches = []) {
+  const embeddings = stopEmbeddingData.embeddings || {};
+  if (!Object.keys(embeddings).length) return exactMatches;
+
+  const groups = new Map();
+  for (const route of routes) {
+    for (const stop of route.stops || []) {
+      const key = stopGroupKey(stop);
+      if (!groups.has(key)) groups.set(key, stop);
+    }
+  }
+  const embeddingEntries = Object.entries(embeddings)
+    .map(([name, vector]) => ({ name, vector, key: stopGroupKey(name), canonical: groups.get(stopGroupKey(name)) || name }))
+    .filter((entry) => groups.has(entry.key));
+  const foundKeys = new Set(exactMatches.map(stopGroupKey));
+  const semanticMatches = [];
+
+  for (const candidate of semanticCandidates(message)) {
+    // Do not reinterpret a phrase that already participated in an exact
+    // match; this avoids turning a canonical "Ayala" hit into a nearby
+    // description fragment such as "SM via Ayala".
+    if (exactMatches.some((stop) => {
+      const stopText = normalizeStop(stop);
+      return stopText.includes(candidate.phrase) || candidate.phrase.includes(stopText);
+    })) continue;
+    const queryVector = await embedText(candidate.phrase);
+    const ranked = embeddingEntries
+      .filter((entry) => !foundKeys.has(entry.key))
+      .map((entry) => ({ ...entry, score: cosineSimilarity(queryVector, entry.vector) }))
+      .sort((a, b) => b.score - a.score);
+    const best = ranked[0];
+    const second = ranked[1];
+    if (!best || best.score < STOP_EMBEDDING_THRESHOLD) {
+      if (best) console.info(`[semantic-stop] no confident match for "${candidate.phrase}": ${best.name}=${best.score.toFixed(3)}`);
+      continue;
+    }
+    // Similar scores indicate an ambiguous nickname (for example, "Punta").
+    if (second && best.score - second.score < 0.03) {
+      console.info(`[semantic-stop] ambiguous "${candidate.phrase}": ${best.name}=${best.score.toFixed(3)}, ${second.name}=${second.score.toFixed(3)}`);
+      continue;
+    }
+    console.info(`[semantic-stop] "${candidate.phrase}" -> "${best.canonical}" (score=${best.score.toFixed(3)})`);
+    semanticMatches.push({ stop: best.canonical, index: candidate.index });
+    foundKeys.add(best.key);
+  }
+
+  return [...exactMatches.map((stop) => ({ stop, index: normalizeStop(message).indexOf(normalizeStop(stop)) })), ...semanticMatches]
+    .sort((a, b) => a.index - b.index)
+    .map(({ stop }) => stop);
+}
+
 export function suggestStops(message, routes, alreadyFound = []) {
   const norm = normalizeStop(message);
   const foundKeys = new Set(alreadyFound.map(stopGroupKey));
@@ -140,7 +254,7 @@ export function suggestStops(message, routes, alreadyFound = []) {
 
 // Interpret a user message as a routing request.
 // The first two distinct stops mentioned are origin and destination.
-export function parseRequest(message, routes, context = {}) {
+export async function parseRequest(message, routes, context = {}) {
   // A new chat sends a null context; normalize it before reading follow-up state.
   const safeContext = context || {};
   const suggestedStops = safeContext.suggestedStops || [];
@@ -151,7 +265,10 @@ export function parseRequest(message, routes, context = {}) {
     return { kind: 'query', origin: exactSuggested, destination: safeContext.destination, fromSuggestion: true };
   }
 
-  const stops = extractStops(message, routes);
+  const exactStops = extractStops(message, routes);
+  const stops = exactStops.length >= 2
+    ? exactStops
+    : await extractStopsSemantic(message, routes, exactStops);
   if (stops.length < 2) return { kind: 'unknown', stops, suggestions: suggestStops(message, routes, stops) };
 
   // In natural phrasing, the origin follows "from" even when the destination
@@ -159,7 +276,12 @@ export function parseRequest(message, routes, context = {}) {
   const norm = normalizeStop(message);
   const fromIndex = norm.indexOf(' from ');
   if (fromIndex >= 0) {
-    const fromStop = extractStops(norm.slice(fromIndex + 6), routes)[0];
+    const fromText = norm.slice(fromIndex + 6);
+    const fromStop = (await extractStopsSemantic(
+      fromText,
+      routes,
+      extractStops(fromText, routes),
+    ))[0];
     if (fromStop) {
       const destination = stops.find((stop) => !sameStop(stop, fromStop));
       if (destination) return { kind: 'query', origin: fromStop, destination };
