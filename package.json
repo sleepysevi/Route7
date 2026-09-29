@@ -11,6 +11,7 @@
     "convert-kml": "node scripts/convert-kml.js",
     "extract-kml": "node scripts/extract-kml-routes.js",
     "generate-stop-embeddings": "node scripts/generate-stop-embeddings.js",
+    "test": "node --test",
     "postinstall": "node -e \"process.platform!=='win32'&&require('child_process').execSync('chmod +x node_modules/.bin/*')\""
   },
   "dependencies": {
