@@ -222,7 +222,7 @@ export default function Splash({ onEnter, onOpenAbout }) {
             onKeyDown={(e) => {
                 if (e.key === 'Enter') handleStart(query.trim(), e);
             }}
-            className="w-full rounded-2xl border border-line bg-solid/90 py-3.5 pl-12 pr-4 text-sm font-medium text-ink shadow-search backdrop-blur-md transition placeholder:text-dim focus:border-primary focus:bg-inset-raise focus:shadow-[0_0_0_3px_rgba(255,71,87,0.25)] focus:outline-none"
+            className="w-full rounded-2xl border border-line bg-solid/90 py-3.5 pl-12 pr-4 text-sm font-medium text-ink shadow-search backdrop-blur-md transition placeholder:text-dim focus:border-primary focus:bg-inset-raise focus:shadow-[0_0_0_3px_var(--ring-accent)] focus:outline-none"
           />
         </div>
 
@@ -244,7 +244,7 @@ export default function Splash({ onEnter, onOpenAbout }) {
         <button
           type="button"
           onClick={(e) => handleStart(query.trim(), e)}
-          className="splash-enter-up mt-2 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff4757] to-[#e84152] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(255,71,87,0.35)] transition-all hover:scale-105 hover:shadow-[0_12px_30px_rgba(255,71,87,0.5)] active:scale-95"
+          className="splash-enter-up mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-cta transition-all hover:scale-105 hover:bg-primary-hover hover:shadow-cta-hover active:scale-95"
         >
           Explore all routes
         </button>

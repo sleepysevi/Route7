@@ -56,7 +56,7 @@ export default function SpotCard({ spot, onFocusOnMap, onSelectJeepneyRoute }) {
                   type="button"
                   onClick={() => onSelectJeepneyRoute && onSelectJeepneyRoute(code)}
                   title={`View route ${code}`}
-                  className="rounded-lg bg-gradient-to-r from-[#ff4757] to-[#e84152] px-2 py-0.5 text-[11px] font-extrabold text-white shadow transition hover:scale-105 active:scale-95"
+                  className="rounded-lg bg-route-badge px-2 py-0.5 text-[11px] font-extrabold text-white shadow transition hover:scale-105 active:scale-95"
                 >
                   {code}
                 </button>

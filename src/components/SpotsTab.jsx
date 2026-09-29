@@ -79,7 +79,7 @@ export default function SpotsTab({ spots, onSelectJeepneyRoute }) {
 
           {/* Search Box */}
           <div className="relative w-full min-w-0 sm:min-w-[260px]">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#ff4757]" />
+            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-ink" />
             <input
               type="text"
               aria-label="Search spots, malls, and areas"

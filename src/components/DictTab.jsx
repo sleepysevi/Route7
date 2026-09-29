@@ -81,7 +81,7 @@ export default function DictTab({ dictionary, onToast }) {
 
         {/* Search Box */}
         <div className="relative mt-4">
-          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#ff4757]" />
+          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-ink" />
           <input
             type="text"
             placeholder="Search phrases (e.g. Lugar lang, plete, asa, pila)..."
@@ -154,7 +154,7 @@ export default function DictTab({ dictionary, onToast }) {
               <div
                 key={`${item.phrase}-${idx}`}
                 onClick={() => handleCopy(item.phrase)}
-                className="glass-card group flex cursor-pointer flex-col justify-between rounded-2xl p-4 transition-all hover:border-[#ff4757]/40"
+                className="glass-card group flex cursor-pointer flex-col justify-between rounded-2xl p-4 transition-all hover:border-primary/40"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">

@@ -28,7 +28,7 @@ export default function RouteCard({
       onClick={handleCardClick}
       className={`glass-card cursor-pointer rounded-2xl p-4 transition-all duration-200 ${
         isSelected
-          ? 'border-primary bg-selected shadow-[0_0_20px_rgba(255,71,87,0.25)] ring-1 ring-primary'
+          ? 'border-primary bg-selected shadow-[0_0_20px_var(--ring-accent)] ring-1 ring-primary'
           : 'border-line hover:border-line-strong'
       }`}
     >
@@ -40,7 +40,7 @@ export default function RouteCard({
             className={`inline-flex items-center justify-center rounded-xl px-3 py-1 text-xs font-extrabold uppercase tracking-wider transition-colors duration-200 ${
               isSelected
                 ? 'bg-[#ffbe0b] text-[#0b0c10]'
-                : 'bg-gradient-to-r from-[#ff4757] to-[#e84152] text-white'
+                : 'bg-route-badge text-white'
             }`}
           >
             {route.code}
@@ -60,7 +60,7 @@ export default function RouteCard({
         <p className="mt-1 text-xs text-muted">
           <span className="font-semibold text-soft">via</span> {route.via}
         </p>
-        <p className="mt-2 text-xs font-semibold text-primary-ink">
+        <p className="mt-2 text-xs font-semibold text-fare">
           Fare: ₱{routeFare.regularFare} <span className="font-normal text-muted">(₱{routeFare.discountedFare} discounted)</span>
         </p>
       </div>
