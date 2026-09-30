@@ -325,7 +325,7 @@ export default async function handler(req, res) {
             throw new Error('Gemini response did not include a verified Route7 code');
           }
         }
-        if (fare && !reply.includes('₱')) reply = `${reply}\n\n${formatFare(fare)}`;
+        if (fare && !reply.includes('₱')) reply = `${reply}\n${formatFare(fare)}`;
 
         console.log(`[chat] path=${requestLog.path} attempts=${requestLog.attempts} latency=${Date.now() - startedAt}ms origin=${requestLog.origin ?? '-'} destination=${requestLog.destination ?? requestLog.reason ?? '-'} model=${model} attemptLatency=${Date.now() - attemptStart}ms`);
         return res.status(200).json({ reply, result: verifiedResult, fare, engine: requestLog.path });

@@ -241,3 +241,35 @@ test('reply for a direct trip includes the route code', () => {
   const reply = formatRouteReply(result, routes);
   assert.match(reply, /12L/, 'reply must contain the route code');
 });
+
+test('Regression: cleaned routes resolve correctly using aliases', async () => {
+  // Route 03B: "sindulan" -> "Mabolo (Sindulan)"
+  let res = await parseRequest('from sindulan to colon', routes);
+  assert.equal(res.kind, 'query');
+  assert.equal(res.origin, 'Mabolo (Sindulan)');
+
+  // Route 04B: "campo" -> "Lahug Terminal (Campo)"
+  res = await parseRequest('from campo to carbon', routes);
+  assert.equal(res.kind, 'query');
+  assert.equal(res.origin, 'Lahug Terminal (Campo)');
+
+  // Route 04H: "plaza housing" -> "Plaza Housing (Busay)"
+  res = await parseRequest('from plaza housing to carbon', routes);
+  assert.equal(res.kind, 'query');
+  assert.equal(res.origin, 'Plaza Housing (Busay)');
+
+  // Route 06B: "guadalupe" -> "Guadalupe Church" (Assuming this maps correctly)
+  res = await parseRequest('from guadalupe to carbon', routes);
+  assert.equal(res.kind, 'query');
+  assert.equal(res.origin, 'Guadalupe Church');
+
+  // Route 07B: "banawa" -> "Banawa Terminal"
+  res = await parseRequest('from banawa to colon', routes);
+  assert.equal(res.kind, 'query');
+  assert.equal(res.origin, 'banawa');
+
+  // Route 17D: "uc" -> "E-Mall (UC Main)"
+  res = await parseRequest('from apas to uc', routes);
+  assert.equal(res.kind, 'query');
+  assert.equal(res.destination, 'E-Mall (UC Main)');
+});

@@ -90,7 +90,7 @@ export default function ChatBot() {
             </div>
             <div style={{ flex: 1, overflowY: 'auto', padding: 12 }}>
               {messages.map((m, i) => (
-                <p key={i} style={{ margin: '4px 0' }}>
+                <p key={i} style={{ margin: '4px 0', whiteSpace: 'pre-wrap' }}>
                   <strong>{m.role === 'user' ? 'You' : 'ZevBot'}:</strong> {m.text}
                 </p>
               ))}
